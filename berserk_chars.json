@@ -8,7 +8,8 @@
     "hair_color": "Black",
     "height_cm": 204,
     "debut_arc": "Black Swordsman Arc",
-    "image_url": "guts.jpg"
+    "image_url": "guts.jpg",
+    "hint": "The struggler who defies destiny."
   },
   {
     "id": 2,
@@ -19,7 +20,8 @@
     "hair_color": "White",
     "height_cm": 178,
     "debut_arc": "Golden Age Arc",
-    "image_url": "griffith.jpg"
+    "image_url": "griffith.jpg",
+    "hint": "The White Hawk who sacrificed everything."
   },
   {
     "id": 3,
@@ -30,7 +32,8 @@
     "hair_color": "Black",
     "height_cm": 165,
     "debut_arc": "Golden Age Arc",
-    "image_url": "casca.jpg"
+    "image_url": "casca.jpg",
+    "hint": "Former commander of the Band of the Hawk."
   },
   {
     "id": 4,
@@ -41,7 +44,8 @@
     "hair_color": "Blue",
     "height_cm": 15,
     "debut_arc": "Black Swordsman Arc",
-    "image_url": "puck.jpg"
+    "image_url": "puck.jpg",
+    "hint": "A wind spirit from Elfhelm."
   },
   {
     "id": 5,
@@ -52,7 +56,8 @@
     "hair_color": "Black",
     "height_cm": 220,
     "debut_arc": "Golden Age Arc",
-    "image_url": "zodd.jpg"
+    "image_url": "zodd.jpg",
+    "hint": "The Immortal seeker of the ultimate strong."
   },
   {
     "id": 6,
@@ -63,7 +68,8 @@
     "hair_color": "Blonde",
     "height_cm": 162,
     "debut_arc": "Conviction Arc",
-    "image_url": "farnese.jpg"
+    "image_url": "farnese.jpg",
+    "hint": "Former leader of the Holy Iron Chain Knights."
   },
   {
     "id": 7,
@@ -74,7 +80,8 @@
     "hair_color": "Blonde",
     "height_cm": 175,
     "debut_arc": "Conviction Arc",
-    "image_url": "serpico.jpg"
+    "image_url": "serpico.jpg",
+    "hint": "Possesses the Sylph Sword and Cloak."
   },
   {
     "id": 8,
@@ -85,7 +92,8 @@
     "hair_color": "Orange",
     "height_cm": 135,
     "debut_arc": "Conviction Arc",
-    "image_url": "isidro.jpg"
+    "image_url": "isidro.jpg",
+    "hint": "Aspires to be the greatest swordsman."
   },
   {
     "id": 9,
@@ -96,7 +104,8 @@
     "hair_color": "Green",
     "height_cm": 120,
     "debut_arc": "Millennium Falcon Arc",
-    "image_url": "schierke.jpg"
+    "image_url": "schierke.jpg",
+    "hint": "A young witch in training."
   },
   {
     "id": 10,
@@ -107,7 +116,8 @@
     "hair_color": "White",
     "height_cm": 230,
     "debut_arc": "Golden Age Arc",
-    "image_url": "skull_knight.jpg"
+    "image_url": "skull_knight.jpg",
+    "hint": "The foe of the Inhumans."
   },
   {
     "id": 11,
@@ -118,7 +128,8 @@
     "hair_color": "Blonde",
     "height_cm": 160,
     "debut_arc": "Golden Age Arc",
-    "image_url": "judeau.jpg"
+    "image_url": "judeau.jpg",
+    "hint": "Jack of all trades in the original Band."
   },
   {
     "id": 12,
@@ -129,7 +140,8 @@
     "hair_color": "Black",
     "height_cm": 190,
     "debut_arc": "Golden Age Arc",
-    "image_url": "pippin.jpg"
+    "image_url": "pippin.jpg",
+    "hint": "The silent giant of the original Band."
   },
   {
     "id": 13,
@@ -140,7 +152,8 @@
     "hair_color": "Black",
     "height_cm": 170,
     "debut_arc": "Golden Age Arc",
-    "image_url": "corkus.jpg"
+    "image_url": "corkus.jpg",
+    "hint": "Always cynical and hostile towards Guts."
   },
   {
     "id": 14,
@@ -151,7 +164,8 @@
     "hair_color": "Orange",
     "height_cm": 165,
     "debut_arc": "Golden Age Arc",
-    "image_url": "rickert.jpg"
+    "image_url": "rickert.jpg",
+    "hint": "The young survivor of the Eclipse."
   },
   {
     "id": 15,
@@ -162,7 +176,8 @@
     "hair_color": "None",
     "height_cm": 265,
     "debut_arc": "Black Swordsman Arc",
-    "image_url": "void.jpg"
+    "image_url": "void.jpg",
+    "hint": "The brain-exposed leader of the God Hand."
   },
   {
     "id": 16,
@@ -173,7 +188,8 @@
     "hair_color": "Black",
     "height_cm": 185,
     "debut_arc": "Black Swordsman Arc",
-    "image_url": "slan.jpg"
+    "image_url": "slan.jpg",
+    "hint": "The Whore Princess of the Uterine Sea."
   },
   {
     "id": 17,
@@ -184,7 +200,8 @@
     "hair_color": "None",
     "height_cm": 80,
     "debut_arc": "Black Swordsman Arc",
-    "image_url": "ubik.jpg"
+    "image_url": "ubik.jpg",
+    "hint": "The floating manipulator of the God Hand."
   },
   {
     "id": 18,
@@ -195,7 +212,8 @@
     "hair_color": "None",
     "height_cm": 150,
     "debut_arc": "Black Swordsman Arc",
-    "image_url": "conrad.jpg"
+    "image_url": "conrad.jpg",
+    "hint": "The pestilence-bringer of the God Hand."
   },
   {
     "id": 19,
@@ -206,7 +224,8 @@
     "hair_color": "Red",
     "height_cm": 270,
     "debut_arc": "Millennium Falcon Arc",
-    "image_url": "grunbeld.jpg"
+    "image_url": "grunbeld.jpg",
+    "hint": "The Great Flame Dragon Apostle."
   },
   {
     "id": 20,
@@ -217,7 +236,8 @@
     "hair_color": "Unknown",
     "height_cm": 200,
     "debut_arc": "Millennium Falcon Arc",
-    "image_url": "locus.jpg"
+    "image_url": "locus.jpg",
+    "hint": "The Moonlight Knight."
   },
   {
     "id": 21,
@@ -228,7 +248,8 @@
     "hair_color": "Black",
     "height_cm": 175,
     "debut_arc": "Millennium Falcon Arc",
-    "image_url": "irvine.jpg"
+    "image_url": "irvine.jpg",
+    "hint": "The demonic archer."
   },
   {
     "id": 22,
@@ -239,7 +260,8 @@
     "hair_color": "Orange",
     "height_cm": 140,
     "debut_arc": "Millennium Falcon Arc",
-    "image_url": "sonia.jpg"
+    "image_url": "sonia.jpg",
+    "hint": "A clairvoyant girl devoted to Griffith."
   },
   {
     "id": 23,
@@ -250,7 +272,8 @@
     "hair_color": "Blonde",
     "height_cm": 174,
     "debut_arc": "Golden Age Arc",
-    "image_url": "silat.jpg"
+    "image_url": "silat.jpg",
+    "hint": "Prince of the Bakiraka clan."
   },
   {
     "id": 24,
@@ -261,7 +284,8 @@
     "hair_color": "Brown",
     "height_cm": 155,
     "debut_arc": "Millennium Falcon Arc",
-    "image_url": "mule.jpg"
+    "image_url": "mule.jpg",
+    "hint": "Sonia's loyal protector."
   },
   {
     "id": 25,
@@ -272,7 +296,8 @@
     "hair_color": "White",
     "height_cm": 160,
     "debut_arc": "Conviction Arc",
-    "image_url": "azan.jpg"
+    "image_url": "azan.jpg",
+    "hint": "The Bridge Knight."
   },
   {
     "id": 26,
@@ -283,7 +308,8 @@
     "hair_color": "Pink",
     "height_cm": 15,
     "debut_arc": "Millennium Falcon Arc",
-    "image_url": "ivalera.jpg"
+    "image_url": "ivalera.jpg",
+    "hint": "Schierke's flower spirit companion."
   },
   {
     "id": 27,
@@ -294,7 +320,8 @@
     "hair_color": "Black",
     "height_cm": 180,
     "debut_arc": "Millennium Falcon Arc",
-    "image_url": "roderick.jpg"
+    "image_url": "roderick.jpg",
+    "hint": "Captain of the Sea Horse."
   },
   {
     "id": 28,
@@ -305,7 +332,8 @@
     "hair_color": "Black",
     "height_cm": 180,
     "debut_arc": "Golden Age Arc",
-    "image_url": "gambino.jpg"
+    "image_url": "gambino.jpg",
+    "hint": "Guts' alcoholic adoptive father."
   },
   {
     "id": 29,
@@ -316,7 +344,8 @@
     "hair_color": "None",
     "height_cm": 160,
     "debut_arc": "Black Swordsman Arc",
-    "image_url": "godot.jpg"
+    "image_url": "godot.jpg",
+    "hint": "Smith who forged the Dragon Slayer."
   },
   {
     "id": 30,
@@ -327,7 +356,8 @@
     "hair_color": "None",
     "height_cm": 200,
     "debut_arc": "Millennium Falcon Arc",
-    "image_url": "rakshas.jpg"
+    "image_url": "rakshas.jpg",
+    "hint": "Exiled Bakiraka assassin."
   },
   {
     "id": 31,
@@ -338,7 +368,8 @@
     "hair_color": "Purple",
     "height_cm": 155,
     "debut_arc": "Conviction Arc",
-    "image_url": "rosine.jpg"
+    "image_url": "rosine.jpg",
+    "hint": "The Queen of the Elves (Moth Apostle)."
   },
   {
     "id": 32,
@@ -349,7 +380,8 @@
     "hair_color": "Grey",
     "height_cm": 230,
     "debut_arc": "Conviction Arc",
-    "image_url": "mozgus.jpg"
+    "image_url": "mozgus.jpg",
+    "hint": "Fanatical Chief Inquisitor."
   },
   {
     "id": 33,
@@ -360,7 +392,8 @@
     "hair_color": "Grey",
     "height_cm": 250,
     "debut_arc": "Millennium Falcon Arc",
-    "image_url": "ganishka.jpg"
+    "image_url": "ganishka.jpg",
+    "hint": "The Kushan Emperor."
   },
   {
     "id": 34,
@@ -371,7 +404,8 @@
     "hair_color": "Brown",
     "height_cm": 165,
     "debut_arc": "Conviction Arc",
-    "image_url": "luca.jpg"
+    "image_url": "luca.jpg",
+    "hint": "Protector of the refugees at Albion."
   },
   {
     "id": 35,
@@ -382,7 +416,8 @@
     "hair_color": "White",
     "height_cm": 210,
     "debut_arc": "Golden Age Arc",
-    "image_url": "wyald.jpg"
+    "image_url": "wyald.jpg",
+    "hint": "Leader of the Black Dog Knights."
   },
   {
     "id": 36,
@@ -393,7 +428,8 @@
     "hair_color": "Black",
     "height_cm": 185,
     "debut_arc": "Golden Age Arc",
-    "image_url": "adon.jpg"
+    "image_url": "adon.jpg",
+    "hint": "Master of the Coborlwitz secret techniques."
   },
   {
     "id": 37,
@@ -404,7 +440,8 @@
     "hair_color": "Blonde",
     "height_cm": 200,
     "debut_arc": "Black Swordsman Arc",
-    "image_url": "count.jpg"
+    "image_url": "count.jpg",
+    "hint": "Slug-like Apostle who ruled a town."
   },
   {
     "id": 38,
@@ -415,7 +452,8 @@
     "hair_color": "Black",
     "height_cm": 172,
     "debut_arc": "Golden Age Arc",
-    "image_url": "gaston.jpg"
+    "image_url": "gaston.jpg",
+    "hint": "Guts' second-in-command during the raid."
   },
   {
     "id": 39,
@@ -426,7 +464,8 @@
     "hair_color": "Grey",
     "height_cm": 155,
     "debut_arc": "Millennium Falcon Arc",
-    "image_url": "daiba.jpg"
+    "image_url": "daiba.jpg",
+    "hint": "Sorcerer advisor to Ganishka."
   },
   {
     "id": 40,
@@ -437,7 +476,8 @@
     "hair_color": "Brown",
     "height_cm": 158,
     "debut_arc": "Fantasia Arc",
-    "image_url": "isma.jpg"
+    "image_url": "isma.jpg",
+    "hint": "Girl from the Solitary Island."
   },
   {
     "id": 41,
@@ -448,7 +488,8 @@
     "hair_color": "Blonde",
     "height_cm": 168,
     "debut_arc": "Millennium Falcon Arc",
-    "image_url": "magnifico.jpg"
+    "image_url": "magnifico.jpg",
+    "hint": "Farnese's ambitious brother."
   },
   {
     "id": 42,
@@ -459,7 +500,8 @@
     "hair_color": "None",
     "height_cm": 210,
     "debut_arc": "Black Swordsman Arc",
-    "image_url": "snake_baron.jpg"
+    "image_url": "snake_baron.jpg",
+    "hint": "The first Apostle slain by Guts in the manga."
   },
   {
     "id": 43,
@@ -470,7 +512,8 @@
     "hair_color": "Red",
     "height_cm": 155,
     "debut_arc": "Conviction Arc",
-    "image_url": "nina.jpg"
+    "image_url": "nina.jpg",
+    "hint": "Sickly girl who betrayed Casca."
   },
   {
     "id": 44,
@@ -481,7 +524,8 @@
     "hair_color": "Blonde",
     "height_cm": 178,
     "debut_arc": "Conviction Arc",
-    "image_url": "jerome.jpg"
+    "image_url": "jerome.jpg",
+    "hint": "Knight who loved Luca."
   },
   {
     "id": 45,
@@ -492,7 +536,8 @@
     "hair_color": "Black",
     "height_cm": 205,
     "debut_arc": "Golden Age Arc",
-    "image_url": "boscogn.jpg"
+    "image_url": "boscogn.jpg",
+    "hint": "General of the Purple Rhino Knights."
   },
   {
     "id": 46,
@@ -503,7 +548,8 @@
     "hair_color": "Blonde",
     "height_cm": 176,
     "debut_arc": "Golden Age Arc",
-    "image_url": "julius.jpg"
+    "image_url": "julius.jpg",
+    "hint": "Adonis's father."
   },
   {
     "id": 47,
@@ -514,7 +560,8 @@
     "hair_color": "Grey",
     "height_cm": 170,
     "debut_arc": "Golden Age Arc",
-    "image_url": "midland_king.jpg"
+    "image_url": "midland_king.jpg",
+    "hint": "Unhealthily obsessed with his daughter."
   },
   {
     "id": 48,
@@ -525,7 +572,8 @@
     "hair_color": "Brown",
     "height_cm": 155,
     "debut_arc": "Golden Age Arc",
-    "image_url": "foss.jpg"
+    "image_url": "foss.jpg",
+    "hint": "Cunning minister of Midland."
   },
   {
     "id": 49,
@@ -536,7 +584,8 @@
     "hair_color": "Unknown",
     "height_cm": 180,
     "debut_arc": "Millennium Falcon Arc",
-    "image_url": "geralt.jpg"
+    "image_url": "geralt.jpg",
+    "hint": "A commander in the new Band."
   },
   {
     "id": 50,
@@ -547,7 +596,8 @@
     "hair_color": "Pink",
     "height_cm": 170,
     "debut_arc": "Fantasia Arc",
-    "image_url": "danan.jpg"
+    "image_url": "danan.jpg",
+    "hint": "The Flower Storm Monarch."
   },
   {
     "id": 51,
@@ -558,7 +608,8 @@
     "hair_color": "Grey",
     "height_cm": 160,
     "debut_arc": "Millennium Falcon Arc",
-    "image_url": "flora.jpg"
+    "image_url": "flora.jpg",
+    "hint": "Schierke's mistress in the Spirit Tree."
   },
   {
     "id": 52,
@@ -569,7 +620,8 @@
     "hair_color": "Grey",
     "height_cm": 165,
     "debut_arc": "Golden Age Arc",
-    "image_url": "gennon.jpg"
+    "image_url": "gennon.jpg",
+    "hint": "Governor of Doldrey who loved Griffith."
   },
   {
     "id": 53,
@@ -580,7 +632,8 @@
     "hair_color": "Blonde",
     "height_cm": 150,
     "debut_arc": "Golden Age Arc",
-    "image_url": "adonis.jpg"
+    "image_url": "adonis.jpg",
+    "hint": "Julius's young son."
   },
   {
     "id": 54,
@@ -591,7 +644,8 @@
     "hair_color": "Black",
     "height_cm": 205,
     "debut_arc": "Golden Age Arc",
-    "image_url": "samson.jpg"
+    "image_url": "samson.jpg",
+    "hint": "Coborlwitz brother with heavy armor."
   },
   {
     "id": 55,
@@ -602,7 +656,8 @@
     "hair_color": "Brown",
     "height_cm": 160,
     "debut_arc": "Golden Age Arc",
-    "image_url": "anna.jpg"
+    "image_url": "anna.jpg",
+    "hint": "Charlotte's friend/maid."
   },
   {
     "id": 56,
@@ -613,7 +668,8 @@
     "hair_color": "None",
     "height_cm": 100,
     "debut_arc": "Conviction Arc",
-    "image_url": "egg_apostle.jpg"
+    "image_url": "egg_apostle.jpg",
+    "hint": "The incubator for the new world."
   },
   {
     "id": 57,
@@ -624,7 +680,8 @@
     "hair_color": "Brown",
     "height_cm": 170,
     "debut_arc": "Conviction Arc",
-    "image_url": "joachim.jpg"
+    "image_url": "joachim.jpg",
+    "hint": "Attempted to escape Albion with Nina."
   },
   {
     "id": 58,
@@ -635,7 +692,8 @@
     "hair_color": "Blonde",
     "height_cm": 180,
     "debut_arc": "Millennium Falcon Arc",
-    "image_url": "owen.jpg"
+    "image_url": "owen.jpg",
+    "hint": "A noble commander in the new Band."
   },
   {
     "id": 59,
@@ -646,7 +704,8 @@
     "hair_color": "Brown",
     "height_cm": 185,
     "debut_arc": "Millennium Falcon Arc",
-    "image_url": "laban.jpg"
+    "image_url": "laban.jpg",
+    "hint": "A pragmatic commander in the new Band."
   },
   {
     "id": 60,
@@ -657,7 +716,8 @@
     "hair_color": "Black",
     "height_cm": 165,
     "debut_arc": "Fantasia Arc",
-    "image_url": "morda.jpg"
+    "image_url": "morda.jpg",
+    "hint": "A rebellious witch."
   },
   {
     "id": 61,
@@ -668,7 +728,8 @@
     "hair_color": "Unknown",
     "height_cm": 250,
     "debut_arc": "Fantasia Arc",
-    "image_url": "merrow_queen.jpg"
+    "image_url": "merrow_queen.jpg",
+    "hint": "Isma's true mother."
   },
   {
     "id": 62,
@@ -679,7 +740,8 @@
     "hair_color": "Brown",
     "height_cm": 150,
     "debut_arc": "Black Swordsman Arc",
-    "image_url": "theresia.jpg"
+    "image_url": "theresia.jpg",
+    "hint": "The Count's daughter, swore revenge on Guts."
   },
   {
     "id": 63,
@@ -690,7 +752,8 @@
     "hair_color": "None",
     "height_cm": 300,
     "debut_arc": "Millennium Falcon Arc",
-    "image_url": "borkoff.jpg"
+    "image_url": "borkoff.jpg",
+    "hint": "The Apostle who bit off Guts's arm (in the eclipse hallucination/event)."
   },
   {
     "id": 64,
@@ -701,7 +764,8 @@
     "hair_color": "Unknown",
     "height_cm": 210,
     "debut_arc": "Golden Age Arc",
-    "image_url": "zondark.jpg"
+    "image_url": "zondark.jpg",
+    "hint": "Captain of the guard defeated by Guts."
   },
   {
     "id": 65,
@@ -712,7 +776,8 @@
     "hair_color": "Unknown",
     "height_cm": 230,
     "debut_arc": "Golden Age Arc",
-    "image_url": "gaiseric.jpg"
+    "image_url": "gaiseric.jpg",
+    "hint": "The Supreme King who united the continent."
   },
   {
     "id": 66,
@@ -723,7 +788,8 @@
     "hair_color": "Grey",
     "height_cm": 160,
     "debut_arc": "Black Swordsman Arc",
-    "image_url": "vargas.jpg"
+    "image_url": "vargas.jpg",
+    "hint": "Stole the Beherit from the Count."
   },
   {
     "id": 67,
@@ -734,7 +800,8 @@
     "hair_color": "Brown",
     "height_cm": 140,
     "debut_arc": "Conviction Arc",
-    "image_url": "pepe.jpg"
+    "image_url": "pepe.jpg",
+    "hint": "A child refugee at Albion."
   },
   {
     "id": 68,
@@ -745,7 +812,8 @@
     "hair_color": "Green",
     "height_cm": 15,
     "debut_arc": "Millennium Falcon Arc",
-    "image_url": "evarella.jpg"
+    "image_url": "evarella.jpg",
+    "hint": "Morda's supervising elf."
   },
   {
     "id": 69,
@@ -756,7 +824,8 @@
     "hair_color": "Black",
     "height_cm": 120,
     "debut_arc": "Millennium Falcon Arc",
-    "image_url": "moonlight_boy.jpg"
+    "image_url": "moonlight_boy.jpg",
+    "hint": "Appears on full moon nights."
   },
   {
     "id": 70,
@@ -767,7 +836,8 @@
     "hair_color": "Black",
     "height_cm": 200,
     "debut_arc": "Conviction Arc",
-    "image_url": "beast_of_darkness.jpg"
+    "image_url": "beast_of_darkness.jpg",
+    "hint": "The manifestation of Guts' inner darkness."
   },
   {
     "id": 71,
@@ -778,10 +848,11 @@
     "hair_color": "Unknown",
     "height_cm": 200,
     "debut_arc": "Conviction Arc",
-    "image_url": "berserk.jpg"
+    "image_url": "berserk.jpg",
+    "hint": "The concept of rage itself."
   },
   {
-    "id": 71,
+    "id": 72,
     "name": "Princess Charlotte",
     "gender": "Female",
     "species": "Human",
@@ -789,10 +860,11 @@
     "hair_color": "Brown",
     "height_cm": 160,
     "debut_arc": "Golden Age Arc",
-    "image_url": "charlotte.jpg"
+    "image_url": "charlotte.jpg",
+    "hint": "The Princess of Midland."
   },
   {
-    "id": 72,
+    "id": 73,
     "name": "Jill",
     "gender": "Female",
     "species": "Human",
@@ -800,10 +872,11 @@
     "hair_color": "Brown",
     "height_cm": 140,
     "debut_arc": "Conviction Arc",
-    "image_url": "jill.jpg"
+    "image_url": "jill.jpg",
+    "hint": "A village girl who befriended Puck."
   },
   {
-    "id": 73,
+    "id": 74,
     "name": "Bonebeard",
     "gender": "Male",
     "species": "Human",
@@ -811,10 +884,11 @@
     "hair_color": "Black",
     "height_cm": 190,
     "debut_arc": "Millennium Falcon Arc",
-    "image_url": "bonebeard.jpg"
+    "image_url": "bonebeard.jpg",
+    "hint": "Pirate Captain employed by Kushan."
   },
   {
-    "id": 74,
+    "id": 75,
     "name": "Chitch",
     "gender": "Female",
     "species": "Elf",
@@ -822,10 +896,11 @@
     "hair_color": "Green",
     "height_cm": 10,
     "debut_arc": "Golden Age Arc",
-    "image_url": "chitch.jpg"
+    "image_url": "chitch.jpg",
+    "hint": "Flower spirit Guts met in jail."
   },
   {
-    "id": 75,
+    "id": 76,
     "name": "Donovan",
     "gender": "Male",
     "species": "Human",
@@ -833,10 +908,11 @@
     "hair_color": "Black",
     "height_cm": 200,
     "debut_arc": "Golden Age Arc",
-    "image_url": "donovan.jpg"
+    "image_url": "donovan.jpg",
+    "hint": "The mercenary who bought Guts."
   },
   {
-    "id": 76,
+    "id": 77,
     "name": "Tapasa",
     "gender": "Male",
     "species": "Human",
@@ -844,10 +920,11 @@
     "hair_color": "None",
     "height_cm": 230,
     "debut_arc": "Millennium Falcon Arc",
-    "image_url": "tapasa.jpg"
+    "image_url": "tapasa.jpg",
+    "hint": "One of Silat's muscle bodyguards."
   },
   {
-    "id": 77,
+    "id": 78,
     "name": "Imp",
     "gender": "Male",
     "species": "Human",
@@ -855,10 +932,11 @@
     "hair_color": "None",
     "height_cm": 130,
     "debut_arc": "Conviction Arc",
-    "image_url": "imp.jpg"
+    "image_url": "imp.jpg",
+    "hint": "Small spirit haunting people."
   },
   {
-    "id": 78,
+    "id": 79,
     "name": "Gedfring",
     "gender": "Male",
     "species": "Human",
@@ -866,10 +944,11 @@
     "hair_color": "Grey",
     "height_cm": 160,
     "debut_arc": "Fantasia Arc",
-    "image_url": "gedfring.jpg"
+    "image_url": "gedfring.jpg",
+    "hint": "A Great Wizard of Skellig."
   },
   {
-    "id": 79,
+    "id": 80,
     "name": "Moll",
     "gender": "Female",
     "species": "Human",
@@ -877,10 +956,11 @@
     "hair_color": "Black",
     "height_cm": 155,
     "debut_arc": "Fantasia Arc",
-    "image_url": "moll.jpg"
+    "image_url": "moll.jpg",
+    "hint": "A witch of Skellig."
   },
   {
-    "id": 80,
+    "id": 81,
     "name": "Queen of Midland",
     "gender": "Female",
     "species": "Human",
@@ -888,10 +968,11 @@
     "hair_color": "Blonde",
     "height_cm": 165,
     "debut_arc": "Golden Age Arc",
-    "image_url": "midland_queen.jpg"
+    "image_url": "midland_queen.jpg",
+    "hint": "Step-mother of Charlotte."
   },
   {
-    "id": 81,
+    "id": 82,
     "name": "Federico III de Vandimion",
     "gender": "Male",
     "species": "Human",
@@ -899,10 +980,11 @@
     "hair_color": "White",
     "height_cm": 175,
     "debut_arc": "Millennium Falcon Arc",
-    "image_url": "federico.jpg"
+    "image_url": "federico.jpg",
+    "hint": "Head of the Vandimion family."
   },
   {
-    "id": 82,
+    "id": 83,
     "name": "Zepe",
     "gender": "Male",
     "species": "Human",
@@ -910,10 +992,11 @@
     "hair_color": "Brown",
     "height_cm": 165,
     "debut_arc": "Conviction Arc",
-    "image_url": "zepe.jpg"
+    "image_url": "zepe.jpg",
+    "hint": "Refugee who tried to protect the prostitutes."
   },
   {
-    "id": 83,
+    "id": 84,
     "name": "Morgan",
     "gender": "Male",
     "species": "Human",
@@ -921,10 +1004,11 @@
     "hair_color": "Grey",
     "height_cm": 155,
     "debut_arc": "Millennium Falcon Arc",
-    "image_url": "morgan.jpg"
+    "image_url": "morgan.jpg",
+    "hint": "Elder of Enoch Village."
   },
   {
-    "id": 84,
+    "id": 85,
     "name": "Collette",
     "gender": "Female",
     "species": "Human",
@@ -932,10 +1016,11 @@
     "hair_color": "Brown",
     "height_cm": 130,
     "debut_arc": "Black Swordsman Arc",
-    "image_url": "collette.jpg"
+    "image_url": "collette.jpg",
+    "hint": "Girl killed in the first chapter."
   },
   {
-    "id": 85,
+    "id": 86,
     "name": "Female Apostle (Succubus)",
     "gender": "Female",
     "species": "Apostle",
@@ -943,10 +1028,11 @@
     "hair_color": "Black",
     "height_cm": 170,
     "debut_arc": "Black Swordsman Arc",
-    "image_url": "female_apostle.jpg"
+    "image_url": "female_apostle.jpg",
+    "hint": "Killed Corkus during the Eclipse."
   },
   {
-    "id": 86,
+    "id": 87,
     "name": "Grand Pontiff",
     "gender": "Male",
     "species": "Human",
@@ -954,10 +1040,11 @@
     "hair_color": "White",
     "height_cm": 160,
     "debut_arc": "Millennium Falcon Arc",
-    "image_url": "pontiff.jpg"
+    "image_url": "pontiff.jpg",
+    "hint": "Religious leader of the Holy See."
   },
   {
-    "id": 87,
+    "id": 88,
     "name": "Hassan",
     "gender": "Male",
     "species": "Human",
@@ -965,10 +1052,11 @@
     "hair_color": "Black",
     "height_cm": 170,
     "debut_arc": "Golden Age Arc",
-    "image_url": "hassan.jpg"
+    "image_url": "hassan.jpg",
+    "hint": "Silent Bakiraka assassin."
   },
   {
-    "id": 88,
+    "id": 89,
     "name": "Jarishka",
     "gender": "Male",
     "species": "Human",
@@ -976,10 +1064,11 @@
     "hair_color": "Black",
     "height_cm": 190,
     "debut_arc": "Millennium Falcon Arc",
-    "image_url": "jarishka.jpg"
+    "image_url": "jarishka.jpg",
+    "hint": "Kushan commander."
   },
   {
-    "id": 89,
+    "id": 90,
     "name": "Makara",
     "gender": "Male",
     "species": "Apostle",
@@ -987,10 +1076,11 @@
     "hair_color": "None",
     "height_cm": 350,
     "debut_arc": "Millennium Falcon Arc",
-    "image_url": "makara.jpg"
+    "image_url": "makara.jpg",
+    "hint": "Amphibious Kushan Apostle."
   },
   {
-    "id": 90,
+    "id": 91,
     "name": "Kundalini",
     "gender": "Male",
     "species": "Apostle",
@@ -998,10 +1088,11 @@
     "hair_color": "None",
     "height_cm": 500,
     "debut_arc": "Millennium Falcon Arc",
-    "image_url": "kundalini.jpg"
+    "image_url": "kundalini.jpg",
+    "hint": "Huge snake-like Kushan Apostle."
   },
   {
-    "id": 91,
+    "id": 92,
     "name": "Sea God",
     "gender": "Male",
     "species": "Unknown",
@@ -1009,10 +1100,11 @@
     "hair_color": "None",
     "height_cm": 999,
     "debut_arc": "Fantasia Arc",
-    "image_url": "sea_god.jpg"
+    "image_url": "sea_god.jpg",
+    "hint": "Giant Lovecraftian entity."
   },
   {
-    "id": 92,
+    "id": 93,
     "name": "Shiz",
     "gender": "Male",
     "species": "Human",
@@ -1020,10 +1112,11 @@
     "hair_color": "White",
     "height_cm": 160,
     "debut_arc": "Fantasia Arc",
-    "image_url": "shiz.jpg"
+    "image_url": "shiz.jpg",
+    "hint": "Son of Gedfring."
   },
   {
-    "id": 93,
+    "id": 94,
     "name": "Martino",
     "gender": "Male",
     "species": "Human",
@@ -1031,10 +1124,11 @@
     "hair_color": "Brown",
     "height_cm": 150,
     "debut_arc": "Golden Age Arc",
-    "image_url": "martino.jpg"
+    "image_url": "martino.jpg",
+    "hint": "Gambino's mercenary friend."
   },
   {
-    "id": 94,
+    "id": 95,
     "name": "Corneal",
     "gender": "Male",
     "species": "Human",
@@ -1042,10 +1136,11 @@
     "hair_color": "Grey",
     "height_cm": 165,
     "debut_arc": "Black Swordsman Arc",
-    "image_url": "corneal.jpg"
+    "image_url": "corneal.jpg",
+    "hint": "Mayor of the town ruled by the Count."
   },
   {
-    "id": 95,
+    "id": 96,
     "name": "Angel Face",
     "gender": "Male",
     "species": "Human",
@@ -1053,10 +1148,11 @@
     "hair_color": "None",
     "height_cm": 180,
     "debut_arc": "Conviction Arc",
-    "image_url": "angel_face.jpg"
+    "image_url": "angel_face.jpg",
+    "hint": "One of Mozgus's torturers."
   },
   {
-    "id": 96,
+    "id": 97,
     "name": "Bubble",
     "gender": "Male",
     "species": "Human",
@@ -1064,10 +1160,11 @@
     "hair_color": "None",
     "height_cm": 175,
     "debut_arc": "Conviction Arc",
-    "image_url": "bubble.jpg"
+    "image_url": "bubble.jpg",
+    "hint": "One of Mozgus's torturers."
   },
   {
-    "id": 97,
+    "id": 98,
     "name": "Hanarr",
     "gender": "Male",
     "species": "Dwarf",
@@ -1075,10 +1172,11 @@
     "hair_color": "White",
     "height_cm": 130,
     "debut_arc": "Fantasia Arc",
-    "image_url": "hanarr.jpg"
+    "image_url": "hanarr.jpg",
+    "hint": "The Master Smith who created the Berserker Armor."
   },
   {
-    "id": 98,
+    "id": 99,
     "name": "Great Goat",
     "gender": "Male",
     "species": "Apostle",
@@ -1086,10 +1184,11 @@
     "hair_color": "Brown",
     "height_cm": 250,
     "debut_arc": "Conviction Arc",
-    "image_url": "great_goat.jpg"
+    "image_url": "great_goat.jpg",
+    "hint": "Goat-headed pagan deity/Apostle."
   },
   {
-    "id": 99,
+    "id": 100,
     "name": "Schnoz",
     "gender": "Male",
     "species": "Unknown",
@@ -1097,10 +1196,11 @@
     "hair_color": "None",
     "height_cm": 50,
     "debut_arc": "Millennium Falcon Arc",
-    "image_url": "schnoz.jpg"
+    "image_url": "schnoz.jpg",
+    "hint": "The internet's favorite apostle (Just a nose)."
   },
   {
-    "id": 100,
+    "id": 101,
     "name": "Old Fortune Teller",
     "gender": "Female",
     "species": "Human",
@@ -1108,10 +1208,11 @@
     "hair_color": "Grey",
     "height_cm": 150,
     "debut_arc": "Golden Age Arc",
-    "image_url": "fortune_teller.jpg"
+    "image_url": "fortune_teller.jpg",
+    "hint": "Gave Griffith the Beherit?"
   },
   {
-    "id": 101,
+    "id": 102,
     "name": "General Gien",
     "gender": "Male",
     "species": "Human",
@@ -1119,10 +1220,11 @@
     "hair_color": "Black",
     "height_cm": 185,
     "debut_arc": "Golden Age Arc",
-    "image_url": "gien.jpg"
+    "image_url": "gien.jpg",
+    "hint": "General of Chuder."
   },
   {
-    "id": 102,
+    "id": 103,
     "name": "Lady Vandimion",
     "gender": "Female",
     "species": "Human",
@@ -1130,10 +1232,11 @@
     "hair_color": "Blonde",
     "height_cm": 165,
     "debut_arc": "Millennium Falcon Arc",
-    "image_url": "lady_vandimion.jpg"
+    "image_url": "lady_vandimion.jpg",
+    "hint": "Farnese's mother."
   },
   {
-    "id": 103,
+    "id": 104,
     "name": "Albino Torturer",
     "gender": "Male",
     "species": "Human",
@@ -1141,10 +1244,11 @@
     "hair_color": "None",
     "height_cm": 160,
     "debut_arc": "Golden Age Arc",
-    "image_url": "torturer.jpg"
+    "image_url": "torturer.jpg",
+    "hint": "Tortured Griffith in the Tower of Rebirth."
   },
   {
-    "id": 104,
+    "id": 105,
     "name": "Bakiraka Scout",
     "gender": "Male",
     "species": "Human",
@@ -1152,10 +1256,11 @@
     "hair_color": "None",
     "height_cm": 165,
     "debut_arc": "Golden Age Arc",
-    "image_url": "bakiraka.jpg"
+    "image_url": "bakiraka.jpg",
+    "hint": "Scout for the Bakiraka."
   },
   {
-    "id": 105,
+    "id": 106,
     "name": "Bird Mask",
     "gender": "Male",
     "species": "Human",
@@ -1163,10 +1268,11 @@
     "hair_color": "None",
     "height_cm": 200,
     "debut_arc": "Conviction Arc",
-    "image_url": "bird_mask.jpg"
+    "image_url": "bird_mask.jpg",
+    "hint": "One of Mozgus's torturers."
   },
   {
-    "id": 106,
+    "id": 107,
     "name": "Twin A",
     "gender": "Male",
     "species": "Human",
@@ -1174,10 +1280,11 @@
     "hair_color": "None",
     "height_cm": 210,
     "debut_arc": "Conviction Arc",
-    "image_url": "twin_a.jpg"
+    "image_url": "twin_a.jpg",
+    "hint": "One of Mozgus's torturer twins."
   },
   {
-    "id": 107,
+    "id": 108,
     "name": "Twin B",
     "gender": "Male",
     "species": "Human",
@@ -1185,10 +1292,11 @@
     "hair_color": "None",
     "height_cm": 210,
     "debut_arc": "Conviction Arc",
-    "image_url": "twin_b.jpg"
+    "image_url": "twin_b.jpg",
+    "hint": "One of Mozgus's torturer twins."
   },
   {
-    "id": 108,
+    "id": 109,
     "name": "Countess",
     "gender": "Female",
     "species": "Human",
@@ -1196,10 +1304,11 @@
     "hair_color": "Blonde",
     "height_cm": 165,
     "debut_arc": "Black Swordsman Arc",
-    "image_url": "countess.jpg"
+    "image_url": "countess.jpg",
+    "hint": "The Count's wife."
   },
   {
-    "id": 109,
+    "id": 110,
     "name": "Slug Count's Daughter",
     "gender": "Female",
     "species": "Human",
@@ -1207,10 +1316,11 @@
     "hair_color": "Brown",
     "height_cm": 155,
     "debut_arc": "Black Swordsman Arc",
-    "image_url": "theresia.jpg"
+    "image_url": "theresia.jpg",
+    "hint": "Theresia."
   },
   {
-    "id": 110,
+    "id": 111,
     "name": "Conrad (Human Form)",
     "gender": "Male",
     "species": "Human",
@@ -1218,6 +1328,7 @@
     "hair_color": "None",
     "height_cm": 150,
     "debut_arc": "Golden Age Arc",
-    "image_url": "conrad_human.jpg"
+    "image_url": "conrad_human.jpg",
+    "hint": "The human form of Conrad visible in memories/background."
   }
 ]
