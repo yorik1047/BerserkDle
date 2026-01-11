@@ -5,6 +5,7 @@ import InfoModal from './components/InfoModal';
 import WinModal from './components/WinModal';
 import GrimParticles from './components/GrimParticles';
 import { getDailyCharacter, compareAttributes } from './utils/GameLogic';
+import BerserkConfetti from './components/BerserkConfetti';
 
 function App() {
     const [targetCharacter, setTargetCharacter] = useState(null);
@@ -101,10 +102,10 @@ function App() {
 
     return (
         // 🔥 ВИКОРИСТОВУЄМО ФРАГМЕНТ (<> ... </>)
-        // Це дозволяє нам мати два елементи на верхньому рівні.
         <>
-            {/* 1. Частинки тепер ЗЗОВНІ головного контейнера. Вони покриють весь екран. */}
+            {/* 1. Фонові ефекти (Попіл + Клеймо Жертви) */}
             {hasWon && <GrimParticles />}
+            {hasWon && <BerserkConfetti />} {/* ✅ ДОДАНО ТУТ */}
 
             {/* 2. Головний контейнер сайту */}
             <div className="text-white min-h-screen flex flex-col items-center py-10 font-serif relative overflow-x-hidden">
