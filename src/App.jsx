@@ -14,6 +14,7 @@ function App() {
     const [streak, setStreak] = useState(0);
     const [showInfo, setShowInfo] = useState(false);
     const [showWin, setShowWin] = useState(false);
+    const [showHint, setShowHint] = useState(false);
     const [timeRemaining, setTimeRemaining] = useState('');
 
     useEffect(() => {
@@ -31,6 +32,7 @@ function App() {
         if (savedState.date === todayStr) {
             setGuesses(savedState.guesses || []);
             setHasWon(savedState.won || false);
+            setShowHint(savedState.showHint || false);
             if (savedState.won) {
                 setShowWin(true);
             }
@@ -96,7 +98,8 @@ function App() {
         localStorage.setItem('berserkdle_state', JSON.stringify({
             date: new Date().toISOString().split('T')[0],
             guesses: newGuesses,
-            won: isWin
+            won: isWin,
+            showHint: showHint
         }));
     };
 
@@ -148,6 +151,40 @@ function App() {
                         <span>Streak</span>
                     </div>
                 </div>
+
+                {/* Hint System */}
+                {!hasWon && (
+                    <div className="mb-4 z-10 w-full max-w-md flex justify-center">
+                        {guesses.length < 15 ? (
+                            <div className="bg-gray-800/50 border border-gray-700 px-4 py-2 rounded text-gray-500 text-sm flex items-center gap-2 select-none">
+                                <span>🔒</span> Hint unlocks in {15 - guesses.length} attempts
+                            </div>
+                        ) : !showHint ? (
+                            <button
+                                onClick={() => {
+                                    setShowHint(true);
+                                    localStorage.setItem('berserkdle_state', JSON.stringify({
+                                        date: new Date().toISOString().split('T')[0],
+                                        guesses: guesses,
+                                        won: false,
+                                        showHint: true
+                                    }));
+                                }}
+                                className="bg-yellow-600/20 hover:bg-yellow-600/40 border border-yellow-600/50 text-yellow-500 px-6 py-2 rounded-full text-sm transition-all flex items-center gap-2 animate-pulse shadow-[0_0_15px_rgba(234,179,8,0.2)] cursor-pointer"
+                            >
+                                <span>💡</span> <span className="font-bold tracking-wider uppercase">Reveal Hint</span>
+                            </button>
+                        ) : (
+                            <div className="bg-gray-900 border-l-4 border-yellow-600 p-4 rounded-r shadow-lg relative overflow-hidden w-full">
+                                <div className="absolute top-0 right-0 -mt-2 -mr-2 w-12 h-12 bg-yellow-600/10 rounded-full blur-xl"></div>
+                                <p className="text-[10px] text-yellow-600 font-bold uppercase mb-1 tracking-widest">Secret Scroll</p>
+                                <p className="text-yellow-100/90 italic font-serif text-lg leading-relaxed text-center">
+                                    "{targetCharacter?.hint || 'No hint available'}"
+                                </p>
+                            </div>
+                        )}
+                    </div>
+                )}
 
                 {/* Game Area */}
                 <div className="w-full max-w-4xl px-4 flex flex-col items-center z-10">

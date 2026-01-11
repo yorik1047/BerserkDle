@@ -3,68 +3,67 @@ import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 
 const BerserkConfetti = () => {
-    // Ініціалізація рушія частинок
     const particlesInit = useCallback(async engine => {
         await loadSlim(engine);
     }, []);
 
-    // Формуємо правильний шлях до картинки (для GitHub Pages)
     const imagePath = `${import.meta.env.BASE_URL}images/berserk_mark.png`;
 
     return (
         <Particles
             id="tsparticles"
-            className="fixed inset-0 z-[100] pointer-events-none" // z-100 щоб було над грою, але під модалкою (якщо вона z-101)
+            className="fixed inset-0 z-[100] pointer-events-none h-full w-full"
             init={particlesInit}
             options={{
-                fullScreen: { enable: false }, // Важливо, щоб не перекривало кліки, якщо контейнер не на весь екран
-                fpsLimit: 60,
+                fullScreen: { enable: true, zIndex: 100 },
+                fpsLimit: 120,
                 particles: {
-                    // Налаштування картинки
+                    // 1. Картинка
                     shape: {
                         type: "image",
                         image: {
                             src: imagePath,
-                            width: 100, // Пропорції
+                            width: 100,
                             height: 100
                         }
                     },
-                    // Кількість знаків (не роби забагато, щоб не лагало)
+                    // 2. Кількість (ЗМЕНШЕНО: тепер їх всього 15 на екрані)
                     number: {
-                        value: 30,
+                        value: 20,
                         density: {
                             enable: true,
                             area: 800
                         }
                     },
-                    // Розмір знаків
+                    // 3. Розмір (ЗМЕНШЕНО: тепер вони дрібніші)
                     size: {
-                        value: { min: 20, max: 40 }, // Різний розмір для глибини
+                        value: { min: 9, max: 22 },
                     },
-                    // Рух (падають вниз як сніг/попіл)
+                    // 4. Рух (Трохи повільніше і плавніше)
                     move: {
                         enable: true,
-                        speed: 3,
+                        speed: 2,
                         direction: "bottom",
                         random: false,
                         straight: false,
                         outModes: {
-                            default: "out" // Коли долітають до низу - зникають
+                            default: "out",
                         },
                     },
-                    // Прозорість
+                    // 5. Прозорість (Зробив прозорішими, щоб не заважали)
                     opacity: {
-                        value: 0.8,
-                        random: true,
+                        value: 0.85,
+                        random: true, // Тепер деякі будуть зовсім бліді
+                        anim: {
+                            enable: false
+                        }
                     },
-                    // Обертання (щоб падали реалістично)
+                    // 6. Обертання
                     rotate: {
-                        value: 0,
-                        random: true,
-                        direction: "random",
+                        value: { min: 0, max: 360 },
                         animation: {
                             enable: true,
-                            speed: 5,
+                            speed: 3, // Повільніше обертання
                             sync: false
                         }
                     }
