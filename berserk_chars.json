@@ -840,18 +840,6 @@
     "hint": "The manifestation of Guts' inner darkness."
   },
   {
-    "id": 71,
-    "name": "Berserk",
-    "gender": "Male",
-    "species": "Human",
-    "affiliation": "None",
-    "hair_color": "Unknown",
-    "height_cm": 200,
-    "debut_arc": "Conviction Arc",
-    "image_url": "berserk.jpg",
-    "hint": "The concept of rage itself."
-  },
-  {
     "id": 72,
     "name": "Princess Charlotte",
     "gender": "Female",

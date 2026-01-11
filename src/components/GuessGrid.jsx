@@ -1,5 +1,19 @@
 import React from 'react';
 
+// Допоміжна функція для правильних шляхів на GitHub Pages
+const resolvePath = (path) => {
+    // Якщо шляху немає або це undefined
+    if (!path) return `${import.meta.env.BASE_URL}images/placeholder.jpg`;
+    // Якщо це повне посилання на інтернет (http/https)
+    if (path.startsWith('http')) return path;
+
+    // Видаляємо скісну риску на початку, щоб уникнути подвійних слешів (//)
+    const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+
+    // Об'єднуємо з базовим шляхом (наприклад, /BerserkDle/)
+    return `${import.meta.env.BASE_URL}${cleanPath}`;
+};
+
 const GuessRow = ({ guess, delay }) => {
     const cellClass = (match) => `
         flex items-center justify-center p-2 text-center text-sm md:text-base border-2 border-gray-800 rounded
@@ -12,9 +26,14 @@ const GuessRow = ({ guess, delay }) => {
             {/* Character Info */}
             <div className="flex flex-col items-center justify-center p-2 border-2 border-gray-700 bg-gray-800 rounded">
                 <img
-                    src={guess.image_url}
+                    // ✅ ВИПРАВЛЕНО: Використовуємо функцію для правильного шляху
+                    src={resolvePath(guess.image_url)}
                     alt={guess.name.value}
-                    onError={(e) => { e.target.onerror = null; e.target.src = '/images/placeholder.jpg'; }}
+                    onError={(e) => {
+                        e.target.onerror = null;
+                        // ✅ ВИПРАВЛЕНО: Правильний шлях до placeholder
+                        e.target.src = `${import.meta.env.BASE_URL}images/placeholder.jpg`;
+                    }}
                     className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover mb-1 border border-gray-600"
                 />
                 <span className="text-xs font-bold leading-tight truncate w-full text-center">{guess.name.value}</span>
@@ -63,6 +82,9 @@ const GuessRow = ({ guess, delay }) => {
 };
 
 const GuessGrid = ({ guesses }) => {
+    // Якщо здогадок немає, нічого не рендеримо
+    if (!guesses || guesses.length === 0) return null;
+
     return (
         <div className="w-full max-w-5xl mx-auto px-2">
             {/* Header */}
