@@ -1,0 +1,164 @@
+[33mcommit 0e5875a057fb6daf9ba6fda2956e2312bfb59f1e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: yorik1047 <ilyashyaroslav3@gmail.com>
+Date:   Sun Jan 11 21:46:20 2026 +0200
+
+    Added some User Expirience changes
+
+[1mdiff --git a/src/components/SearchBar.jsx b/src/components/SearchBar.jsx[m
+[1mindex 95f3d72..f4876d5 100644[m
+[1m--- a/src/components/SearchBar.jsx[m
+[1m+++ b/src/components/SearchBar.jsx[m
+[36m@@ -1,22 +1,37 @@[m
+[31m-import { useState, useEffect } from 'react';[m
+[31m-import characters from '../../berserk_chars.json';[m
+[32m+[m[32mimport React, { useState, useEffect, useRef } from 'react';[m
+[32m+[m[32m// 👇 ВИПРАВЛЕНО: Шлях ../../ веде з src/components/ прямо в корінь проекту[m
+[32m+[m[32mimport characterData from '../../berserk_chars.json';[m
+ [m
+ const SearchBar = ({ onGuess, guessedIds, disabled }) => {[m
+     const [query, setQuery] = useState('');[m
+     const [suggestions, setSuggestions] = useState([]);[m
+[31m-    const [showSuggestions, setShowSuggestions] = useState(false);[m
+[32m+[m[32m    const [isFocused, setIsFocused] = useState(false);[m
+[32m+[m[32m    const wrapperRef = useRef(null);[m
+ [m
+[32m+[m[32m    // Закриваємо список при кліку назовні[m
+[32m+[m[32m    useEffect(() => {[m
+[32m+[m[32m        function handleClickOutside(event) {[m
+[32m+[m[32m            if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {[m
+[32m+[m[32m                setIsFocused(false);[m
+[32m+[m[32m            }[m
+[32m+[m[32m        }[m
+[32m+[m[32m        document.addEventListener("mousedown", handleClickOutside);[m
+[32m+[m[32m        return () => {[m
+[32m+[m[32m            document.removeEventListener("mousedown", handleClickOutside);[m
+[32m+[m[32m        };[m
+[32m+[m[32m    }, [wrapperRef]);[m
+[32m+[m
+[32m+[m[32m    // Пошук та фільтрація[m
+     useEffect(() => {[m
+         if (query.length > 0) {[m
+[31m-            const filtered = characters.filter(c =>[m
+[31m-                c.name.toLowerCase().includes(query.toLowerCase()) &&[m
+[31m-                !guessedIds.includes(c.id)[m
+[31m-            );[m
+[31m-            setSuggestions(filtered);[m
+[31m-            setShowSuggestions(true);[m
+[32m+[m[32m            const filtered = characterData.filter(char => {[m
+[32m+[m[32m                const isAlreadyGuessed = guessedIds.includes(char.id);[m
+[32m+[m[32m                const matchesName = char.name.toLowerCase().includes(query.toLowerCase());[m
+[32m+[m[32m                return !isAlreadyGuessed && matchesName;[m
+[32m+[m[32m            });[m
+[32m+[m[32m            setSuggestions(filtered.slice(0, 5)); // Показуємо топ-5[m
+         } else {[m
+             setSuggestions([]);[m
+[31m-            setShowSuggestions(false);[m
+         }[m
+     }, [query, guessedIds]);[m
+ [m
+[36m@@ -24,35 +39,77 @@[m [mconst SearchBar = ({ onGuess, guessedIds, disabled }) => {[m
+         onGuess(character);[m
+         setQuery('');[m
+         setSuggestions([]);[m
+[31m-        setShowSuggestions(false);[m
+[32m+[m[32m        setIsFocused(false);[m
+[32m+[m[32m    };[m
+[32m+[m
+[32m+[m[32m    // 🔥 ФІЧА: Натискання ENTER вибирає першого у списку[m
+[32m+[m[32m    const handleKeyDown = (e) => {[m
+[32m+[m[32m        if (e.key === 'Enter' && suggestions.length > 0) {[m
+[32m+[m[32m            e.preventDefault();[m
+[32m+[m[32m            handleSelect(suggestions[0]); // Вибираємо найпершого персонажа[m
+[32m+[m[32m        }[m
+     };[m
+ [m
+[32m+[m[32m    if (disabled) return null;[m
+[32m+[m
+     return ([m
+[31m-        <div className="relative w-full max-w-md mx-auto mb-8 z-50">[m
+[31m-            <input[m
+[31m-                type="text"[m
+[31m-                value={query}[m
+[31m-                onChange={(e) => setQuery(e.target.value)}[m
+[31m-                placeholder="Guess a character..."[m
+[31m-                disabled={disabled}[m
+[31m-                className="w-full px-4 py-3 bg-gray-800 border-2 border-gray-700 rounded-lg text-white focus:outline-none focus:border-berserk-red focus:shadow-[0_0_10px_#8a0303] placeholder-gray-500 transition-all font-serif text-lg"[m
+[31m-            />[m
+[32m+[m[32m        <div className="relative w-full max-w-md mb-6 z-50" ref={wrapperRef}>[m
+[32m+[m[32m            <div className="relative">[m
+[32m+[m[32m                <input[m
+[32m+[m[32m                    type="text"[m
+[32m+[m[32m                    value={query}[m
+[32m+[m[32m                    onChange={(e) => {[m
+[32m+[m[32m                        setQuery(e.target.value);[m
+[32m+[m[32m                        setIsFocused(true);[m
+[32m+[m[32m                    }}[m
+[32m+[m[32m                    onFocus={() => setIsFocused(true)}[m
+[32m+[m[32m                    onKeyDown={handleKeyDown} // 👈 Підключили Enter[m
+[32m+[m[32m                    placeholder="Type a character name..."[m
+[32m+[m[32m                    className="w-full p-4 pl-12 bg-gray-900/80 border-2 border-gray-600 rounded text-white placeholder-gray-500 focus:border-red-600 focus:outline-none focus:ring-1 focus:ring-red-600 transition-all font-serif tracking-wider shadow-lg backdrop-blur-sm"[m
+[32m+[m[32m                    disabled={disabled}[m
+[32m+[m[32m                />[m
+[32m+[m[32m                <svg[m
+[32m+[m[32m                    className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500"[m
+[32m+[m[32m                    fill="none"[m
+[32m+[m[32m                    stroke="currentColor"[m
+[32m+[m[32m                    viewBox="0 0 24 24"[m
+[32m+[m[32m                >[m
+[32m+[m[32m                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />[m
+[32m+[m[32m                </svg>[m
+[32m+[m[32m            </div>[m
+ [m
+[31m-            {showSuggestions && suggestions.length > 0 && ([m
+[31m-                <ul className="absolute w-full mt-2 bg-gray-900 border border-gray-700 rounded-lg shadow-xl max-h-60 overflow-y-auto">[m
+[31m-                    {suggestions.map((char) => ([m
+[32m+[m[32m            {/* Випадаючий список */}[m
+[32m+[m[32m            {isFocused && suggestions.length > 0 && ([m
+[32m+[m[32m                <ul className="absolute w-full bg-gray-900 border-2 border-gray-600 mt-2 rounded shadow-2xl max-h-60 overflow-y-auto z-50 divide-y divide-gray-800">[m
+[32m+[m[32m                    {suggestions.map((char, index) => ([m
+                         <li[m
+                             key={char.id}[m
+                             onClick={() => handleSelect(char)}[m
+[31m-                            className="px-4 py-2 hover:bg-berserk-red hover:text-white cursor-pointer flex items-center gap-3 transition-colors border-b border-gray-800 last:border-b-0"[m
+[32m+[m[32m                            // Додаємо підсвітку для першого елемента[m
+[32m+[m[32m                            className={`p-3 cursor-pointer transition-colors flex items-center gap-3[m
+[32m+[m[32m                                ${index === 0 ? 'bg-red-900/20 hover:bg-red-900/40 border-l-4 border-red-600' : 'hover:bg-gray-800'}[m
+[32m+[m[32m                            `}[m
+                         >[m
+[31m-                            <img[m
+[31m-                                src={char.image_url}[m
+[31m-                                alt={char.name}[m
+[31m-                                onError={(e) => { e.target.onerror = null; e.target.src = '/images/placeholder.jpg'; }}[m
+[31m-                                className="w-8 h-8 rounded-full object-cover bg-gray-700"[m
+[31m-                            />[m
+[31m-                            <span className="font-serif">{char.name}</span>[m
+[32m+[m[32m                            <div className="w-8 h-8 rounded bg-gray-800 overflow-hidden flex-shrink-0 border border-gray-700">[m
+[32m+[m[32m                                <img[m
+[32m+[m[32m                                    src={char.image_url || '/images/placeholder.jpg'}[m
+[32m+[m[32m                                    alt={char.name}[m
+[32m+[m[32m                                    className="w-full h-full object-cover"[m
+[32m+[m[32m                                    onError={(e) => { e.target.onerror = null; e.target.src = '/images/placeholder.jpg' }}[m
+[32m+[m[32m                                />[m
+[32m+[m[32m                            </div>[m
+[32m+[m
+[32m+[m[32m                            <div className="flex flex-col w-full">[m
+[32m+[m[32m                                <span className="font-bold text-gray-200 flex justify-between items-center">[m
+[32m+[m[32m                                    {char.name}[m
+[32m+[m[32m                                    {/* Підказка "Enter" біля першого */}[m
+[32m+[m[32m                                    {index === 0 && ([m
+[32m+[m[32m                                        <span className="text-[10px] text-gray-400 uppercase tracking-widest border border-gray-600 px-1 rounded bg-black/40">[m
+[32m+[m[32m                                            ↵ Enter[m
+[32m+[m[32m                                        </span>[m
+[32m+[m[32m                                    )}[m
+[32m+[m[32m                                </span>[m
+[32m+[m[32m                            </div>[m
+                         </li>[m
+                     ))}[m
+                 </ul>[m
+[36m@@ -61,4 +118,4 @@[m [mconst SearchBar = ({ onGuess, guessedIds, disabled }) => {[m
+     );[m
+ };[m
+ [m
+[31m-export default SearchBar;[m
+[32m+[m[32mexport default SearchBar;[m
+\ No newline at end of file[m
