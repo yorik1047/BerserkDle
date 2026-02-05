@@ -1,86 +1,158 @@
-import React from 'react';
-
-const InfoModal = ({ onClose }) => {
+function InfoModal({ onClose }) {
     return (
-        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-[100] p-4 animate-fadeIn">
-            <div className="bg-gray-900 border-2 border-berserk-red max-w-2xl w-full rounded-lg shadow-[0_0_20px_rgba(138,3,3,0.5)] p-6 relative flex flex-col max-h-[90vh] overflow-y-auto">
+        <div
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            onClick={onClose}
+        >
+            <div
+                className="bg-[#0a0a0a] border-double border-4 border-red-900/40 rounded-lg shadow-[0_0_50px_rgba(220,38,38,0.15)] max-w-2xl w-full max-h-[90vh] overflow-y-auto relative"
+                onClick={(e) => e.stopPropagation()}
+            >
                 {/* Close Button */}
                 <button
                     onClick={onClose}
-                    className="absolute top-2 right-2 md:top-4 md:right-4 bg-red-900 border border-berserk-red text-white hover:bg-berserk-red px-3 py-1 rounded font-serif transition-colors"
+                    className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center text-gray-600 hover:text-red-500 hover:drop-shadow-[0_0_10px_rgba(239,68,68,0.6)] transition-all duration-300 text-xl font-bold"
+                    aria-label="Close"
                 >
-                    X
+                    ✕
                 </button>
-
-                <h2 className="text-3xl font-bold text-berserk-red text-center mb-6 font-serif uppercase tracking-widest border-b border-gray-800 pb-4">
-                    How to Play
-                </h2>
-
-                <div className="text-gray-300 space-y-4 font-serif text-sm md:text-base">
-                    <p>Guess the hidden Berserk character for the day.</p>
-
+                {/* Header */}
+                <div className="border-b border-red-900/30 px-8 py-6">
+                    <h2 className="font-serif font-black text-red-500 text-3xl uppercase tracking-widest text-center">
+                        How To Play
+                    </h2>
+                    <p className="text-gray-500 text-center text-sm mt-2 italic">
+                        Master the ancient art of guessing...
+                    </p>
+                </div>
+                {/* Content */}
+                <div className="px-8 py-6 space-y-6 text-gray-400">
+                    {/* Objective */}
                     <div>
-                        <ul className="list-disc pl-5 space-y-2">
-                            <li><span className="text-green-400 font-bold">Green:</span> Exact match.</li>
-                            <li><span className="text-red-400 font-bold">Red:</span> Incorrect match.</li>
-                            <li>
-                                <span className="font-bold text-white">Arrows (↑/↓):</span> Indicate if the correct answer is
-                                <span className="italic"> Higher/Lower</span> (for Height) or
-                                <span className="italic"> Later/Earlier</span> in the story (for Debut Arc).
+                        <h3 className="text-red-400 font-bold uppercase tracking-wider text-sm mb-3 flex items-center gap-2">
+                            <span>⚔️</span> Objective
+                        </h3>
+                        <p className="leading-relaxed">
+                            Guess the daily character in as few attempts as possible. Each guess reveals clues about the mystery character.
+                        </p>
+                    </div>
+                    {/* How It Works */}
+                    <div>
+                        <h3 className="text-red-400 font-bold uppercase tracking-wider text-sm mb-3 flex items-center gap-2">
+                            <span>🌑</span> How It Works
+                        </h3>
+                        <ul className="space-y-2 leading-relaxed">
+                            <li className="flex items-start gap-2">
+                                <span className="text-gray-600 mt-1">▸</span>
+                                <span>Type a character name in the search box</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                                <span className="text-gray-600 mt-1">▸</span>
+                                <span>Submit your guess to see attribute comparisons</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                                <span className="text-gray-600 mt-1">▸</span>
+                                <span>Use the clues to narrow down your next guess</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                                <span className="text-gray-600 mt-1">▸</span>
+                                <span>After 15 attempts, you can unlock a hint</span>
                             </li>
                         </ul>
                     </div>
-
-                    <div className="my-6 border-t border-b border-gray-800 py-4">
-                        <h3 className="text-lg font-bold text-white mb-2">Example</h3>
-                        <p className="mb-2 text-xs text-gray-400">Target Character: <span className="text-berserk-red font-bold">Guts (204cm)</span></p>
-
-                        {/* Mock Header */}
-                        <div className="grid grid-cols-4 gap-1 md:gap-2 text-[10px] md:text-xs text-center uppercase text-gray-500 mb-1">
-                            <div>Character</div>
-                            <div>Gender</div>
-                            <div>Debut</div>
-                            <div>Height</div>
-                        </div>
-
-                        {/* Mock Row */}
-                        <div className="grid grid-cols-4 gap-1 md:gap-2 text-center text-[10px] md:text-sm">
-                            {/* Char */}
-                            <div className="bg-gray-800 border-2 border-gray-700 p-1 rounded flex flex-col items-center">
-                                <div className="w-8 h-8 rounded-full bg-gray-600 mb-1 overflow-hidden">
-                                    <img src="/images/placeholder.jpg" alt="Example" className="w-full h-full object-cover" />
+                    {/* Color Guide */}
+                    <div>
+                        <h3 className="text-red-400 font-bold uppercase tracking-wider text-sm mb-3 flex items-center gap-2">
+                            <span>✦</span> Color Guide
+                        </h3>
+                        <div className="space-y-3">
+                            {/* Correct Match */}
+                            <div className="flex items-center gap-3">
+                                <div className="bg-emerald-900/80 border-2 border-emerald-500 px-4 py-2 rounded shadow-[0_0_15px_rgba(16,185,129,0.4)] min-w-[100px] text-center">
+                                    <span className="text-emerald-100 font-bold text-sm">Correct</span>
                                 </div>
-                                <span>Judeau</span>
+                                <span className="text-sm">Exact match with the mystery character</span>
                             </div>
-
-                            {/* Gender - Match */}
-                            <div className="bg-green-700 border-2 border-green-500 p-1 rounded flex items-center justify-center">
-                                Male
+                            {/* Incorrect Match */}
+                            <div className="flex items-center gap-3">
+                                <div className="bg-red-950/80 border-2 border-red-900 px-4 py-2 rounded min-w-[100px] text-center">
+                                    <span className="text-red-200 font-bold text-sm">Incorrect</span>
+                                </div>
+                                <span className="text-sm">Does not match the mystery character</span>
                             </div>
-
-                            {/* Debut - Wrong (Earlier) */}
-                            <div className="bg-red-900/50 border-2 border-berserk-red p-1 rounded flex flex-col items-center justify-center">
-                                <span>Golden Age</span>
-                                <span className="text-lg font-bold">↓</span>
+                            {/* Higher/Lower */}
+                            <div className="flex items-center gap-3">
+                                <div className="bg-gray-900/80 border-2 border-amber-600/50 px-4 py-2 rounded min-w-[100px] text-center">
+                                    <span className="text-amber-400 font-bold text-sm">↑ Higher</span>
+                                </div>
+                                <span className="text-sm">The actual value is higher (for numeric attributes)</span>
                             </div>
-
-                            {/* Height - Wrong (Taller) */}
-                            <div className="bg-red-900/50 border-2 border-berserk-red p-1 rounded flex flex-col items-center justify-center">
-                                <span>160cm</span>
-                                <span className="text-lg font-bold">↑</span>
+                            <div className="flex items-center gap-3">
+                                <div className="bg-gray-900/80 border-2 border-amber-600/50 px-4 py-2 rounded min-w-[100px] text-center">
+                                    <span className="text-amber-400 font-bold text-sm">↓ Lower</span>
+                                </div>
+                                <span className="text-sm">The actual value is lower (for numeric attributes)</span>
                             </div>
                         </div>
-                        <p className="mt-2 text-xs italic text-gray-500">
-                            (↑) = Target is Taller / Later Arc. <br />
-                            (↓) = Target is Shorter / Earlier Arc.
+                    </div>
+                    {/* Attributes */}
+                    <div>
+                        <h3 className="text-red-400 font-bold uppercase tracking-wider text-sm mb-3 flex items-center gap-2">
+                            <span>📜</span> Attributes
+                        </h3>
+                        <p className="leading-relaxed mb-2">
+                            Each guess compares these attributes:
+                        </p>
+                        <div className="grid grid-cols-2 gap-2 text-sm">
+                            <div className="bg-gray-900/30 border border-gray-800 px-3 py-2 rounded">
+                                <span className="text-gray-500">Name</span>
+                            </div>
+                            <div className="bg-gray-900/30 border border-gray-800 px-3 py-2 rounded">
+                                <span className="text-gray-500">Gender</span>
+                            </div>
+                            <div className="bg-gray-900/30 border border-gray-800 px-3 py-2 rounded">
+                                <span className="text-gray-500">Race</span>
+                            </div>
+                            <div className="bg-gray-900/30 border border-gray-800 px-3 py-2 rounded">
+                                <span className="text-gray-500">Affiliation</span>
+                            </div>
+                            <div className="bg-gray-900/30 border border-gray-800 px-3 py-2 rounded">
+                                <span className="text-gray-500">First Appearance</span>
+                            </div>
+                            <div className="bg-gray-900/30 border border-gray-800 px-3 py-2 rounded">
+                                <span className="text-gray-500">Status</span>
+                            </div>
+                        </div>
+                    </div>
+                    {/* Tips */}
+                    <div>
+                        <h3 className="text-red-400 font-bold uppercase tracking-wider text-sm mb-3 flex items-center gap-2">
+                            <span>🗡️</span> Tips
+                        </h3>
+                        <ul className="space-y-2 leading-relaxed text-sm">
+                            <li className="flex items-start gap-2">
+                                <span className="text-amber-600 mt-1">◆</span>
+                                <span>Start with well-known characters to narrow down categories</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                                <span className="text-amber-600 mt-1">◆</span>
+                                <span>Pay attention to numeric clues (arrows) for appearance dates</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                                <span className="text-amber-600 mt-1">◆</span>
+                                <span>A new character appears each day at midnight</span>
+                            </li>
+                        </ul>
+                    </div>
+                    {/* Footer */}
+                    <div className="border-t border-red-900/20 pt-4 mt-6">
+                        <p className="text-gray-600 text-xs text-center italic">
+                            May the Brand guide your guesses...
                         </p>
                     </div>
-
-                    <p className="text-center text-gray-400 text-xs">A new character is chosen available every day!</p>
                 </div>
             </div>
         </div>
     );
-};
-
+}
 export default InfoModal;
