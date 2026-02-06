@@ -7,6 +7,7 @@ import WinModal from '../components/WinModal';
 import GrimParticles from '../components/GrimParticles';
 import { getDailyCharacter, compareAttributes } from '../utils/GameLogic';
 import BerserkConfetti from '../components/BerserkConfetti';
+
 function ClassicMode() {
     const [targetCharacter, setTargetCharacter] = useState(null);
     const [guesses, setGuesses] = useState([]);
@@ -16,15 +17,19 @@ function ClassicMode() {
     const [showWin, setShowWin] = useState(false);
     const [showHint, setShowHint] = useState(false);
     const [timeRemaining, setTimeRemaining] = useState('');
+
     useEffect(() => {
         // 1. Load daily character
         const dailyTarget = getDailyCharacter();
         setTargetCharacter(dailyTarget);
+
         // 2. Check saved state
         const todayStr = new Date().toISOString().split('T')[0];
         const savedState = JSON.parse(localStorage.getItem('berserkdle_state') || '{}');
         const savedStreak = parseInt(localStorage.getItem('berserkdle_streak') || '0');
+
         setStreak(savedStreak);
+
         if (savedState.date === todayStr) {
             setGuesses(savedState.guesses || []);
             setHasWon(savedState.won || false);
@@ -35,39 +40,52 @@ function ClassicMode() {
         } else {
             localStorage.removeItem('berserkdle_state');
         }
+
         // 3. Show intro for newcomers
         const introSeen = localStorage.getItem('berserkdle_intro_seen');
         if (!introSeen) {
             setShowInfo(true);
             localStorage.setItem('berserkdle_intro_seen', 'true');
         }
+
         // 4. Timer
         const calculateTimeLeft = () => {
             const now = new Date();
             const midnight = new Date();
             midnight.setHours(24, 0, 0, 0);
+
             const diff = midnight - now;
+
             if (diff <= 0) return "00:00:00";
+
             const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
             const minutes = Math.floor((diff / (1000 * 60)) % 60);
             const seconds = Math.floor((diff / 1000) % 60);
+
             return [
                 hours.toString().padStart(2, '0'),
                 minutes.toString().padStart(2, '0'),
                 seconds.toString().padStart(2, '0')
             ].join(':');
         };
+
         setTimeRemaining(calculateTimeLeft());
         const timer = setInterval(() => {
             setTimeRemaining(calculateTimeLeft());
         }, 1000);
+
         return () => clearInterval(timer);
+
     }, []);
+
     const handleGuess = (character) => {
         if (!targetCharacter || hasWon) return;
+
         const result = compareAttributes(character, targetCharacter);
         const newGuesses = [...guesses, result];
+
         setGuesses(newGuesses);
+
         const isWin = character.id === targetCharacter.id;
         if (isWin) {
             setHasWon(true);
@@ -76,6 +94,7 @@ function ClassicMode() {
             setStreak(newStreak);
             localStorage.setItem('berserkdle_streak', newStreak.toString());
         }
+
         // Save progress
         localStorage.setItem('berserkdle_state', JSON.stringify({
             date: new Date().toISOString().split('T')[0],
@@ -84,23 +103,37 @@ function ClassicMode() {
             showHint: showHint
         }));
     };
+
+    const handleDevReset = () => {
+        if (window.confirm("RESET ALL PROGRESS? This is for testing only.")) {
+            localStorage.clear();
+            // Fix: Redirect to root (Home) to avoid GitHub Pages 404 error on sub-routes
+            window.location.href = import.meta.env.BASE_URL;
+        }
+    };
+
     return (
         <>
             {/* Background effects (Ash + Brand of Sacrifice) */}
             {hasWon && <GrimParticles />}
             {hasWon && <BerserkConfetti />}
+
             {/* Main container with Atmospheric Background Image */}
             <div className="relative min-h-screen overflow-x-hidden">
+
                 {/* Full-Screen Background Image - Lowest Layer */}
                 <img
                     src={`${import.meta.env.BASE_URL}images/classic_gameplay_bg.jpg`}
                     alt=""
                     className="fixed inset-0 w-full h-full object-cover z-0"
                 />
+
                 {/* Dark Overlay for Text Readability */}
                 <div className="fixed inset-0 bg-black/70 z-0" />
+
                 {/* Content Container - Above Background */}
                 <div className="relative z-10 text-white min-h-screen flex flex-col items-center py-10 font-serif">
+
                     {/* Modals */}
                     {showInfo && <InfoModal onClose={() => setShowInfo(false)} />}
                     {showWin && hasWon && (
@@ -111,8 +144,10 @@ function ClassicMode() {
                             onClose={() => setShowWin(false)}
                         />
                     )}
+
                     {/* Header with Dark Fantasy Styling */}
                     <header className="w-full max-w-4xl px-4 flex justify-between items-start mb-8 z-10">
+
                         {/* Back Button - Runic Symbol */}
                         <Link
                             to="/"
@@ -121,6 +156,7 @@ function ClassicMode() {
                         >
                             ←
                         </Link>
+
                         {/* Title Section - Metallic Blood-Stained */}
                         <div className="text-center flex-1">
                             <h1 className="font-serif font-black bg-gradient-to-b from-gray-100 to-gray-400 bg-clip-text text-transparent text-5xl md:text-6xl uppercase tracking-[0.2em] mb-2" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.9)' }}>
@@ -130,6 +166,7 @@ function ClassicMode() {
                                 The Struggle Continues...
                             </p>
                         </div>
+
                         {/* Help Button - Runic Symbol */}
                         <button
                             onClick={() => setShowInfo(true)}
@@ -139,6 +176,7 @@ function ClassicMode() {
                             ?
                         </button>
                     </header>
+
                     {/* Stats Bar - Metal Plates */}
                     <div className="mb-6 flex gap-6 z-10">
                         {/* Streak Counter - Obsidian Plate with Conditional Green Glow */}
@@ -146,12 +184,14 @@ function ClassicMode() {
                             <span className="font-mono text-2xl text-white font-bold" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>{streak}</span>
                             <span className="text-gray-400 text-xs uppercase tracking-[0.15em] mt-1">Streak</span>
                         </div>
+
                         {/* Attempts Counter - Worn Iron Plate with Red Glow */}
                         <div className="bg-gradient-to-b from-gray-900/70 to-black/80 border-2 border-gray-700 px-6 py-3 rounded flex flex-col items-center min-w-[100px] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1),0_0_12px_rgba(220,38,38,0.25)]">
                             <span className="font-mono text-2xl text-red-400 font-bold" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>{guesses.length}</span>
                             <span className="text-gray-400 text-xs uppercase tracking-[0.15em] mt-1">Attempts</span>
                         </div>
                     </div>
+
                     {/* Hint System - Dark Fantasy */}
                     {!hasWon && (
                         <div className="mb-4 z-10 w-full max-w-md flex justify-center px-4">
@@ -190,8 +230,10 @@ function ClassicMode() {
                             )}
                         </div>
                     )}
+
                     {/* Game Area */}
                     <div className="w-full max-w-4xl px-4 flex flex-col items-center z-10">
+
                         {!hasWon && (
                             <SearchBar
                                 onGuess={handleGuess}
@@ -199,16 +241,16 @@ function ClassicMode() {
                                 disabled={hasWon}
                             />
                         )}
+
                         <GuessGrid guesses={guesses} />
+
                         {/* Footer - Blood Clock & Forbidden Button */}
                         <footer className="mt-12 py-6 text-center border-t border-red-900/30 w-full">
                             <p className="text-gray-500 text-sm mb-2 uppercase tracking-widest font-serif">Next Apostle arrives in:</p>
                             <p className="text-2xl font-mono text-red-500 font-bold shadow-[0_0_15px_rgba(220,38,38,0.4)]" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.9)' }}>{timeRemaining}</p>
+
                             <button
-                                onClick={() => {
-                                    localStorage.clear();
-                                    window.location.reload();
-                                }}
+                                onClick={handleDevReset}
                                 className="mt-6 bg-red-950/30 hover:bg-red-950/50 border-2 border-red-900/50 hover:border-red-800/70 text-red-800 hover:text-red-400 px-3 py-1.5 rounded text-[10px] transition-all cursor-pointer shadow-[0_0_10px_rgba(127,29,29,0.3)] hover:shadow-[0_0_15px_rgba(127,29,29,0.6)] uppercase tracking-wider font-bold"
                             >
                                 ⚠ Dev Reset ⚠
@@ -221,4 +263,5 @@ function ClassicMode() {
         </>
     );
 }
+
 export default ClassicMode;

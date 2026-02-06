@@ -16,6 +16,7 @@ function InfoModal({ onClose }) {
                 >
                     ✕
                 </button>
+
                 {/* Header */}
                 <div className="border-b border-red-900/30 px-8 py-6">
                     <h2 className="font-serif font-black text-red-500 text-3xl uppercase tracking-widest text-center">
@@ -25,8 +26,10 @@ function InfoModal({ onClose }) {
                         Master the ancient art of guessing...
                     </p>
                 </div>
+
                 {/* Content */}
                 <div className="px-8 py-6 space-y-6 text-gray-400">
+
                     {/* Objective */}
                     <div>
                         <h3 className="text-red-400 font-bold uppercase tracking-wider text-sm mb-3 flex items-center gap-2">
@@ -36,6 +39,7 @@ function InfoModal({ onClose }) {
                             Guess the daily character in as few attempts as possible. Each guess reveals clues about the mystery character.
                         </p>
                     </div>
+
                     {/* How It Works */}
                     <div>
                         <h3 className="text-red-400 font-bold uppercase tracking-wider text-sm mb-3 flex items-center gap-2">
@@ -60,6 +64,7 @@ function InfoModal({ onClose }) {
                             </li>
                         </ul>
                     </div>
+
                     {/* Color Guide */}
                     <div>
                         <h3 className="text-red-400 font-bold uppercase tracking-wider text-sm mb-3 flex items-center gap-2">
@@ -73,6 +78,7 @@ function InfoModal({ onClose }) {
                                 </div>
                                 <span className="text-sm">Exact match with the mystery character</span>
                             </div>
+
                             {/* Incorrect Match */}
                             <div className="flex items-center gap-3">
                                 <div className="bg-red-950/80 border-2 border-red-900 px-4 py-2 rounded min-w-[100px] text-center">
@@ -80,6 +86,7 @@ function InfoModal({ onClose }) {
                                 </div>
                                 <span className="text-sm">Does not match the mystery character</span>
                             </div>
+
                             {/* Higher/Lower */}
                             <div className="flex items-center gap-3">
                                 <div className="bg-gray-900/80 border-2 border-amber-600/50 px-4 py-2 rounded min-w-[100px] text-center">
@@ -87,6 +94,7 @@ function InfoModal({ onClose }) {
                                 </div>
                                 <span className="text-sm">The actual value is higher (for numeric attributes)</span>
                             </div>
+
                             <div className="flex items-center gap-3">
                                 <div className="bg-gray-900/80 border-2 border-amber-600/50 px-4 py-2 rounded min-w-[100px] text-center">
                                     <span className="text-amber-400 font-bold text-sm">↓ Lower</span>
@@ -95,6 +103,7 @@ function InfoModal({ onClose }) {
                             </div>
                         </div>
                     </div>
+
                     {/* Attributes */}
                     <div>
                         <h3 className="text-red-400 font-bold uppercase tracking-wider text-sm mb-3 flex items-center gap-2">
@@ -124,6 +133,7 @@ function InfoModal({ onClose }) {
                             </div>
                         </div>
                     </div>
+
                     {/* Tips */}
                     <div>
                         <h3 className="text-red-400 font-bold uppercase tracking-wider text-sm mb-3 flex items-center gap-2">
@@ -144,6 +154,7 @@ function InfoModal({ onClose }) {
                             </li>
                         </ul>
                     </div>
+
                     {/* Footer */}
                     <div className="border-t border-red-900/20 pt-4 mt-6">
                         <p className="text-gray-600 text-xs text-center italic">
@@ -155,4 +166,5 @@ function InfoModal({ onClose }) {
         </div>
     );
 }
+
 export default InfoModal;

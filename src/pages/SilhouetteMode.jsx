@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SearchBar from '../components/SearchBar';
 import characterData from '../../berserk_chars.json';
 
-// Helper function for image paths
+// --- Helper: Path Resolution ---
 const resolvePath = (path) => {
     if (!path) return `${import.meta.env.BASE_URL}images/placeholder.jpg`;
     if (path.startsWith('http')) return path;
@@ -11,403 +11,222 @@ const resolvePath = (path) => {
     return `${import.meta.env.BASE_URL}${cleanPath}`;
 };
 
-// Get daily character based on current date (deterministic)
-// Uses offset to ensure different character from Classic Mode
-const getDailyCharacter = () => {
-    const today = new Date().toISOString().split('T')[0];
-
-    // Simple hash function to generate pseudo-random index from date
-    let hash = 0;
-    for (let i = 0; i < today.length; i++) {
-        hash = ((hash << 5) - hash) + today.charCodeAt(i);
-        hash |= 0; // Convert to 32bit integer
-    }
-
-    // Add offset to differentiate from Classic Mode
-    const index = (Math.abs(hash) + 123) % characterData.length;
-    return characterData[index];
+// --- Helper: Daily Logic ---
+const getDailyIndex = () => {
+    const epoch = new Date("2024-01-01T00:00:00.000Z");
+    const today = new Date();
+    const diffTime = Math.abs(today - epoch);
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    return (diffDays + 123) % characterData.length;
 };
 
 const SilhouetteMode = () => {
     const [targetCharacter, setTargetCharacter] = useState(null);
     const [guesses, setGuesses] = useState([]);
     const [hasWon, setHasWon] = useState(false);
-    const [hasGivenUp, setHasGivenUp] = useState(false);
-    const [showWinFlash, setShowWinFlash] = useState(false);
     const [streak, setStreak] = useState(0);
     const [timeRemaining, setTimeRemaining] = useState('');
 
     useEffect(() => {
-        // 1. Load daily character
-        const dailyTarget = getDailyCharacter();
-        setTargetCharacter(dailyTarget);
+        // Init Character
+        const dailyIndex = getDailyIndex();
+        setTargetCharacter(characterData[dailyIndex]);
 
-        // 2. Load streak
-        const savedStreak = parseInt(localStorage.getItem('berserkdle_silhouette_streak') || '0');
-        setStreak(savedStreak);
-
-        // 3. Check saved state for today
+        // Init State from LocalStorage
         const todayStr = new Date().toISOString().split('T')[0];
         const savedState = JSON.parse(localStorage.getItem('berserkdle_silhouette_state') || '{}');
+        const savedStreak = parseInt(localStorage.getItem('berserkdle_silhouette_streak') || '0');
+
+        setStreak(savedStreak);
 
         if (savedState.date === todayStr) {
-            // Load today's progress
             setGuesses(savedState.guesses || []);
             setHasWon(savedState.won || false);
-            setHasGivenUp(savedState.gaveUp || false);
-        } else {
-            // Clear old state, start fresh
-            localStorage.removeItem('berserkdle_silhouette_state');
         }
 
-        // 4. Countdown timer to midnight
-        const calculateTimeLeft = () => {
+        // Timer Logic
+        const timer = setInterval(() => {
             const now = new Date();
             const midnight = new Date();
             midnight.setHours(24, 0, 0, 0);
-
             const diff = midnight - now;
-            if (diff <= 0) return "00:00:00";
 
-            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-            const minutes = Math.floor((diff / (1000 * 60)) % 60);
-            const seconds = Math.floor((diff / 1000) % 60);
-
-            return [
-                hours.toString().padStart(2, '0'),
-                minutes.toString().padStart(2, '0'),
-                seconds.toString().padStart(2, '0')
-            ].join(':');
-        };
-
-        setTimeRemaining(calculateTimeLeft());
-        const timer = setInterval(() => {
-            setTimeRemaining(calculateTimeLeft());
+            if (diff <= 0) {
+                setTimeRemaining("00:00:00");
+            } else {
+                const h = Math.floor((diff / (1000 * 60 * 60)) % 24).toString().padStart(2, '0');
+                const m = Math.floor((diff / (1000 * 60)) % 60).toString().padStart(2, '0');
+                const s = Math.floor((diff / 1000) % 60).toString().padStart(2, '0');
+                setTimeRemaining(`${h}:${m}:${s}`);
+            }
         }, 1000);
 
         return () => clearInterval(timer);
     }, []);
 
-    const saveGameState = (newGuesses, won, gaveUp) => {
-        const todayStr = new Date().toISOString().split('T')[0];
-        localStorage.setItem('berserkdle_silhouette_state', JSON.stringify({
-            date: todayStr,
-            guesses: newGuesses,
-            won: won,
-            gaveUp: gaveUp
-        }));
-    };
-
     const handleGuess = (character) => {
-        if (!targetCharacter || hasWon || hasGivenUp) return;
+        if (!targetCharacter || hasWon) return;
 
-        const newGuesses = [...guesses, character];
+        const newGuesses = [...guesses, character.id];
         setGuesses(newGuesses);
 
         const isWin = character.id === targetCharacter.id;
 
         if (isWin) {
             setHasWon(true);
-            // Trigger dramatic flash effect
-            setShowWinFlash(true);
-            setTimeout(() => setShowWinFlash(false), 800);
-
-            // Increment streak
             const newStreak = streak + 1;
             setStreak(newStreak);
             localStorage.setItem('berserkdle_silhouette_streak', newStreak.toString());
-
-            saveGameState(newGuesses, true, false);
-        } else {
-            saveGameState(newGuesses, false, false);
         }
+
+        localStorage.setItem('berserkdle_silhouette_state', JSON.stringify({
+            date: new Date().toISOString().split('T')[0],
+            guesses: newGuesses,
+            won: isWin
+        }));
     };
 
-    const handleGiveUp = () => {
-        setHasGivenUp(true);
+    if (!targetCharacter) return <div className="text-red-900 text-center mt-20 animate-pulse font-serif tracking-widest">SUMMONING...</div>;
 
-        // Reset streak on give up
-        setStreak(0);
-        localStorage.setItem('berserkdle_silhouette_streak', '0');
-
-        saveGameState(guesses, false, true);
-    };
-
-    if (!targetCharacter) {
-        return (
-            <div className="min-h-screen bg-black flex items-center justify-center">
-                <div className="text-red-600 text-2xl font-bold animate-pulse">Loading the Abyss...</div>
-            </div>
-        );
+    // Blur Calculation with minimum floor
+    const attempts = guesses.length;
+    const maxBlurPx = 40;
+    const attemptsToClear = 25;
+    let currentBlur = Math.max(0, maxBlurPx - (attempts * (maxBlurPx / attemptsToClear)));
+    // Enforce minimum blur floor of 5px until they win
+    if (!hasWon) {
+        currentBlur = Math.max(5, currentBlur);
+    } else {
+        currentBlur = 0;
     }
 
-    const attempts = guesses.length;
-    const isGameOver = hasWon || hasGivenUp;
-
-    // --- BLUR LOGIC ---
-    const maxBlurPx = 35;
-    const attemptsToClear = 30;
-    let currentBlur = Math.max(0, maxBlurPx - (attempts * (maxBlurPx / attemptsToClear)));
-    if (isGameOver) currentBlur = 0;
-
     return (
-        <div className="relative min-h-screen font-serif overflow-hidden">
-            {/* ===== ECLIPSE BACKGROUND IMAGE ===== */}
-            <div className="fixed inset-0 bg-black">
-                {/* Background Image */}
+        // ROOT CONTAINER: Transparent background, relative positioning
+        <div className="min-h-screen bg-transparent relative overflow-x-hidden font-serif text-red-100 selection:bg-red-900 selection:text-white">
+
+            {/* --- 1. BACKGROUND LAYER (Fixed & Negative Z-Index) --- */}
+            <div className="fixed inset-0 z-[-1]">
                 <img
-                    src={`${import.meta.env.BASE_URL}images/eclipse_mode_bg.jpg`}
+                    src={`${import.meta.env.BASE_URL}images/eclipse_final_bg.jpg`}
                     alt="Eclipse Background"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover opacity-60 grayscale brightness-50"
                 />
-                {/* Dark overlay for readability */}
-                <div className="absolute inset-0 bg-black/60"></div>
+                {/* Overlay for atmosphere */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black via-red-950/20 to-black mix-blend-multiply"></div>
+                {/* Noise Texture */}
+                <div className="absolute inset-0 opacity-[0.05] mix-blend-overlay"
+                    style={{ backgroundImage: `url("https://www.transparenttextures.com/patterns/stardust.png")` }}>
+                </div>
             </div>
 
-            {/* Win Flash Effect */}
-            {showWinFlash && (
-                <div
-                    className="fixed inset-0 z-50 pointer-events-none"
-                    style={{
-                        background: 'radial-gradient(circle, rgba(220,38,38,0.8) 0%, transparent 70%)',
-                        animation: 'winFlash 0.8s ease-out'
-                    }}
-                />
-            )}
+            {/* --- 2. GAME CONTENT (Positive Z-Index) --- */}
+            <div className="relative z-10 flex flex-col items-center py-6">
 
-            {/* ===== CONTENT ===== */}
-            <div className="relative z-10 text-white min-h-screen flex flex-col items-center py-8 px-4">
-
-                {/* Header */}
-                <header className="w-full max-w-4xl flex justify-between items-center mb-12">
-                    <Link
-                        to="/"
-                        className="text-gray-500 hover:text-red-400 transition-all duration-300 flex items-center gap-2 group"
-                    >
-                        <span className="group-hover:-translate-x-1 transition-transform">←</span>
-                        <span className="text-sm uppercase tracking-wider">Back</span>
+                {/* HEADER */}
+                <header className="w-full max-w-4xl px-4 flex justify-between items-start mb-12">
+                    <Link to="/" className="text-gray-500 hover:text-red-500 transition-colors flex items-center gap-2 group font-bold tracking-[0.2em] uppercase text-[10px]">
+                        <span className="group-hover:-translate-x-1 transition-transform">←</span> Escape
                     </Link>
 
-                    <h1
-                        className="text-4xl md:text-6xl font-bold text-red-600 tracking-widest uppercase text-center"
-                        style={{
-                            textShadow: '0 0 20px rgba(220,38,38,0.8), 0 0 40px rgba(220,38,38,0.5), 0 4px 8px rgba(0,0,0,0.9)',
-                            fontFamily: 'serif',
-                            letterSpacing: '0.15em'
-                        }}
-                    >
-                        The Eclipse
-                    </h1>
-
-                    {/* Streak Counter */}
                     <div className="flex flex-col items-center">
-                        <span
-                            className="font-bold text-2xl text-white"
-                            style={{ textShadow: '0 0 10px rgba(255,255,255,0.5), 0 2px 4px rgba(0,0,0,0.9)' }}
-                        >
-                            {streak}
-                        </span>
-                        <span className="text-gray-500 text-xs uppercase tracking-wider">Streak</span>
+                        <h1 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-b from-red-600 to-black drop-shadow-[0_4px_10px_rgba(220,38,38,0.5)] tracking-[0.2em] uppercase text-shadow-red text-center">
+                            The Eclipse
+                        </h1>
+                        <div className="flex items-center gap-3 mt-4 bg-black/40 px-4 py-2 border border-red-900/30 rounded backdrop-blur-sm">
+                            <span className="text-[9px] uppercase tracking-[0.3em] text-red-500/70">Survival Streak</span>
+                            <div className="text-red-500 font-mono font-bold text-xl drop-shadow-[0_0_5px_rgba(220,38,38,0.8)]">
+                                {streak}
+                            </div>
+                        </div>
                     </div>
+
+                    <div className="w-16"></div>
                 </header>
 
-                <main className="flex flex-col items-center w-full max-w-md">
+                <main className="flex flex-col items-center w-full max-w-md px-4">
 
-                    {/* ===== DEMONIC IMAGE FRAME ===== */}
-                    <div className="relative mb-10 group">
-                        {/* Outer glow rings */}
-                        <div className="absolute -inset-6 rounded-full opacity-40 blur-xl bg-gradient-to-r from-red-900 via-red-700 to-red-900 animate-pulse" />
-                        <div className="absolute -inset-4 rounded-full opacity-30 blur-lg bg-gradient-to-r from-red-800 to-red-900" />
+                    {/* PORTAL / IMAGE CONTAINER */}
+                    <div className="relative group mb-10">
+                        {/* Red Glow Behind */}
+                        <div className={`absolute -inset-4 bg-gradient-to-b from-red-600 to-black rounded-full blur-xl opacity-20 transition-opacity duration-1000 ${hasWon ? 'opacity-50 animate-pulse' : ''}`}></div>
 
-                        {/* Main frame container */}
-                        <div className="relative w-72 h-72 md:w-96 md:h-96">
-                            {/* Ornate border effect using pseudo-elements */}
-                            <div
-                                className="absolute inset-0 rounded-lg overflow-hidden"
+                        {/* The Image Itself */}
+                        <div className="relative w-64 h-64 md:w-80 md:h-80 bg-black rounded-full border-4 border-red-900/40 overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.9)] ring-1 ring-red-950">
+                            <img
+                                src={resolvePath(targetCharacter.image_url)}
+                                alt="Silhouette"
+                                draggable="false"
+                                onContextMenu={(e) => e.preventDefault()}
+                                className="w-full h-full object-cover scale-110 pointer-events-none select-none"
                                 style={{
-                                    background: 'linear-gradient(135deg, #1a0000 0%, #0a0000 100%)',
-                                    padding: '6px',
-                                    boxShadow: 'inset 0 0 30px rgba(139,0,0,0.6), 0 0 50px rgba(139,0,0,0.4)',
+                                    filter: `grayscale(100%) blur(${currentBlur.toFixed(1)}px) brightness(${hasWon ? 1 : 0.7})`,
+                                    transition: 'filter 1.5s cubic-bezier(0.4, 0, 0.2, 1)',
+                                    userSelect: 'none',
+                                    WebkitUserDrag: 'none'
                                 }}
-                            >
-                                {/* Inner jagged border effect */}
-                                <div
-                                    className="w-full h-full relative overflow-hidden rounded"
-                                    style={{
-                                        background: 'linear-gradient(135deg, #2a0000 0%, #0a0000 100%)',
-                                        boxShadow: 'inset 0 0 20px rgba(0,0,0,0.9), inset 0 0 40px rgba(139,0,0,0.3)',
-                                    }}
-                                >
-                                    {/* Character Image */}
-                                    <img
-                                        src={resolvePath(targetCharacter.image_url)}
-                                        alt={isGameOver ? targetCharacter.name : "Target Silhouette"}
-                                        className="w-full h-full object-cover"
-                                        style={{
-                                            filter: `blur(${currentBlur.toFixed(1)}px) brightness(0.9)`,
-                                            transition: 'filter 0.8s ease-in-out'
-                                        }}
-                                    />
-
-                                    {/* Red overlay when not won */}
-                                    {!isGameOver && (
-                                        <div className="absolute inset-0 bg-gradient-to-b from-red-900/20 via-red-950/30 to-black/40 pointer-events-none mix-blend-multiply" />
-                                    )}
-                                </div>
-                            </div>
-
-                            {/* Corner ornaments */}
-                            <div className="absolute -top-2 -left-2 w-8 h-8 border-t-4 border-l-4 border-red-700 opacity-60" style={{ transform: 'rotate(-45deg)' }} />
-                            <div className="absolute -top-2 -right-2 w-8 h-8 border-t-4 border-r-4 border-red-700 opacity-60" style={{ transform: 'rotate(45deg)' }} />
-                            <div className="absolute -bottom-2 -left-2 w-8 h-8 border-b-4 border-l-4 border-red-700 opacity-60" style={{ transform: 'rotate(-135deg)' }} />
-                            <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-4 border-r-4 border-red-700 opacity-60" style={{ transform: 'rotate(135deg)' }} />
-                        </div>
-                    </div>
-
-                    {/* ===== GAME STATUS ===== */}
-                    <div className="mb-6 text-center">
-                        <p
-                            className="text-gray-300 uppercase tracking-[0.3em] text-sm mb-2 font-bold"
-                            style={{ textShadow: '0 0 10px rgba(220,38,38,0.5), 0 2px 4px rgba(0,0,0,0.8)' }}
-                        >
-                            Attempts: <span className="text-red-500 font-bold text-2xl ml-2" style={{ textShadow: '0 0 15px rgba(239,68,68,0.8)' }}>{attempts}</span>
-                        </p>
-                        {!isGameOver && attempts > 0 && attempts < attemptsToClear && (
-                            <p className="text-gray-600 text-xs italic mt-2 animate-pulse">The vision clears with each sacrifice...</p>
-                        )}
-                    </div>
-
-                    {/* ===== WIN STATE ===== */}
-                    {hasWon && (
-                        <div className="flex flex-col items-center gap-6 animate-fadeIn">
-                            <h2
-                                className="text-3xl font-bold text-white text-center"
-                                style={{ textShadow: '0 0 20px rgba(255,255,255,0.5), 0 4px 6px rgba(0,0,0,0.9)' }}
-                            >
-                                It was <span className="text-red-500" style={{ textShadow: '0 0 25px rgba(239,68,68,0.8)' }}>{targetCharacter.name}</span>!
-                            </h2>
-
-                            {/* Countdown Timer */}
-                            <div className="text-center">
-                                <p className="text-gray-500 text-sm uppercase tracking-widest mb-2">Next Eclipse in:</p>
-                                <p className="text-2xl font-mono text-red-600 font-bold" style={{ textShadow: '0 0 15px rgba(220,38,38,0.6)' }}>
-                                    {timeRemaining}
-                                </p>
-                            </div>
-                        </div>
-                    )}
-
-                    {/* ===== GIVE UP STATE ===== */}
-                    {hasGivenUp && !hasWon && (
-                        <div className="flex flex-col items-center gap-6 animate-fadeIn">
-                            <h2
-                                className="text-3xl font-bold text-white text-center"
-                                style={{ textShadow: '0 0 20px rgba(255,255,255,0.5), 0 4px 6px rgba(0,0,0,0.9)' }}
-                            >
-                                It was <span className="text-red-500" style={{ textShadow: '0 0 25px rgba(239,68,68,0.8)' }}>{targetCharacter.name}</span>
-                            </h2>
-                            <p className="text-gray-400 italic">You submitted to fate...</p>
-
-                            {/* Countdown Timer */}
-                            <div className="text-center">
-                                <p className="text-gray-500 text-sm uppercase tracking-widest mb-2">Next Eclipse in:</p>
-                                <p className="text-2xl font-mono text-red-600 font-bold" style={{ textShadow: '0 0 15px rgba(220,38,38,0.6)' }}>
-                                    {timeRemaining}
-                                </p>
-                            </div>
-                        </div>
-                    )}
-
-                    {/* ===== ACTIVE GAME STATE ===== */}
-                    {!isGameOver && (
-                        <div className="w-full flex flex-col gap-5">
-                            <SearchBar
-                                onGuess={handleGuess}
-                                guessedIds={guesses.map(g => g.id)}
-                                disabled={isGameOver}
                             />
-
-                            {/* Give Up Button - Corrupted Tablet Style */}
-                            <button
-                                onClick={handleGiveUp}
-                                className="relative px-6 py-2 text-sm uppercase tracking-widest group transition-all duration-300 hover:scale-102 self-center"
-                                style={{
-                                    background: 'linear-gradient(135deg, #0a0000 0%, #1a0000 100%)',
-                                    border: '2px solid #3d0000',
-                                    boxShadow: 'inset 0 -2px 4px rgba(0,0,0,0.7), 0 4px 12px rgba(0,0,0,0.8)',
-                                    textShadow: '0 1px 2px rgba(0,0,0,0.9)',
-                                }}
-                            >
-                                <span className="relative z-10 text-gray-600 group-hover:text-red-400 transition-colors">
-                                    Submit to Fate
-                                </span>
-                                <div className="absolute inset-0 bg-red-900/0 group-hover:bg-red-900/10 transition-all duration-300" />
-                            </button>
+                            {!hasWon && <div className="absolute inset-0 bg-red-900/10 mix-blend-overlay pointer-events-none"></div>}
                         </div>
-                    )}
+                    </div>
 
-                    {/* Previous Wrong Guesses */}
-                    {guesses.filter(g => g.id !== targetCharacter.id).length > 0 && (
-                        <div className="mt-10 w-full">
-                            <p className="text-gray-600 text-xs uppercase tracking-[0.3em] mb-3 text-center font-bold">
-                                Fallen Souls
-                            </p>
-                            <div className="flex flex-wrap gap-2 justify-center">
-                                {guesses.filter(g => g.id !== targetCharacter.id).map((char, idx) => (
-                                    <div
-                                        key={idx}
-                                        className="bg-black/50 border border-red-900/30 px-3 py-1 rounded text-gray-500 text-sm"
-                                        style={{ boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.5)' }}
-                                    >
-                                        {char.name}
-                                    </div>
-                                ))}
+                    {/* COUNTER */}
+                    <div className="mb-8 text-center">
+                        <p className="text-red-900/60 text-[9px] uppercase tracking-[0.4em] mb-2 font-bold">Blood Sacrifices</p>
+                        <p className="text-3xl font-bold text-red-600 font-mono drop-shadow-[0_0_10px_rgba(220,38,38,0.6)]">{attempts}</p>
+                    </div>
+
+                    {/* GAME INPUT / WIN STATE */}
+                    {hasWon ? (
+                        <div className="flex flex-col items-center gap-8 w-full animate-fadeInUp">
+                            {/* Victory Revelation Banner - Burning Metal Effect */}
+                            <div className="w-full bg-gradient-to-r from-transparent via-red-950/30 to-transparent border-y border-red-900/50 py-8 backdrop-blur-md mb-6">
+                                <h2 className="text-sm text-gray-500 uppercase tracking-[0.4em] mb-4 text-center">The Veil is Lifted</h2>
+                                <p className="font-serif font-black text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-red-500 via-red-600 to-black uppercase tracking-[0.3em] drop-shadow-[0_2px_2px_rgba(0,0,0,1)] drop-shadow-[0_0_15px_rgba(220,38,38,0.6)] text-center">
+                                    {targetCharacter.name}
+                                </p>
                             </div>
+                            <div className="w-full bg-red-950/10 border-y border-red-900/30 p-6 flex flex-col items-center gap-2 backdrop-blur-md">
+                                <p className="text-red-700 text-[10px] uppercase tracking-[0.3em]">Next Eclipse In</p>
+                                <p className="text-2xl font-mono text-red-500">{timeRemaining}</p>
+                            </div>
+                            <Link to="/" className="group px-8 py-3 bg-transparent border border-red-900/50 text-red-500 hover:bg-red-900 hover:text-white hover:border-red-500 transition-all text-xs tracking-[0.3em] uppercase rounded-sm">
+                                Return to Darkness
+                            </Link>
+                        </div>
+                    ) : (
+                        <div className="w-full flex flex-col gap-5">
+                            <div className="relative group z-50">
+                                <div className="absolute -inset-0.5 bg-red-900/20 rounded blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                                <SearchBar onGuess={handleGuess} guessedIds={guesses} disabled={hasWon} />
+                            </div>
+
+                            {/* Previous Guesses List */}
+                            {guesses.length > 0 && (
+                                <div className="w-full mt-4 space-y-1 max-h-60 overflow-y-auto">
+                                    {guesses.map((guessId, idx) => {
+                                        const guessedChar = characterData.find(c => c.id === guessId);
+                                        if (!guessedChar) return null;
+                                        return (
+                                            <div key={idx} className="flex items-center gap-3 bg-black/30 border border-red-900/20 px-3 py-2 rounded backdrop-blur-sm">
+                                                <img
+                                                    src={resolvePath(guessedChar.image_url)}
+                                                    alt={guessedChar.name}
+                                                    className="w-8 h-8 rounded-full object-cover border border-red-900/40 grayscale"
+                                                />
+                                                <span className="text-sm text-red-300/80 font-mono">{guessedChar.name}</span>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            )}
+
+                            <p className="text-center text-[9px] text-gray-700 uppercase tracking-widest mt-4">
+                                There is no escape. Guess to survive.
+                            </p>
                         </div>
                     )}
                 </main>
-
-                {/* Footer */}
-                <footer className="mt-auto pt-16 text-center text-gray-700 text-xs">
-                    <p style={{ textShadow: '0 1px 2px rgba(0,0,0,0.9)' }}>
-                        Unofficial Fan Game. Berserk is © Kentaro Miura.
-                    </p>
-                </footer>
             </div>
-
-            {/* ===== CUSTOM ANIMATIONS ===== */}
-            <style>{`
-                @keyframes eclipsePulse {
-                    0%, 100% { 
-                        transform: translate(-50%, -50%) scale(1);
-                        opacity: 0.3;
-                    }
-                    50% { 
-                        transform: translate(-50%, -50%) scale(1.1);
-                        opacity: 0.4;
-                    }
-                }
-
-                @keyframes bloodDrift {
-                    0% { background-position: 0% 0%; }
-                    100% { background-position: 100% 100%; }
-                }
-
-                @keyframes winFlash {
-                    0% { opacity: 0; }
-                    30% { opacity: 1; }
-                    100% { opacity: 0; }
-                }
-
-                @keyframes fadeIn {
-                    from { opacity: 0; transform: translateY(10px); }
-                    to { opacity: 1; transform: translateY(0); }
-                }
-
-                .animate-fadeIn {
-                    animation: fadeIn 0.6s ease-out;
-                }
-            `}</style>
         </div>
     );
 };
