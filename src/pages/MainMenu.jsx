@@ -40,7 +40,7 @@ const MainMenu = () => {
                     {/* Background Image (Guts) */}
                     <div className="absolute inset-0 z-0">
                         <img
-                            src={resolvePath('images/classic_mode_bg.jpg')}
+                            src={`${import.meta.env.BASE_URL}images/home_classic_bg.jpg`}
                             alt="The Struggle"
                             className="w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 scale-100 group-hover:scale-110"
                         />
@@ -68,7 +68,7 @@ const MainMenu = () => {
                     {/* Background Image (Eclipse) */}
                     <div className="absolute inset-0 z-0">
                         <img
-                            src={resolvePath('images/eclipse_mode_bg.jpg')}
+                            src={`${import.meta.env.BASE_URL}images/home_eclipse_bg.jpg`}
                             alt="The Eclipse"
                             className="w-full h-full object-cover opacity-40 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 scale-105 group-hover:scale-110"
                         />

@@ -640,7 +640,7 @@
     "name": "Samson",
     "gender": "Male",
     "species": "Human",
-    "affiliation": "Band of the Hawk",
+    "affiliation": "Blue Whale Knights",
     "hair_color": "Black",
     "height_cm": 205,
     "debut_arc": "Golden Age Arc",
@@ -794,7 +794,7 @@
   {
     "id": 67,
     "name": "Pepe",
-    "gender": "Male",
+    "gender": "Female",
     "species": "Human",
     "affiliation": "None",
     "hair_color": "Brown",
@@ -802,18 +802,6 @@
     "debut_arc": "Conviction Arc",
     "image_url": "pepe.jpg",
     "hint": "A child refugee at Albion."
-  },
-  {
-    "id": 68,
-    "name": "Evarella",
-    "gender": "Female",
-    "species": "Elf",
-    "affiliation": "Elfhelm",
-    "hair_color": "Green",
-    "height_cm": 15,
-    "debut_arc": "Millennium Falcon Arc",
-    "image_url": "evarella.jpg",
-    "hint": "Morda's supervising elf."
   },
   {
     "id": 69,
@@ -892,8 +880,8 @@
     "name": "Donovan",
     "gender": "Male",
     "species": "Human",
-    "affiliation": "Band of the Hawk",
-    "hair_color": "Black",
+    "affiliation": "Mercenary",
+    "hair_color": "None",
     "height_cm": 200,
     "debut_arc": "Golden Age Arc",
     "image_url": "donovan.jpg",
@@ -972,18 +960,6 @@
     "hint": "Head of the Vandimion family."
   },
   {
-    "id": 83,
-    "name": "Zepe",
-    "gender": "Male",
-    "species": "Human",
-    "affiliation": "None",
-    "hair_color": "Brown",
-    "height_cm": 165,
-    "debut_arc": "Conviction Arc",
-    "image_url": "zepe.jpg",
-    "hint": "Refugee who tried to protect the prostitutes."
-  },
-  {
     "id": 84,
     "name": "Morgan",
     "gender": "Male",
@@ -1042,18 +1018,6 @@
     "debut_arc": "Golden Age Arc",
     "image_url": "hassan.jpg",
     "hint": "Silent Bakiraka assassin."
-  },
-  {
-    "id": 89,
-    "name": "Jarishka",
-    "gender": "Male",
-    "species": "Human",
-    "affiliation": "Kushan",
-    "hair_color": "Black",
-    "height_cm": 190,
-    "debut_arc": "Millennium Falcon Arc",
-    "image_url": "jarishka.jpg",
-    "hint": "Kushan commander."
   },
   {
     "id": 90,
