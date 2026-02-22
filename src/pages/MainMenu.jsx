@@ -95,9 +95,25 @@ const MainMenu = () => {
             <div className="fixed top-6 left-6 w-8 h-8 border-l-2 border-t-2 border-gray-800 opacity-50 pointer-events-none"></div>
             <div className="fixed bottom-6 right-6 w-8 h-8 border-r-2 border-b-2 border-gray-800 opacity-50 pointer-events-none"></div>
 
-            {/* Footer */}
-            <div className="absolute bottom-8 text-[10px] text-gray-600 tracking-[0.5em] uppercase hover:text-red-900 transition-colors cursor-default">
-                Casualty Count: Infinite
+            {/* Footer — Social Links */}
+            <div className="absolute bottom-8 flex items-center gap-4">
+                <a
+                    href="https://discord.gg/mRwCVtmJAs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-serif tracking-[0.3em] uppercase text-gray-500 hover:text-red-600 transition-colors duration-300"
+                >
+                    Discord
+                </a>
+                <span className="text-red-900/50 text-xs">•</span>
+                <a
+                    href="https://linktr.ee/eclipsysstudios"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-serif tracking-[0.3em] uppercase text-gray-500 hover:text-red-600 transition-colors duration-300"
+                >
+                    More from Eclipsys Studios
+                </a>
             </div>
         </div>
     );
