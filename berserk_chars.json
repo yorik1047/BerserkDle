@@ -576,18 +576,6 @@
     "hint": "Cunning minister of Midland."
   },
   {
-    "id": 49,
-    "name": "Geralt",
-    "gender": "Male",
-    "species": "Human",
-    "affiliation": "Band of the Hawk (Reborn)",
-    "hair_color": "Unknown",
-    "height_cm": 180,
-    "debut_arc": "Millennium Falcon Arc",
-    "image_url": "geralt.jpg",
-    "hint": "A commander in the new Band."
-  },
-  {
     "id": 50,
     "name": "Danan",
     "gender": "Female",
