@@ -5,7 +5,7 @@ const MainMenu = () => {
     const resolvePath = (path) => `${import.meta.env.BASE_URL}${path}`;
 
     return (
-        <div className="min-h-screen bg-[#050505] text-white font-serif flex flex-col items-center justify-center p-6 relative overflow-hidden">
+        <div className="min-h-screen bg-[#050505] text-white font-serif flex flex-col items-center overflow-y-auto p-6 relative overflow-x-hidden">
 
             {/* --- GLOBAL NOISE TEXTURE --- */}
             <div className="fixed inset-0 opacity-[0.08] pointer-events-none z-50 mix-blend-overlay"
@@ -32,7 +32,7 @@ const MainMenu = () => {
             </div>
 
             {/* --- THE CARDS (Brutal Style) --- */}
-            <div className="z-10 flex flex-col md:flex-row gap-0 w-full max-w-5xl h-auto md:h-[500px] border border-gray-800 bg-black/50 shadow-2xl relative">
+            <div className="z-10 flex flex-col md:flex-row gap-0 w-full max-w-5xl h-auto md:h-[500px] border border-gray-800 bg-black/50 shadow-2xl relative my-auto">
 
                 {/* === LEFT: CLASSIC MODE (THE STRUGGLE) === */}
                 <Link to="/classic" className="group relative flex-1 border-b md:border-b-0 md:border-r border-gray-800 cursor-pointer overflow-hidden transition-all duration-500 hover:flex-[1.5]">
@@ -96,7 +96,7 @@ const MainMenu = () => {
             <div className="fixed bottom-6 right-6 w-8 h-8 border-r-2 border-b-2 border-gray-800 opacity-50 pointer-events-none"></div>
 
             {/* Footer — Social Links */}
-            <div className="absolute bottom-8 flex items-center gap-4">
+            <div className="z-10 flex items-center gap-4 mt-12 pb-6">
                 <a
                     href="https://discord.gg/mRwCVtmJAs"
                     target="_blank"
