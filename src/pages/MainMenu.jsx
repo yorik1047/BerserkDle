@@ -62,8 +62,8 @@ const MainMenu = () => {
                     </div>
                 </Link>
 
-                {/* === RIGHT: ECLIPSE MODE (THE SACRIFICE) === */}
-                <Link to="/silhouette" className="group relative flex-1 cursor-pointer overflow-hidden transition-all duration-500 hover:flex-[1.5]">
+                {/* === CENTER: ECLIPSE MODE (THE SACRIFICE) === */}
+                <Link to="/silhouette" className="group relative flex-1 border-b md:border-b-0 md:border-r border-gray-800 cursor-pointer overflow-hidden transition-all duration-500 hover:flex-[1.5]">
 
                     {/* Background Image (Eclipse) */}
                     <div className="absolute inset-0 z-0">
@@ -86,6 +86,35 @@ const MainMenu = () => {
                         </h2>
                         <p className="mt-4 text-red-900/40 text-xs uppercase tracking-widest group-hover:text-red-300 font-bold">
                             Silhouette Mode
+                        </p>
+                    </div>
+                </Link>
+
+                {/* === RIGHT: EMOJI MODE (THE ASTRAL) === */}
+                <Link to="/emoji" className="group relative flex-1 cursor-pointer overflow-hidden transition-all duration-500 hover:flex-[1.5]">
+
+                    {/* Background Image (Astral Void) */}
+                    <div className="absolute inset-0 z-0">
+                        <img
+                            src={`${import.meta.env.BASE_URL}images/astral_button_bg.png`}
+                            alt="The Astral"
+                            className="w-full h-full object-cover opacity-40 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 scale-105 group-hover:scale-110"
+                        />
+                        {/* Purple overlay for astral atmosphere */}
+                        <div className="absolute inset-0 bg-purple-900/20 mix-blend-overlay"></div>
+                    </div>
+
+                    {/* Dark Overlay that disappears on hover */}
+                    <div className="absolute inset-0 bg-black/70 group-hover:bg-transparent transition-colors duration-700 z-1"></div>
+
+                    {/* Content */}
+                    <div className="relative z-10 h-full flex flex-col items-center justify-center p-8">
+
+                        <h2 className="text-2xl md:text-4xl font-bold text-purple-900/60 uppercase tracking-widest group-hover:text-purple-400 transition-colors border-b-2 border-transparent group-hover:border-purple-500 pb-2 drop-shadow-lg">
+                            The Astral
+                        </h2>
+                        <p className="mt-4 text-purple-900/40 text-xs uppercase tracking-widest group-hover:text-purple-300 font-bold">
+                            Emoji Mode
                         </p>
                     </div>
                 </Link>

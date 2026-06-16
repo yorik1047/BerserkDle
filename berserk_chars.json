@@ -9,7 +9,8 @@
     "height_cm": 204,
     "debut_arc": "Black Swordsman Arc",
     "image_url": "guts.jpg",
-    "hint": "The struggler who defies destiny."
+    "hint": "The struggler who defies destiny.",
+    "emojis": "🗡️🦾🐺😡"
   },
   {
     "id": 2,
@@ -21,7 +22,8 @@
     "height_cm": 178,
     "debut_arc": "Golden Age Arc",
     "image_url": "griffith.jpg",
-    "hint": "The White Hawk who sacrificed everything."
+    "hint": "The White Hawk who sacrificed everything.",
+    "emojis": "🦅🏰🗡️👑"
   },
   {
     "id": 3,
@@ -33,7 +35,8 @@
     "height_cm": 165,
     "debut_arc": "Golden Age Arc",
     "image_url": "casca.jpg",
-    "hint": "Former commander of the Band of the Hawk."
+    "hint": "Former commander of the Band of the Hawk.",
+    "emojis": "⚔️🌙💔🛡️"
   },
   {
     "id": 4,
@@ -45,7 +48,8 @@
     "height_cm": 15,
     "debut_arc": "Black Swordsman Arc",
     "image_url": "puck.jpg",
-    "hint": "A wind spirit from Elfhelm."
+    "hint": "A wind spirit from Elfhelm.",
+    "emojis": "🧚✨💚😂"
   },
   {
     "id": 5,
@@ -57,7 +61,8 @@
     "height_cm": 220,
     "debut_arc": "Golden Age Arc",
     "image_url": "zodd.jpg",
-    "hint": "The Immortal seeker of the ultimate strong."
+    "hint": "The Immortal seeker of the ultimate strong.",
+    "emojis": "👹⚔️🦇💀"
   },
   {
     "id": 6,
@@ -69,7 +74,8 @@
     "height_cm": 162,
     "debut_arc": "Conviction Arc",
     "image_url": "farnese.jpg",
-    "hint": "Former leader of the Holy Iron Chain Knights."
+    "hint": "Former leader of the Holy Iron Chain Knights.",
+    "emojis": "🔥⛪🙏📿"
   },
   {
     "id": 7,
@@ -81,7 +87,8 @@
     "height_cm": 175,
     "debut_arc": "Conviction Arc",
     "image_url": "serpico.jpg",
-    "hint": "Possesses the Sylph Sword and Cloak."
+    "hint": "Possesses the Sylph Sword and Cloak.",
+    "emojis": "💨🗡️🌬️😏"
   },
   {
     "id": 8,
@@ -93,7 +100,8 @@
     "height_cm": 135,
     "debut_arc": "Conviction Arc",
     "image_url": "isidro.jpg",
-    "hint": "Aspires to be the greatest swordsman."
+    "hint": "Aspires to be the greatest swordsman.",
+    "emojis": "🔥🗡️👦💪"
   },
   {
     "id": 9,
@@ -105,7 +113,8 @@
     "height_cm": 120,
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "schierke.jpg",
-    "hint": "A young witch in training."
+    "hint": "A young witch in training.",
+    "emojis": "🧙‍♀️🔮🌿📖"
   },
   {
     "id": 10,
@@ -117,7 +126,8 @@
     "height_cm": 230,
     "debut_arc": "Golden Age Arc",
     "image_url": "skull_knight.jpg",
-    "hint": "The foe of the Inhumans."
+    "hint": "The foe of the Inhumans.",
+    "emojis": "💀🐴⚔️🌀"
   },
   {
     "id": 11,
@@ -129,7 +139,8 @@
     "height_cm": 160,
     "debut_arc": "Golden Age Arc",
     "image_url": "judeau.jpg",
-    "hint": "Jack of all trades in the original Band."
+    "hint": "Jack of all trades in the original Band.",
+    "emojis": "🎯🗡️💛😢"
   },
   {
     "id": 12,
@@ -141,7 +152,8 @@
     "height_cm": 190,
     "debut_arc": "Golden Age Arc",
     "image_url": "pippin.jpg",
-    "hint": "The silent giant of the original Band."
+    "hint": "The silent giant of the original Band.",
+    "emojis": "🛡️🤐💪🪓"
   },
   {
     "id": 13,
@@ -153,7 +165,8 @@
     "height_cm": 170,
     "debut_arc": "Golden Age Arc",
     "image_url": "corkus.jpg",
-    "hint": "Always cynical and hostile towards Guts."
+    "hint": "Always cynical and hostile towards Guts.",
+    "emojis": "😤🍺💰🗡️"
   },
   {
     "id": 14,
@@ -165,7 +178,8 @@
     "height_cm": 165,
     "debut_arc": "Golden Age Arc",
     "image_url": "rickert.jpg",
-    "hint": "The young survivor of the Eclipse."
+    "hint": "The young survivor of the Eclipse.",
+    "emojis": "🔨✋🏰👦"
   },
   {
     "id": 15,
@@ -177,7 +191,8 @@
     "height_cm": 265,
     "debut_arc": "Black Swordsman Arc",
     "image_url": "void.jpg",
-    "hint": "The brain-exposed leader of the God Hand."
+    "hint": "The brain-exposed leader of the God Hand.",
+    "emojis": "🧠✋🌀👁️"
   },
   {
     "id": 16,
@@ -189,7 +204,8 @@
     "height_cm": 185,
     "debut_arc": "Black Swordsman Arc",
     "image_url": "slan.jpg",
-    "hint": "The Whore Princess of the Uterine Sea."
+    "hint": "The Whore Princess of the Uterine Sea.",
+    "emojis": "😈🦇💋🖤"
   },
   {
     "id": 17,
@@ -201,7 +217,8 @@
     "height_cm": 80,
     "debut_arc": "Black Swordsman Arc",
     "image_url": "ubik.jpg",
-    "hint": "The floating manipulator of the God Hand."
+    "hint": "The floating manipulator of the God Hand.",
+    "emojis": "👓🫧🎭🤏"
   },
   {
     "id": 18,
@@ -213,7 +230,8 @@
     "height_cm": 150,
     "debut_arc": "Black Swordsman Arc",
     "image_url": "conrad.jpg",
-    "hint": "The pestilence-bringer of the God Hand."
+    "hint": "The pestilence-bringer of the God Hand.",
+    "emojis": "🐀🦠💀🫥"
   },
   {
     "id": 19,
@@ -225,7 +243,8 @@
     "height_cm": 270,
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "grunbeld.jpg",
-    "hint": "The Great Flame Dragon Apostle."
+    "hint": "The Great Flame Dragon Apostle.",
+    "emojis": "🐉🔥🛡️⚔️"
   },
   {
     "id": 20,
@@ -237,7 +256,8 @@
     "height_cm": 200,
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "locus.jpg",
-    "hint": "The Moonlight Knight."
+    "hint": "The Moonlight Knight.",
+    "emojis": "🌙🐴🗡️🦋"
   },
   {
     "id": 21,
@@ -249,7 +269,8 @@
     "height_cm": 175,
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "irvine.jpg",
-    "hint": "The demonic archer."
+    "hint": "The demonic archer.",
+    "emojis": "🏹🐺🎯😶"
   },
   {
     "id": 22,
@@ -261,7 +282,8 @@
     "height_cm": 140,
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "sonia.jpg",
-    "hint": "A clairvoyant girl devoted to Griffith."
+    "hint": "A clairvoyant girl devoted to Griffith.",
+    "emojis": "🔮👁️💫😊"
   },
   {
     "id": 23,
@@ -273,7 +295,8 @@
     "height_cm": 174,
     "debut_arc": "Golden Age Arc",
     "image_url": "silat.jpg",
-    "hint": "Prince of the Bakiraka clan."
+    "hint": "Prince of the Bakiraka clan.",
+    "emojis": "🥋🪃⚡👳"
   },
   {
     "id": 24,
@@ -285,7 +308,8 @@
     "height_cm": 155,
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "mule.jpg",
-    "hint": "Sonia's loyal protector."
+    "hint": "Sonia's loyal protector.",
+    "emojis": "🛡️❤️🗡️👦"
   },
   {
     "id": 25,
@@ -297,7 +321,8 @@
     "height_cm": 160,
     "debut_arc": "Conviction Arc",
     "image_url": "azan.jpg",
-    "hint": "The Bridge Knight."
+    "hint": "The Bridge Knight.",
+    "emojis": "🌉🛡️⚔️🧔"
   },
   {
     "id": 26,
@@ -309,7 +334,8 @@
     "height_cm": 15,
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "ivalera.jpg",
-    "hint": "Schierke's flower spirit companion."
+    "hint": "Schierke's flower spirit companion.",
+    "emojis": "🧚🌸😤💖"
   },
   {
     "id": 27,
@@ -321,7 +347,8 @@
     "height_cm": 180,
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "roderick.jpg",
-    "hint": "Captain of the Sea Horse."
+    "hint": "Captain of the Sea Horse.",
+    "emojis": "⚓🚢🗡️🤵"
   },
   {
     "id": 28,
@@ -333,7 +360,8 @@
     "height_cm": 180,
     "debut_arc": "Golden Age Arc",
     "image_url": "gambino.jpg",
-    "hint": "Guts' alcoholic adoptive father."
+    "hint": "Guts' alcoholic adoptive father.",
+    "emojis": "🍺⚔️🦿😠"
   },
   {
     "id": 29,
@@ -345,7 +373,8 @@
     "height_cm": 160,
     "debut_arc": "Black Swordsman Arc",
     "image_url": "godot.jpg",
-    "hint": "Smith who forged the Dragon Slayer."
+    "hint": "Smith who forged the Dragon Slayer.",
+    "emojis": "🔨🗡️🔥👴"
   },
   {
     "id": 30,
@@ -357,7 +386,8 @@
     "height_cm": 200,
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "rakshas.jpg",
-    "hint": "Exiled Bakiraka assassin."
+    "hint": "Exiled Bakiraka assassin.",
+    "emojis": "🎭🔪🕷️🌑"
   },
   {
     "id": 31,
@@ -369,7 +399,8 @@
     "height_cm": 155,
     "debut_arc": "Conviction Arc",
     "image_url": "rosine.jpg",
-    "hint": "The Queen of the Elves (Moth Apostle)."
+    "hint": "The Queen of the Elves (Moth Apostle).",
+    "emojis": "🦋🧚💜👧"
   },
   {
     "id": 32,
@@ -381,7 +412,8 @@
     "height_cm": 230,
     "debut_arc": "Conviction Arc",
     "image_url": "mozgus.jpg",
-    "hint": "Fanatical Chief Inquisitor."
+    "hint": "Fanatical Chief Inquisitor.",
+    "emojis": "📖😤👼🔥"
   },
   {
     "id": 33,
@@ -393,7 +425,8 @@
     "height_cm": 250,
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "ganishka.jpg",
-    "hint": "The Kushan Emperor."
+    "hint": "The Kushan Emperor.",
+    "emojis": "⛈️👑🐘😈"
   },
   {
     "id": 34,
@@ -405,7 +438,8 @@
     "height_cm": 165,
     "debut_arc": "Conviction Arc",
     "image_url": "luca.jpg",
-    "hint": "Protector of the refugees at Albion."
+    "hint": "Protector of the refugees at Albion.",
+    "emojis": "💃❤️🛡️😊"
   },
   {
     "id": 35,
@@ -417,7 +451,8 @@
     "height_cm": 210,
     "debut_arc": "Golden Age Arc",
     "image_url": "wyald.jpg",
-    "hint": "Leader of the Black Dog Knights."
+    "hint": "Leader of the Black Dog Knights.",
+    "emojis": "🐗💀🤪⚔️"
   },
   {
     "id": 36,
@@ -429,7 +464,8 @@
     "height_cm": 185,
     "debut_arc": "Golden Age Arc",
     "image_url": "adon.jpg",
-    "hint": "Master of the Coborlwitz secret techniques."
+    "hint": "Master of the Coborlwitz secret techniques.",
+    "emojis": "🐳🤡🗡️😤"
   },
   {
     "id": 37,
@@ -441,7 +477,8 @@
     "height_cm": 200,
     "debut_arc": "Black Swordsman Arc",
     "image_url": "count.jpg",
-    "hint": "Slug-like Apostle who ruled a town."
+    "hint": "Slug-like Apostle who ruled a town.",
+    "emojis": "🐌👨‍👧🏰😈"
   },
   {
     "id": 38,
@@ -453,7 +490,8 @@
     "height_cm": 172,
     "debut_arc": "Golden Age Arc",
     "image_url": "gaston.jpg",
-    "hint": "Guts' second-in-command during the raid."
+    "hint": "Guts' second-in-command during the raid.",
+    "emojis": "⚔️🪡🤝😢"
   },
   {
     "id": 39,
@@ -465,7 +503,8 @@
     "height_cm": 155,
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "daiba.jpg",
-    "hint": "Sorcerer advisor to Ganishka."
+    "hint": "Sorcerer advisor to Ganishka.",
+    "emojis": "🧙‍♂️🐘🔮🐊"
   },
   {
     "id": 40,
@@ -477,7 +516,8 @@
     "height_cm": 158,
     "debut_arc": "Fantasia Arc",
     "image_url": "isma.jpg",
-    "hint": "Girl from the Solitary Island."
+    "hint": "Girl from the Solitary Island.",
+    "emojis": "🧜‍♀️🏝️🌊😊"
   },
   {
     "id": 41,
@@ -489,7 +529,8 @@
     "height_cm": 168,
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "magnifico.jpg",
-    "hint": "Farnese's ambitious brother."
+    "hint": "Farnese's ambitious brother.",
+    "emojis": "💰😰🎩🏃"
   },
   {
     "id": 42,
@@ -501,7 +542,8 @@
     "height_cm": 210,
     "debut_arc": "Black Swordsman Arc",
     "image_url": "snake_baron.jpg",
-    "hint": "The first Apostle slain by Guts in the manga."
+    "hint": "The first Apostle slain by Guts in the manga.",
+    "emojis": "🐍🏰⚔️🔥"
   },
   {
     "id": 43,
@@ -513,7 +555,8 @@
     "height_cm": 155,
     "debut_arc": "Conviction Arc",
     "image_url": "nina.jpg",
-    "hint": "Sickly girl who betrayed Casca."
+    "hint": "Sickly girl who betrayed Casca.",
+    "emojis": "🤒😰🐍💔"
   },
   {
     "id": 44,
@@ -525,7 +568,8 @@
     "height_cm": 178,
     "debut_arc": "Conviction Arc",
     "image_url": "jerome.jpg",
-    "hint": "Knight who loved Luca."
+    "hint": "Knight who loved Luca.",
+    "emojis": "⚔️❤️🛡️😏"
   },
   {
     "id": 45,
@@ -537,7 +581,8 @@
     "height_cm": 205,
     "debut_arc": "Golden Age Arc",
     "image_url": "boscogn.jpg",
-    "hint": "General of the Purple Rhino Knights."
+    "hint": "General of the Purple Rhino Knights.",
+    "emojis": "🦏🗡️💪🏰"
   },
   {
     "id": 46,
@@ -549,7 +594,8 @@
     "height_cm": 176,
     "debut_arc": "Golden Age Arc",
     "image_url": "julius.jpg",
-    "hint": "Adonis's father."
+    "hint": "Adonis's father.",
+    "emojis": "👑🗡️😠🩸"
   },
   {
     "id": 47,
@@ -561,7 +607,8 @@
     "height_cm": 170,
     "debut_arc": "Golden Age Arc",
     "image_url": "midland_king.jpg",
-    "hint": "Unhealthily obsessed with his daughter."
+    "hint": "Unhealthily obsessed with his daughter.",
+    "emojis": "👑🤴😰🏰"
   },
   {
     "id": 48,
@@ -573,7 +620,8 @@
     "height_cm": 155,
     "debut_arc": "Golden Age Arc",
     "image_url": "foss.jpg",
-    "hint": "Cunning minister of Midland."
+    "hint": "Cunning minister of Midland.",
+    "emojis": "🐍📜🤫🏛️"
   },
   {
     "id": 50,
@@ -585,7 +633,8 @@
     "height_cm": 170,
     "debut_arc": "Fantasia Arc",
     "image_url": "danan.jpg",
-    "hint": "The Flower Storm Monarch."
+    "hint": "The Flower Storm Monarch.",
+    "emojis": "🌸👑🧚🌺"
   },
   {
     "id": 51,
@@ -597,7 +646,8 @@
     "height_cm": 160,
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "flora.jpg",
-    "hint": "Schierke's mistress in the Spirit Tree."
+    "hint": "Schierke's mistress in the Spirit Tree.",
+    "emojis": "🌳🧙‍♀️📖🕯️"
   },
   {
     "id": 52,
@@ -609,7 +659,8 @@
     "height_cm": 165,
     "debut_arc": "Golden Age Arc",
     "image_url": "gennon.jpg",
-    "hint": "Governor of Doldrey who loved Griffith."
+    "hint": "Governor of Doldrey who loved Griffith.",
+    "emojis": "🏰🤢💰👴"
   },
   {
     "id": 53,
@@ -621,7 +672,8 @@
     "height_cm": 150,
     "debut_arc": "Golden Age Arc",
     "image_url": "adonis.jpg",
-    "hint": "Julius's young son."
+    "hint": "Julius's young son.",
+    "emojis": "👦🗡️😇😢"
   },
   {
     "id": 54,
@@ -633,7 +685,8 @@
     "height_cm": 205,
     "debut_arc": "Golden Age Arc",
     "image_url": "samson.jpg",
-    "hint": "Coborlwitz brother with heavy armor."
+    "hint": "Coborlwitz brother with heavy armor.",
+    "emojis": "🐳🛡️💪⚔️"
   },
   {
     "id": 55,
@@ -645,7 +698,8 @@
     "height_cm": 160,
     "debut_arc": "Golden Age Arc",
     "image_url": "anna.jpg",
-    "hint": "Charlotte's friend/maid."
+    "hint": "Charlotte's friend/maid.",
+    "emojis": "👗🏰🤝👸"
   },
   {
     "id": 56,
@@ -657,7 +711,8 @@
     "height_cm": 100,
     "debut_arc": "Conviction Arc",
     "image_url": "egg_apostle.jpg",
-    "hint": "The incubator for the new world."
+    "hint": "The incubator for the new world.",
+    "emojis": "🥚🌍😢🔴"
   },
   {
     "id": 57,
@@ -669,7 +724,8 @@
     "height_cm": 170,
     "debut_arc": "Conviction Arc",
     "image_url": "joachim.jpg",
-    "hint": "Attempted to escape Albion with Nina."
+    "hint": "Attempted to escape Albion with Nina.",
+    "emojis": "🏃❤️😰⛪"
   },
   {
     "id": 58,
@@ -681,7 +737,8 @@
     "height_cm": 180,
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "owen.jpg",
-    "hint": "A noble commander in the new Band."
+    "hint": "A noble commander in the new Band.",
+    "emojis": "⚔️🏰🤝👑"
   },
   {
     "id": 59,
@@ -693,7 +750,8 @@
     "height_cm": 185,
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "laban.jpg",
-    "hint": "A pragmatic commander in the new Band."
+    "hint": "A pragmatic commander in the new Band.",
+    "emojis": "⚔️🛡️🤔🏰"
   },
   {
     "id": 60,
@@ -705,7 +763,8 @@
     "height_cm": 165,
     "debut_arc": "Fantasia Arc",
     "image_url": "morda.jpg",
-    "hint": "A rebellious witch."
+    "hint": "A rebellious witch.",
+    "emojis": "🔮😤🧹💥"
   },
   {
     "id": 61,
@@ -717,7 +776,8 @@
     "height_cm": 250,
     "debut_arc": "Fantasia Arc",
     "image_url": "merrow_queen.jpg",
-    "hint": "Isma's true mother."
+    "hint": "Isma's true mother.",
+    "emojis": "🧜‍♀️👑🌊💙"
   },
   {
     "id": 62,
@@ -729,7 +789,8 @@
     "height_cm": 150,
     "debut_arc": "Black Swordsman Arc",
     "image_url": "theresia.jpg",
-    "hint": "The Count's daughter, swore revenge on Guts."
+    "hint": "The Count's daughter, swore revenge on Guts.",
+    "emojis": "😢👧🔪💔"
   },
   {
     "id": 63,
@@ -741,7 +802,8 @@
     "height_cm": 300,
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "borkoff.jpg",
-    "hint": "The Apostle who bit off Guts's arm (in the eclipse hallucination/event)."
+    "hint": "The Apostle who bit off Guts's arm (in the eclipse hallucination/event).",
+    "emojis": "🐕💀🦷👹"
   },
   {
     "id": 64,
@@ -753,7 +815,8 @@
     "height_cm": 210,
     "debut_arc": "Golden Age Arc",
     "image_url": "zondark.jpg",
-    "hint": "Captain of the guard defeated by Guts."
+    "hint": "Captain of the guard defeated by Guts.",
+    "emojis": "⚔️🛡️👊😠"
   },
   {
     "id": 65,
@@ -765,7 +828,8 @@
     "height_cm": 230,
     "debut_arc": "Golden Age Arc",
     "image_url": "gaiseric.jpg",
-    "hint": "The Supreme King who united the continent."
+    "hint": "The Supreme King who united the continent.",
+    "emojis": "💀👑🏛️⚔️"
   },
   {
     "id": 66,
@@ -777,7 +841,8 @@
     "height_cm": 160,
     "debut_arc": "Black Swordsman Arc",
     "image_url": "vargas.jpg",
-    "hint": "Stole the Beherit from the Count."
+    "hint": "Stole the Beherit from the Count.",
+    "emojis": "🔴😰🩸🏃"
   },
   {
     "id": 67,
@@ -789,7 +854,8 @@
     "height_cm": 140,
     "debut_arc": "Conviction Arc",
     "image_url": "pepe.jpg",
-    "hint": "A child refugee at Albion."
+    "hint": "A child refugee at Albion.",
+    "emojis": "👧😢⛪🤝"
   },
   {
     "id": 69,
@@ -801,7 +867,8 @@
     "height_cm": 120,
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "moonlight_boy.jpg",
-    "hint": "Appears on full moon nights."
+    "hint": "Appears on full moon nights.",
+    "emojis": "🌕👦✨🤫"
   },
   {
     "id": 70,
@@ -813,7 +880,8 @@
     "height_cm": 200,
     "debut_arc": "Conviction Arc",
     "image_url": "beast_of_darkness.jpg",
-    "hint": "The manifestation of Guts' inner darkness."
+    "hint": "The manifestation of Guts' inner darkness.",
+    "emojis": "🐺🌑😈🔥"
   },
   {
     "id": 72,
@@ -825,7 +893,8 @@
     "height_cm": 160,
     "debut_arc": "Golden Age Arc",
     "image_url": "charlotte.jpg",
-    "hint": "The Princess of Midland."
+    "hint": "The Princess of Midland.",
+    "emojis": "👸🏰💕😢"
   },
   {
     "id": 73,
@@ -837,7 +906,8 @@
     "height_cm": 140,
     "debut_arc": "Conviction Arc",
     "image_url": "jill.jpg",
-    "hint": "A village girl who befriended Puck."
+    "hint": "A village girl who befriended Puck.",
+    "emojis": "👧🦋🏡😢"
   },
   {
     "id": 74,
@@ -849,7 +919,8 @@
     "height_cm": 190,
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "bonebeard.jpg",
-    "hint": "Pirate Captain employed by Kushan."
+    "hint": "Pirate Captain employed by Kushan.",
+    "emojis": "🏴‍☠️💀⚓🗡️"
   },
   {
     "id": 75,
@@ -861,7 +932,8 @@
     "height_cm": 10,
     "debut_arc": "Golden Age Arc",
     "image_url": "chitch.jpg",
-    "hint": "Flower spirit Guts met in jail."
+    "hint": "Flower spirit Guts met in jail.",
+    "emojis": "🌼🧚😢💚"
   },
   {
     "id": 76,
@@ -873,7 +945,8 @@
     "height_cm": 200,
     "debut_arc": "Golden Age Arc",
     "image_url": "donovan.jpg",
-    "hint": "The mercenary who bought Guts."
+    "hint": "The mercenary who bought Guts.",
+    "emojis": "💰😈🌑💢"
   },
   {
     "id": 77,
@@ -885,7 +958,8 @@
     "height_cm": 230,
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "tapasa.jpg",
-    "hint": "One of Silat's muscle bodyguards."
+    "hint": "One of Silat's muscle bodyguards.",
+    "emojis": "💪🥋🛡️🤐"
   },
   {
     "id": 78,
@@ -897,7 +971,8 @@
     "height_cm": 130,
     "debut_arc": "Conviction Arc",
     "image_url": "imp.jpg",
-    "hint": "Small spirit haunting people."
+    "hint": "Small spirit haunting people.",
+    "emojis": "👿🔥😈👻"
   },
   {
     "id": 79,
@@ -909,7 +984,8 @@
     "height_cm": 160,
     "debut_arc": "Fantasia Arc",
     "image_url": "gedfring.jpg",
-    "hint": "A Great Wizard of Skellig."
+    "hint": "A Great Wizard of Skellig.",
+    "emojis": "🧙‍♂️📖✨🏝️"
   },
   {
     "id": 80,
@@ -921,7 +997,8 @@
     "height_cm": 155,
     "debut_arc": "Fantasia Arc",
     "image_url": "moll.jpg",
-    "hint": "A witch of Skellig."
+    "hint": "A witch of Skellig.",
+    "emojis": "🧹🔮🏝️😊"
   },
   {
     "id": 81,
@@ -933,7 +1010,8 @@
     "height_cm": 165,
     "debut_arc": "Golden Age Arc",
     "image_url": "midland_queen.jpg",
-    "hint": "Step-mother of Charlotte."
+    "hint": "Step-mother of Charlotte.",
+    "emojis": "👑🐍🔥😈"
   },
   {
     "id": 82,
@@ -945,7 +1023,8 @@
     "height_cm": 175,
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "federico.jpg",
-    "hint": "Head of the Vandimion family."
+    "hint": "Head of the Vandimion family.",
+    "emojis": "💰🏛️👨‍👧⚖️"
   },
   {
     "id": 84,
@@ -957,7 +1036,8 @@
     "height_cm": 155,
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "morgan.jpg",
-    "hint": "Elder of Enoch Village."
+    "hint": "Elder of Enoch Village.",
+    "emojis": "👴🏘️📖🤔"
   },
   {
     "id": 85,
@@ -969,7 +1049,8 @@
     "height_cm": 130,
     "debut_arc": "Black Swordsman Arc",
     "image_url": "collette.jpg",
-    "hint": "Girl killed in the first chapter."
+    "hint": "Girl killed in the first chapter.",
+    "emojis": "👧🌼💀😢"
   },
   {
     "id": 86,
@@ -981,7 +1062,8 @@
     "height_cm": 170,
     "debut_arc": "Black Swordsman Arc",
     "image_url": "female_apostle.jpg",
-    "hint": "Killed Corkus during the Eclipse."
+    "hint": "Killed Corkus during the Eclipse.",
+    "emojis": "💋😈🌑💀"
   },
   {
     "id": 87,
@@ -993,7 +1075,8 @@
     "height_cm": 160,
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "pontiff.jpg",
-    "hint": "Religious leader of the Holy See."
+    "hint": "Religious leader of the Holy See.",
+    "emojis": "⛪📿👑🙏"
   },
   {
     "id": 88,
@@ -1005,7 +1088,8 @@
     "height_cm": 170,
     "debut_arc": "Golden Age Arc",
     "image_url": "hassan.jpg",
-    "hint": "Silent Bakiraka assassin."
+    "hint": "Silent Bakiraka assassin.",
+    "emojis": "🥷🔪🤐🌑"
   },
   {
     "id": 90,
@@ -1017,7 +1101,8 @@
     "height_cm": 350,
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "makara.jpg",
-    "hint": "Amphibious Kushan Apostle."
+    "hint": "Amphibious Kushan Apostle.",
+    "emojis": "🐊🌊👹💀"
   },
   {
     "id": 91,
@@ -1029,7 +1114,8 @@
     "height_cm": 500,
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "kundalini.jpg",
-    "hint": "Huge snake-like Kushan Apostle."
+    "hint": "Huge snake-like Kushan Apostle.",
+    "emojis": "🐍👹🌊💀"
   },
   {
     "id": 92,
@@ -1041,7 +1127,8 @@
     "height_cm": 999,
     "debut_arc": "Fantasia Arc",
     "image_url": "sea_god.jpg",
-    "hint": "Giant Lovecraftian entity."
+    "hint": "Giant Lovecraftian entity.",
+    "emojis": "🌊🐙❤️💀"
   },
   {
     "id": 93,
@@ -1053,7 +1140,8 @@
     "height_cm": 160,
     "debut_arc": "Fantasia Arc",
     "image_url": "shiz.jpg",
-    "hint": "Son of Gedfring."
+    "hint": "Son of Gedfring.",
+    "emojis": "🧙‍♂️📖🏝️👦"
   },
   {
     "id": 94,
@@ -1065,7 +1153,8 @@
     "height_cm": 150,
     "debut_arc": "Golden Age Arc",
     "image_url": "martino.jpg",
-    "hint": "Gambino's mercenary friend."
+    "hint": "Gambino's mercenary friend.",
+    "emojis": "⚔️🍺🤝🏕️"
   },
   {
     "id": 95,
@@ -1077,7 +1166,8 @@
     "height_cm": 165,
     "debut_arc": "Black Swordsman Arc",
     "image_url": "corneal.jpg",
-    "hint": "Mayor of the town ruled by the Count."
+    "hint": "Mayor of the town ruled by the Count.",
+    "emojis": "🏘️😰👴🐌"
   },
   {
     "id": 96,
@@ -1089,7 +1179,8 @@
     "height_cm": 180,
     "debut_arc": "Conviction Arc",
     "image_url": "angel_face.jpg",
-    "hint": "One of Mozgus's torturers."
+    "hint": "One of Mozgus's torturers.",
+    "emojis": "😇🔨⛪😈"
   },
   {
     "id": 97,
@@ -1101,7 +1192,8 @@
     "height_cm": 175,
     "debut_arc": "Conviction Arc",
     "image_url": "bubble.jpg",
-    "hint": "One of Mozgus's torturers."
+    "hint": "One of Mozgus's torturers.",
+    "emojis": "🫧🔨⛪😈"
   },
   {
     "id": 98,
@@ -1113,7 +1205,8 @@
     "height_cm": 130,
     "debut_arc": "Fantasia Arc",
     "image_url": "hanarr.jpg",
-    "hint": "The Master Smith who created the Berserker Armor."
+    "hint": "The Master Smith who created the Berserker Armor.",
+    "emojis": "🔨⚒️🐺🔥"
   },
   {
     "id": 99,
@@ -1125,7 +1218,8 @@
     "height_cm": 250,
     "debut_arc": "Conviction Arc",
     "image_url": "great_goat.jpg",
-    "hint": "Goat-headed pagan deity/Apostle."
+    "hint": "Goat-headed pagan deity/Apostle.",
+    "emojis": "🐐🔥😈🌑"
   },
   {
     "id": 100,
@@ -1137,7 +1231,8 @@
     "height_cm": 50,
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "schnoz.jpg",
-    "hint": "The internet's favorite apostle (Just a nose)."
+    "hint": "The internet's favorite apostle (Just a nose).",
+    "emojis": "👃😂🤏✨"
   },
   {
     "id": 101,
@@ -1149,7 +1244,8 @@
     "height_cm": 150,
     "debut_arc": "Golden Age Arc",
     "image_url": "fortune_teller.jpg",
-    "hint": "Gave Griffith the Beherit?"
+    "hint": "Gave Griffith the Beherit?",
+    "emojis": "🔮🔴👵🌀"
   },
   {
     "id": 102,
@@ -1161,7 +1257,8 @@
     "height_cm": 185,
     "debut_arc": "Golden Age Arc",
     "image_url": "gien.jpg",
-    "hint": "General of Chuder."
+    "hint": "General of Chuder.",
+    "emojis": "⚔️🏰🐎💀"
   },
   {
     "id": 103,
@@ -1173,7 +1270,8 @@
     "height_cm": 165,
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "lady_vandimion.jpg",
-    "hint": "Farnese's mother."
+    "hint": "Farnese's mother.",
+    "emojis": "👩💰🏛️😔"
   },
   {
     "id": 104,
@@ -1185,7 +1283,8 @@
     "height_cm": 160,
     "debut_arc": "Golden Age Arc",
     "image_url": "torturer.jpg",
-    "hint": "Tortured Griffith in the Tower of Rebirth."
+    "hint": "Tortured Griffith in the Tower of Rebirth.",
+    "emojis": "🔧😈🏰🩸"
   },
   {
     "id": 105,
@@ -1197,7 +1296,8 @@
     "height_cm": 165,
     "debut_arc": "Golden Age Arc",
     "image_url": "bakiraka.jpg",
-    "hint": "Scout for the Bakiraka."
+    "hint": "Scout for the Bakiraka.",
+    "emojis": "🥷👀🔪🌑"
   },
   {
     "id": 106,
@@ -1209,7 +1309,8 @@
     "height_cm": 200,
     "debut_arc": "Conviction Arc",
     "image_url": "bird_mask.jpg",
-    "hint": "One of Mozgus's torturers."
+    "hint": "One of Mozgus's torturers.",
+    "emojis": "🐦🎭🔨⛪"
   },
   {
     "id": 107,
@@ -1221,7 +1322,8 @@
     "height_cm": 210,
     "debut_arc": "Conviction Arc",
     "image_url": "twin_a.jpg",
-    "hint": "One of Mozgus's torturer twins."
+    "hint": "One of Mozgus's torturer twins.",
+    "emojis": "👬🔨⛪💪"
   },
   {
     "id": 108,
@@ -1233,7 +1335,8 @@
     "height_cm": 210,
     "debut_arc": "Conviction Arc",
     "image_url": "twin_b.jpg",
-    "hint": "One of Mozgus's torturer twins."
+    "hint": "One of Mozgus's torturer twins.",
+    "emojis": "👬🔨⛪💪"
   },
   {
     "id": 109,
@@ -1245,7 +1348,8 @@
     "height_cm": 165,
     "debut_arc": "Black Swordsman Arc",
     "image_url": "countess.jpg",
-    "hint": "The Count's wife."
+    "hint": "The Count's wife.",
+    "emojis": "👩🐍🌑💀"
   },
   {
     "id": 110,
@@ -1257,7 +1361,8 @@
     "height_cm": 155,
     "debut_arc": "Black Swordsman Arc",
     "image_url": "theresia.jpg",
-    "hint": "Theresia."
+    "hint": "Theresia.",
+    "emojis": "👧🏰😢🔪"
   },
   {
     "id": 111,
@@ -1269,6 +1374,7 @@
     "height_cm": 150,
     "debut_arc": "Golden Age Arc",
     "image_url": "conrad_human.jpg",
-    "hint": "The human form of Conrad visible in memories/background."
+    "hint": "The human form of Conrad visible in memories/background.",
+    "emojis": "🐀🦠🫥👤"
   }
 ]

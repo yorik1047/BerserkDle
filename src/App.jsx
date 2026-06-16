@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import MainMenu from './pages/MainMenu';
 import ClassicMode from './pages/ClassicMode';
 import SilhouetteMode from './pages/SilhouetteMode';
+import EmojiMode from './pages/EmojiMode';
 
 function App() {
     return (
@@ -9,8 +10,9 @@ function App() {
             <Route path="/" element={<MainMenu />} />
             <Route path="/classic" element={<ClassicMode />} />
             <Route path="/silhouette" element={<SilhouetteMode />} />
+            <Route path="/emoji" element={<EmojiMode />} />
         </Routes>
     );
 }
 
-export default App;
+export default App;
