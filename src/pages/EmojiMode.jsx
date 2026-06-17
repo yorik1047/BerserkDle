@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import characterData from '../../berserk_chars.json';
+import CountdownTimer from '../components/CountdownTimer';
 
 // Filter to only characters that have emoji data
 const emojiCharacters = characterData.filter(c => c.emojis);
@@ -12,6 +13,7 @@ const EmojiMode = () => {
     const [attempts, setAttempts] = useState(0);
     const [wrongGuesses, setWrongGuesses] = useState([]);
     const [shake, setShake] = useState(false);
+    const [isHelpOpen, setIsHelpOpen] = useState(false);
 
     useEffect(() => {
         if (emojiCharacters.length === 0) return;
@@ -179,7 +181,14 @@ const EmojiMode = () => {
                         </p>
                     </div>
 
-                    <div className="w-16"></div>
+                    {/* Help Button */}
+                    <button
+                        onClick={() => setIsHelpOpen(true)}
+                        aria-label="How to Play"
+                        className="w-10 h-10 flex items-center justify-center border border-purple-900/40 rounded text-purple-700 hover:text-purple-300 hover:border-purple-500/60 hover:drop-shadow-[0_0_10px_rgba(139,92,246,0.5)] transition-all duration-300 font-bold text-lg flex-shrink-0"
+                    >
+                        ?
+                    </button>
                 </header>
 
                 {/* MAIN GAME AREA */}
@@ -219,6 +228,7 @@ const EmojiMode = () => {
                                     {targetCharacter.name}
                                 </p>
                             </div>
+                            <CountdownTimer accentColor="purple" />
                             <Link to="/" className="group px-8 py-3 bg-transparent border border-purple-700/50 text-purple-400 hover:bg-purple-900 hover:text-white hover:border-purple-500 transition-all text-xs tracking-[0.3em] uppercase rounded-sm">
                                 Return to Darkness
                             </Link>
@@ -307,6 +317,50 @@ const EmojiMode = () => {
                     to { opacity: 1; transform: translateY(0); }
                 }
             `}</style>
+
+            {/* --- HELP MODAL --- */}
+            {isHelpOpen && (
+                <div
+                    className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+                    onClick={() => setIsHelpOpen(false)}
+                >
+                    {/* Backdrop */}
+                    <div className="absolute inset-0 bg-black/90 backdrop-blur-sm" />
+
+                    {/* Panel */}
+                    <div
+                        className="relative z-10 w-full max-w-md bg-[#0a0510] border border-purple-900/50 rounded-lg shadow-[0_0_60px_rgba(139,92,246,0.2)] p-8"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {/* Decorative corners */}
+                        <div className="absolute top-3 left-3 w-4 h-4 border-l border-t border-purple-700/50" />
+                        <div className="absolute top-3 right-3 w-4 h-4 border-r border-t border-purple-700/50" />
+                        <div className="absolute bottom-3 left-3 w-4 h-4 border-l border-b border-purple-700/50" />
+                        <div className="absolute bottom-3 right-3 w-4 h-4 border-r border-b border-purple-700/50" />
+
+                        {/* Close button */}
+                        <button
+                            onClick={() => setIsHelpOpen(false)}
+                            aria-label="Close"
+                            className="absolute top-4 right-4 w-7 h-7 flex items-center justify-center text-purple-700 hover:text-purple-300 transition-colors text-lg font-bold"
+                        >
+                            ✕
+                        </button>
+
+                        <h2 className="text-purple-400 text-xs uppercase tracking-[0.4em] mb-6 font-bold text-center">How to Play</h2>
+
+                        <p className="text-xs uppercase tracking-[0.3em] text-purple-300/80 font-bold mb-3 text-center">THE ASTRAL</p>
+                        <p className="text-gray-400 text-sm leading-relaxed font-serif text-center">
+                            Divine the character&#39;s identity by interpreting their astral signs (4 emojis).
+                            E.g., 🗡️🦾🐺😡 represents Guts.
+                            Only valid character names will be accepted.
+                        </p>
+
+                        <div className="mt-6 h-px bg-gradient-to-r from-transparent via-purple-900/50 to-transparent" />
+                        <p className="text-purple-900/60 text-[10px] uppercase tracking-widest text-center mt-4">Read the signs. Name the soul.</p>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

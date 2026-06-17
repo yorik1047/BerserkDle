@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SearchBar from '../components/SearchBar';
 import characterData from '../../berserk_chars.json';
+import CountdownTimer from '../components/CountdownTimer';
 
 // --- Helper: Path Resolution ---
 const resolvePath = (path) => {
@@ -25,7 +26,7 @@ const SilhouetteMode = () => {
     const [guesses, setGuesses] = useState([]);
     const [hasWon, setHasWon] = useState(false);
     const [streak, setStreak] = useState(0);
-    const [timeRemaining, setTimeRemaining] = useState('');
+    const [isHelpOpen, setIsHelpOpen] = useState(false);
 
     useEffect(() => {
         // Init Character
@@ -43,25 +44,6 @@ const SilhouetteMode = () => {
             setGuesses(savedState.guesses || []);
             setHasWon(savedState.won || false);
         }
-
-        // Timer Logic
-        const timer = setInterval(() => {
-            const now = new Date();
-            const midnight = new Date();
-            midnight.setHours(24, 0, 0, 0);
-            const diff = midnight - now;
-
-            if (diff <= 0) {
-                setTimeRemaining("00:00:00");
-            } else {
-                const h = Math.floor((diff / (1000 * 60 * 60)) % 24).toString().padStart(2, '0');
-                const m = Math.floor((diff / (1000 * 60)) % 60).toString().padStart(2, '0');
-                const s = Math.floor((diff / 1000) % 60).toString().padStart(2, '0');
-                setTimeRemaining(`${h}:${m}:${s}`);
-            }
-        }, 1000);
-
-        return () => clearInterval(timer);
     }, []);
 
     const handleGuess = (character) => {
@@ -140,7 +122,14 @@ const SilhouetteMode = () => {
                         </div>
                     </div>
 
-                    <div className="w-16"></div>
+                    {/* Help Button */}
+                    <button
+                        onClick={() => setIsHelpOpen(true)}
+                        aria-label="How to Play"
+                        className="w-10 h-10 flex items-center justify-center border border-red-900/40 rounded text-red-800 hover:text-red-400 hover:border-red-700/60 hover:drop-shadow-[0_0_10px_rgba(220,38,38,0.4)] transition-all duration-300 font-bold text-lg flex-shrink-0"
+                    >
+                        ?
+                    </button>
                 </header>
 
                 <main className="flex flex-col items-center w-full max-w-md px-4">
@@ -185,10 +174,7 @@ const SilhouetteMode = () => {
                                     {targetCharacter.name}
                                 </p>
                             </div>
-                            <div className="w-full bg-red-950/10 border-y border-red-900/30 p-6 flex flex-col items-center gap-2 backdrop-blur-md">
-                                <p className="text-red-700 text-[10px] uppercase tracking-[0.3em]">Next Eclipse In</p>
-                                <p className="text-2xl font-mono text-red-500">{timeRemaining}</p>
-                            </div>
+                            <CountdownTimer accentColor="red" />
                             <Link to="/" className="group px-8 py-3 bg-transparent border border-red-900/50 text-red-500 hover:bg-red-900 hover:text-white hover:border-red-500 transition-all text-xs tracking-[0.3em] uppercase rounded-sm">
                                 Return to Darkness
                             </Link>
@@ -227,6 +213,50 @@ const SilhouetteMode = () => {
                     )}
                 </main>
             </div>
+
+            {/* --- HELP MODAL --- */}
+            {isHelpOpen && (
+                <div
+                    className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+                    onClick={() => setIsHelpOpen(false)}
+                >
+                    {/* Backdrop */}
+                    <div className="absolute inset-0 bg-black/90 backdrop-blur-sm" />
+
+                    {/* Panel */}
+                    <div
+                        className="relative z-10 w-full max-w-md bg-[#0a0505] border border-red-900/50 rounded-lg shadow-[0_0_60px_rgba(220,38,38,0.15)] p-8"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {/* Decorative corners */}
+                        <div className="absolute top-3 left-3 w-4 h-4 border-l border-t border-red-900/50" />
+                        <div className="absolute top-3 right-3 w-4 h-4 border-r border-t border-red-900/50" />
+                        <div className="absolute bottom-3 left-3 w-4 h-4 border-l border-b border-red-900/50" />
+                        <div className="absolute bottom-3 right-3 w-4 h-4 border-r border-b border-red-900/50" />
+
+                        {/* Close button */}
+                        <button
+                            onClick={() => setIsHelpOpen(false)}
+                            aria-label="Close"
+                            className="absolute top-4 right-4 w-7 h-7 flex items-center justify-center text-red-900 hover:text-red-400 transition-colors text-lg font-bold"
+                        >
+                            ✕
+                        </button>
+
+                        <h2 className="text-red-700 text-xs uppercase tracking-[0.4em] mb-6 font-bold text-center">How to Play</h2>
+
+                        <p className="text-xs uppercase tracking-[0.3em] text-red-400/80 font-bold mb-3 text-center">THE ECLIPSE</p>
+                        <p className="text-gray-400 text-sm leading-relaxed font-serif text-center">
+                            Guess the character based on their dark silhouette.
+                            You have unlimited attempts — but the image starts pitch-black.
+                            Each guess reduces the blur slightly. Sacrifice your logic.
+                        </p>
+
+                        <div className="mt-6 h-px bg-gradient-to-r from-transparent via-red-900/50 to-transparent" />
+                        <p className="text-red-900/50 text-[10px] uppercase tracking-widest text-center mt-4">There is no escape. Guess to survive.</p>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
