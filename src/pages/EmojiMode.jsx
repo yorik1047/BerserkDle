@@ -70,7 +70,7 @@ const EmojiMode = () => {
             setHasWon(true);
             saveState(newAttempts, true, wrongGuesses);
         } else {
-            const newWrong = [...wrongGuesses, matchedCharacter.name];
+            const newWrong = [matchedCharacter.name, ...wrongGuesses];
             setWrongGuesses(newWrong);
             setShake(true);
             setTimeout(() => setShake(false), 500);
@@ -116,7 +116,7 @@ const EmojiMode = () => {
                     setHasWon(true);
                     saveState(newAttempts, true, wrongGuesses);
                 } else {
-                    const newWrong = [...wrongGuesses, topSuggestion.name];
+                    const newWrong = [topSuggestion.name, ...wrongGuesses];
                     setWrongGuesses(newWrong);
                     setShake(true);
                     setTimeout(() => setShake(false), 500);
@@ -261,9 +261,15 @@ const EmojiMode = () => {
                                                 onClick={() => {
                                                     setGuess(char.name);
                                                 }}
-                                                className="w-full px-5 py-3 text-left text-purple-200 hover:bg-purple-900/30 hover:text-white transition-colors text-sm font-serif tracking-wider border-b border-purple-900/20 last:border-b-0 cursor-pointer"
+                                                className="w-full px-5 py-3 text-left text-purple-200 hover:bg-purple-900/30 hover:text-white transition-colors text-sm font-serif tracking-wider border-b border-purple-900/20 last:border-b-0 cursor-pointer flex items-center"
                                             >
-                                                {char.name}
+                                                <img
+                                                    src={`${import.meta.env.BASE_URL}${char.image_url}`}
+                                                    alt={char.name}
+                                                    className="w-8 h-8 rounded-full object-cover mr-3 border border-gray-600 flex-shrink-0"
+                                                    onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                                                />
+                                                <span>{char.name}</span>
                                             </button>
                                         ))}
                                     </div>
@@ -283,12 +289,23 @@ const EmojiMode = () => {
                             {wrongGuesses.length > 0 && (
                                 <div className="w-full mt-2 space-y-1 max-h-48 overflow-y-auto">
                                     <p className="text-purple-900/50 text-[9px] uppercase tracking-[0.3em] mb-2 font-bold text-center">Failed Visions</p>
-                                    {wrongGuesses.map((wrong, idx) => (
-                                        <div key={idx} className="flex items-center gap-3 bg-black/30 border border-purple-900/20 px-4 py-2 rounded backdrop-blur-sm">
-                                            <span className="text-red-900/60 text-xs">✕</span>
-                                            <span className="text-sm text-purple-300/60 font-mono line-through">{wrong}</span>
-                                        </div>
-                                    ))}
+                                    {wrongGuesses.map((wrong, idx) => {
+                                        const charData = characterData.find(c => c.name.toLowerCase() === wrong.toLowerCase());
+                                        return (
+                                            <div key={idx} className="flex items-center gap-3 bg-black/30 border border-purple-900/20 px-4 py-2 rounded backdrop-blur-sm">
+                                                <span className="text-red-900/60 text-xs flex-shrink-0">✕</span>
+                                                {charData && (
+                                                    <img
+                                                        src={`${import.meta.env.BASE_URL}${charData.image_url}`}
+                                                        alt={wrong}
+                                                        className="w-7 h-7 rounded-full object-cover border border-purple-900/40 flex-shrink-0"
+                                                        onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                                                    />
+                                                )}
+                                                <span className="text-sm text-purple-300/60 font-mono line-through">{wrong}</span>
+                                            </div>
+                                        );
+                                    })}
                                 </div>
                             )}
 

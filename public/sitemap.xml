@@ -2,8 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
       <loc>https://yorik1047.github.io/BerserkDle/</loc>
-      <lastmod>2026-01-11</lastmod>
+      <lastmod>2026-06-22</lastmod>
       <changefreq>daily</changefreq>
       <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>https://yorik1047.github.io/BerserkDle/classic</loc>
+      <lastmod>2026-06-22</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://yorik1047.github.io/BerserkDle/silhouette</loc>
+      <lastmod>2026-06-22</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://yorik1047.github.io/BerserkDle/emoji</loc>
+      <lastmod>2026-06-22</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.9</priority>
    </url>
 </urlset>

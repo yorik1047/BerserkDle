@@ -49,7 +49,7 @@ const SilhouetteMode = () => {
     const handleGuess = (character) => {
         if (!targetCharacter || hasWon) return;
 
-        const newGuesses = [...guesses, character.id];
+        const newGuesses = [character.id, ...guesses];
         setGuesses(newGuesses);
 
         const isWin = character.id === targetCharacter.id;
