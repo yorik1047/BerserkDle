@@ -17,6 +17,7 @@ function ClassicMode() {
     const [showWin, setShowWin] = useState(false);
     const [showHint, setShowHint] = useState(false);
     const [timeRemaining, setTimeRemaining] = useState('');
+    const [isCopied, setIsCopied] = useState(false);
 
     useEffect(() => {
         // 1. Load daily character
@@ -233,6 +234,33 @@ function ClassicMode() {
 
                     {/* Game Area */}
                     <div className="w-full max-w-4xl px-4 flex flex-col items-center z-10">
+
+                        {hasWon && (
+                            <div className="w-full max-w-md mb-6 flex flex-col items-center gap-4 animate-fadeIn">
+                                <div className="w-full bg-gradient-to-r from-transparent via-amber-950/20 to-transparent border-y border-amber-700/30 py-6 backdrop-blur-md text-center">
+                                    <p className="text-[10px] text-gray-500 uppercase tracking-[0.4em] mb-3">The Branded Revealed</p>
+                                    <p className="font-serif font-black text-3xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-b from-amber-400 via-amber-500 to-amber-900 uppercase tracking-[0.3em]">
+                                        {targetCharacter.name}
+                                    </p>
+                                </div>
+                                <button
+                                    onClick={() => {
+                                        const shareText = `BerserkDle 🗡️\nMode: THE STRUGGLE (Classic)\nGuesses: ${guesses.length}\nPlay now: https://yorik1047.github.io/BerserkDle/`;
+                                        navigator.clipboard.writeText(shareText).then(() => {
+                                            setIsCopied(true);
+                                            setTimeout(() => setIsCopied(false), 2000);
+                                        });
+                                    }}
+                                    className={`px-8 py-3 border text-xs tracking-[0.3em] uppercase rounded-sm transition-all duration-300 cursor-pointer font-bold ${
+                                        isCopied
+                                            ? 'bg-green-900/30 border-green-600/50 text-green-300'
+                                            : 'bg-gradient-to-r from-amber-950/50 via-amber-900/40 to-amber-950/50 border-amber-700/50 text-amber-400 hover:bg-amber-900/50 hover:text-amber-200 hover:border-amber-500 hover:shadow-[0_0_15px_rgba(217,119,6,0.3)]'
+                                    }`}
+                                >
+                                    {isCopied ? 'Copied! ✓' : '📋 Share Result'}
+                                </button>
+                            </div>
+                        )}
 
                         {!hasWon && (
                             <SearchBar

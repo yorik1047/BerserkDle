@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
-const WinModal = ({ character, onClose, nextCharacterTime }) => {
+const WinModal = ({ character, guessCount, onClose, nextCharacterTime }) => {
+    const [isCopied, setIsCopied] = useState(false);
+
     // Захист: якщо персонаж не переданий, не показуємо помилку
     if (!character) return null;
+
+    const handleShare = () => {
+        const shareText = `BerserkDle 🗡️\nMode: THE STRUGGLE (Classic)\nGuesses: ${guessCount}\nPlay now: https://yorik1047.github.io/BerserkDle/`;
+        navigator.clipboard.writeText(shareText).then(() => {
+            setIsCopied(true);
+            setTimeout(() => setIsCopied(false), 2000);
+        });
+    };
 
     return (
         <div className="fixed inset-0 flex items-center justify-center z-[101] bg-black/80 backdrop-blur-sm p-4 animate-fadeIn">
@@ -24,12 +34,24 @@ const WinModal = ({ character, onClose, nextCharacterTime }) => {
                     </div>
                 )}
 
-                <button
-                    onClick={onClose}
-                    className="px-6 py-2 bg-red-900 hover:bg-red-800 text-white font-bold rounded transition-colors uppercase tracking-wider border border-red-700 text-sm"
-                >
-                    CLOSE
-                </button>
+                <div className="flex gap-3 justify-center">
+                    <button
+                        onClick={handleShare}
+                        className={`px-6 py-2 font-bold rounded transition-all duration-300 uppercase tracking-wider border text-sm cursor-pointer ${
+                            isCopied
+                                ? 'bg-green-900/40 border-green-600/60 text-green-300'
+                                : 'bg-gradient-to-r from-amber-950/50 to-amber-900/40 border-amber-700/50 text-amber-400 hover:bg-amber-900/50 hover:text-amber-200 hover:border-amber-500'
+                        }`}
+                    >
+                        {isCopied ? 'Copied! ✓' : '📋 Share'}
+                    </button>
+                    <button
+                        onClick={onClose}
+                        className="px-6 py-2 bg-red-900 hover:bg-red-800 text-white font-bold rounded transition-colors uppercase tracking-wider border border-red-700 text-sm"
+                    >
+                        CLOSE
+                    </button>
+                </div>
             </div>
         </div>
     );

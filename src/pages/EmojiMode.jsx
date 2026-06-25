@@ -14,6 +14,8 @@ const EmojiMode = () => {
     const [wrongGuesses, setWrongGuesses] = useState([]);
     const [shake, setShake] = useState(false);
     const [isHelpOpen, setIsHelpOpen] = useState(false);
+    const [isHintRevealed, setIsHintRevealed] = useState(false);
+    const [isCopied, setIsCopied] = useState(false);
 
     useEffect(() => {
         if (emojiCharacters.length === 0) return;
@@ -33,18 +35,21 @@ const EmojiMode = () => {
             setAttempts(savedState.attempts || 0);
             setHasWon(savedState.won || false);
             setWrongGuesses(savedState.wrongGuesses || []);
+            setIsHintRevealed(savedState.hintRevealed || false);
         } else {
             setTargetCharacter(emojiCharacters[index]);
+            setIsHintRevealed(false);
             localStorage.removeItem('berserkdle_emoji_state');
         }
     }, []);
 
-    const saveState = (newAttempts, won, newWrongGuesses) => {
+    const saveState = (newAttempts, won, newWrongGuesses, hintRevealed = isHintRevealed) => {
         localStorage.setItem('berserkdle_emoji_state', JSON.stringify({
             date: new Date().toISOString().split('T')[0],
             attempts: newAttempts,
             won,
-            wrongGuesses: newWrongGuesses
+            wrongGuesses: newWrongGuesses,
+            hintRevealed
         }));
     };
 
@@ -207,10 +212,61 @@ const EmojiMode = () => {
                             <div className="absolute bottom-2 right-2 w-4 h-4 border-r border-b border-purple-700/40"></div>
 
                             <p className="text-5xl md:text-7xl tracking-[0.5em] text-center leading-relaxed select-none" style={{ textShadow: '0 4px 20px rgba(139,92,246,0.3)' }}>
-                                {targetCharacter.emojis}
+                                {(() => {
+                                    const emojiArr = Array.from(targetCharacter.emojis);
+                                    const failCount = wrongGuesses.length;
+                                    const revealCount = hasWon ? emojiArr.length : Math.min(failCount + 1, emojiArr.length);
+                                    return emojiArr.map((emoji, i) => (
+                                        <span key={i} className={i >= revealCount ? 'opacity-60 grayscale' : ''}>
+                                            {i < revealCount ? emoji : '❓'}
+                                        </span>
+                                    ));
+                                })()}
                             </p>
                         </div>
                     </div>
+
+                    {/* Astral Whisper — Text Hint */}
+                    {wrongGuesses.length >= 4 && !hasWon && (
+                        <div className="mb-6 w-full flex flex-col items-center animate-[fadeInUp_0.6s_ease-out]">
+                            {!isHintRevealed ? (
+                                <button
+                                    onClick={() => {
+                                        setIsHintRevealed(true);
+                                        saveState(attempts, hasWon, wrongGuesses, true);
+                                    }}
+                                    className="group relative px-8 py-3 bg-transparent border border-purple-800/50 rounded-lg text-purple-400 hover:text-purple-200 hover:border-purple-500/70 transition-all duration-500 text-xs uppercase tracking-[0.3em] font-bold cursor-pointer overflow-hidden"
+                                >
+                                    <span className="absolute inset-0 bg-gradient-to-r from-purple-900/0 via-purple-800/20 to-purple-900/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                                    <span className="relative flex items-center gap-2">
+                                        <span className="text-base">👁️</span>
+                                        Listen to the Astral Whisper
+                                    </span>
+                                </button>
+                            ) : (
+                                <div className="relative w-full max-w-md">
+                                    <div className="absolute -inset-2 bg-purple-600/10 rounded-xl blur-xl animate-[whisperGlow_3s_ease-in-out_infinite]"></div>
+                                    <div className="relative bg-black/50 border border-purple-700/40 rounded-xl px-6 py-4 backdrop-blur-sm">
+                                        <p className="text-[9px] uppercase tracking-[0.4em] text-purple-600/60 mb-2 font-bold text-center">Astral Whisper</p>
+                                        <p className="text-purple-300 italic text-center font-serif text-sm md:text-base leading-relaxed" style={{ textShadow: '0 0 20px rgba(168,85,247,0.4)' }}>
+                                            "{targetCharacter.hint}"
+                                        </p>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    )}
+                    {isHintRevealed && hasWon && targetCharacter.hint && (
+                        <div className="mb-6 w-full flex flex-col items-center">
+                            <div className="relative w-full max-w-md">
+                                <div className="relative bg-black/30 border border-purple-900/30 rounded-xl px-6 py-3 backdrop-blur-sm">
+                                    <p className="text-purple-400/60 italic text-center font-serif text-xs leading-relaxed">
+                                        "{targetCharacter.hint}"
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    )}
 
                     {/* Attempts Counter */}
                     <div className="mb-8 text-center">
@@ -229,9 +285,27 @@ const EmojiMode = () => {
                                 </p>
                             </div>
                             <CountdownTimer accentColor="purple" />
-                            <Link to="/" className="group px-8 py-3 bg-transparent border border-purple-700/50 text-purple-400 hover:bg-purple-900 hover:text-white hover:border-purple-500 transition-all text-xs tracking-[0.3em] uppercase rounded-sm">
-                                Return to Darkness
-                            </Link>
+                            <div className="flex flex-col sm:flex-row gap-3 items-center">
+                                <button
+                                    onClick={() => {
+                                        const shareText = `BerserkDle 🗡️\nMode: THE ASTRAL 🌌\nGuesses: ${attempts}\nPlay now: https://yorik1047.github.io/BerserkDle/`;
+                                        navigator.clipboard.writeText(shareText).then(() => {
+                                            setIsCopied(true);
+                                            setTimeout(() => setIsCopied(false), 2000);
+                                        });
+                                    }}
+                                    className={`group px-8 py-3 border text-xs tracking-[0.3em] uppercase rounded-sm transition-all duration-300 cursor-pointer ${
+                                        isCopied
+                                            ? 'bg-purple-600/30 border-purple-400/60 text-purple-200'
+                                            : 'bg-gradient-to-r from-purple-950/50 via-indigo-950/50 to-purple-950/50 border-purple-700/50 text-purple-400 hover:bg-purple-900/40 hover:text-white hover:border-purple-500'
+                                    }`}
+                                >
+                                    {isCopied ? 'Copied! ✓' : '📋 Share Result'}
+                                </button>
+                                <Link to="/" className="group px-8 py-3 bg-transparent border border-purple-700/50 text-purple-400 hover:bg-purple-900 hover:text-white hover:border-purple-500 transition-all text-xs tracking-[0.3em] uppercase rounded-sm">
+                                    Return to Darkness
+                                </Link>
+                            </div>
                         </div>
                     ) : (
                         <div className="w-full flex flex-col gap-5">
@@ -333,6 +407,10 @@ const EmojiMode = () => {
                     from { opacity: 0; transform: translateY(20px); }
                     to { opacity: 1; transform: translateY(0); }
                 }
+                @keyframes whisperGlow {
+                    0%, 100% { opacity: 0.3; transform: scale(1); }
+                    50% { opacity: 0.7; transform: scale(1.02); }
+                }
             `}</style>
 
             {/* --- HELP MODAL --- */}
@@ -369,7 +447,8 @@ const EmojiMode = () => {
                         <p className="text-xs uppercase tracking-[0.3em] text-purple-300/80 font-bold mb-3 text-center">THE ASTRAL</p>
                         <p className="text-gray-400 text-sm leading-relaxed font-serif text-center">
                             Divine the character&#39;s identity by interpreting their astral signs (4 emojis).
-                            E.g., 🗡️🦾🐺😡 represents Guts.
+                            Only the first sign is revealed — each wrong guess unveils the next.
+                            After 3 failed visions, you may listen to an Astral Whisper for a lore hint.
                             Only valid character names will be accepted.
                         </p>
 

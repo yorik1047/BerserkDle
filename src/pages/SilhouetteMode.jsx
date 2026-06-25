@@ -27,6 +27,7 @@ const SilhouetteMode = () => {
     const [hasWon, setHasWon] = useState(false);
     const [streak, setStreak] = useState(0);
     const [isHelpOpen, setIsHelpOpen] = useState(false);
+    const [isCopied, setIsCopied] = useState(false);
 
     useEffect(() => {
         // Init Character
@@ -175,9 +176,27 @@ const SilhouetteMode = () => {
                                 </p>
                             </div>
                             <CountdownTimer accentColor="red" />
-                            <Link to="/" className="group px-8 py-3 bg-transparent border border-red-900/50 text-red-500 hover:bg-red-900 hover:text-white hover:border-red-500 transition-all text-xs tracking-[0.3em] uppercase rounded-sm">
-                                Return to Darkness
-                            </Link>
+                            <div className="flex flex-col sm:flex-row gap-3 items-center">
+                                <button
+                                    onClick={() => {
+                                        const shareText = `BerserkDle 🗡️\nMode: THE ECLIPSE 🌑\nGuesses: ${attempts}\nPlay now: https://yorik1047.github.io/BerserkDle/`;
+                                        navigator.clipboard.writeText(shareText).then(() => {
+                                            setIsCopied(true);
+                                            setTimeout(() => setIsCopied(false), 2000);
+                                        });
+                                    }}
+                                    className={`group px-8 py-3 border text-xs tracking-[0.3em] uppercase rounded-sm transition-all duration-300 cursor-pointer ${
+                                        isCopied
+                                            ? 'bg-red-600/30 border-red-400/60 text-red-200'
+                                            : 'bg-gradient-to-r from-red-950/50 via-red-900/40 to-red-950/50 border-red-800/50 text-red-500 hover:bg-red-900/40 hover:text-white hover:border-red-500'
+                                    }`}
+                                >
+                                    {isCopied ? 'Copied! ✓' : '📋 Share Result'}
+                                </button>
+                                <Link to="/" className="group px-8 py-3 bg-transparent border border-red-900/50 text-red-500 hover:bg-red-900 hover:text-white hover:border-red-500 transition-all text-xs tracking-[0.3em] uppercase rounded-sm">
+                                    Return to Darkness
+                                </Link>
+                            </div>
                         </div>
                     ) : (
                         <div className="w-full flex flex-col gap-5">
