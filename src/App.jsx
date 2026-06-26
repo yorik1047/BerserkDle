@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import MainMenu from './pages/MainMenu';
 import ClassicMode from './pages/ClassicMode';
 import SilhouetteMode from './pages/SilhouetteMode';
@@ -6,12 +7,15 @@ import EmojiMode from './pages/EmojiMode';
 
 function App() {
     return (
-        <Routes>
-            <Route path="/" element={<MainMenu />} />
-            <Route path="/classic" element={<ClassicMode />} />
-            <Route path="/silhouette" element={<SilhouetteMode />} />
-            <Route path="/emoji" element={<EmojiMode />} />
-        </Routes>
+        <>
+            <Routes>
+                <Route path="/" element={<MainMenu />} />
+                <Route path="/classic" element={<ClassicMode />} />
+                <Route path="/silhouette" element={<SilhouetteMode />} />
+                <Route path="/emoji" element={<EmojiMode />} />
+            </Routes>
+            <Analytics />
+        </>
     );
 }
 
