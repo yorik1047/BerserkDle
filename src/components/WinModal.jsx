@@ -7,7 +7,7 @@ const WinModal = ({ character, guessCount, onClose, nextCharacterTime }) => {
     if (!character) return null;
 
     const handleShare = () => {
-        const shareText = `BerserkDle 🗡️\nMode: THE STRUGGLE (Classic)\nGuesses: ${guessCount}\nPlay now: https://yorik1047.github.io/BerserkDle/`;
+        const shareText = `BerserkDle 🗡️\nMode: THE STRUGGLE (Classic)\nGuesses: ${guessCount}\nPlay now: https://berserk-dle.vercel.app/`;
         navigator.clipboard.writeText(shareText).then(() => {
             setIsCopied(true);
             setTimeout(() => setIsCopied(false), 2000);

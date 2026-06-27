@@ -10,7 +10,7 @@ const resolvePath = (path) => {
     // Видаляємо скісну риску на початку, щоб уникнути подвійних слешів (//)
     const cleanPath = path.startsWith('/') ? path.slice(1) : path;
 
-    // Об'єднуємо з базовим шляхом (наприклад, /BerserkDle/)
+    // Об'єднуємо з базовим шляхом (наприклад, /)
     return `${import.meta.env.BASE_URL}${cleanPath}`;
 };
 
