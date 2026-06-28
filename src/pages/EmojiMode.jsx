@@ -213,7 +213,7 @@ const EmojiMode = () => {
 
                             <p className="text-5xl md:text-7xl tracking-[0.5em] text-center leading-relaxed select-none" style={{ textShadow: '0 4px 20px rgba(139,92,246,0.3)' }}>
                                 {(() => {
-                                    const emojiArr = Array.from(targetCharacter.emojis);
+                                    const emojiArr = [...new Intl.Segmenter().segment(targetCharacter.emojis)].map(s => s.segment);
                                     const failCount = wrongGuesses.length;
                                     const revealCount = hasWon ? emojiArr.length : Math.min(failCount + 1, emojiArr.length);
                                     return emojiArr.map((emoji, i) => (

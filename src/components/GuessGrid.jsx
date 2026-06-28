@@ -22,7 +22,7 @@ const GuessRow = ({ guess, delay }) => {
     `;
 
     return (
-        <div className="grid grid-cols-8 gap-2 mb-2 animate-fadeIn" style={{ animationDelay: `${delay}ms` }}>
+        <div className="grid grid-cols-7 gap-2 mb-2 animate-fadeIn" style={{ animationDelay: `${delay}ms` }}>
             {/* Character Info */}
             <div className="flex flex-col items-center justify-center p-2 border-2 border-gray-700 bg-gray-800 rounded">
                 <img
@@ -88,7 +88,7 @@ const GuessGrid = ({ guesses }) => {
     return (
         <div className="w-full max-w-5xl mx-auto px-2">
             {/* Header */}
-            <div className="grid grid-cols-8 gap-2 mb-4 text-center text-gray-400 text-xs md:text-sm font-serif uppercase tracking-wider">
+            <div className="grid grid-cols-7 gap-2 mb-4 text-center text-gray-400 text-xs md:text-sm font-serif uppercase tracking-wider">
                 <div>Character</div>
                 <div>Gender</div>
                 <div>Species</div>
