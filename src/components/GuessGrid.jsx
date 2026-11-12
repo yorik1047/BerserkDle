@@ -15,11 +15,17 @@ const resolvePath = (path) => {
 };
 
 const GuessRow = ({ guess, delay }) => {
-    const cellClass = (match) => `
+    const cellClass = (match, partial = false) => `
         flex items-center justify-center p-2 text-center text-sm md:text-base border-2 border-gray-800 rounded
         transition-all duration-500 flip-animate
-        ${match ? 'bg-green-700 border-green-500' : 'bg-red-900/50 border-berserk-red'}
+        ${match
+            ? 'bg-green-700 border-green-500'
+            : partial
+                ? 'bg-amber-600/80 border-amber-400 text-amber-50'
+                : 'bg-red-900/50 border-berserk-red'}
     `;
+
+    const statureAttr = guess.stature || guess.height_cm || { value: '-', match: false, partial: false, direction: 'equal' };
 
     return (
         <div className="grid grid-cols-7 gap-2 mb-2 animate-fadeIn" style={{ animationDelay: `${delay}ms` }}>
@@ -67,12 +73,12 @@ const GuessRow = ({ guess, delay }) => {
                 {guess.hair_color.value}
             </div>
 
-            <div className={cellClass(guess.height_cm.match)}>
+            <div className={cellClass(statureAttr.match, statureAttr.partial)}>
                 <div className="flex flex-col items-center">
-                    <span>{guess.height_cm.value}</span>
-                    {!guess.height_cm.match && (
-                        <span className="text-xl font-bold">
-                            {guess.height_cm.direction === 'up' ? '↑' : '↓'}
+                    <span className="text-xs md:text-sm font-semibold">{statureAttr.value}</span>
+                    {!statureAttr.match && statureAttr.direction && statureAttr.direction !== 'equal' && (
+                        <span className="text-lg font-bold leading-none mt-0.5">
+                            {statureAttr.direction === 'up' ? '↑' : '↓'}
                         </span>
                     )}
                 </div>
@@ -95,7 +101,7 @@ const GuessGrid = ({ guesses }) => {
                 <div>Affiliation</div>
                 <div>Debut Arc</div>
                 <div>Hair</div>
-                <div>Height</div>
+                <div>Stature</div>
             </div>
 
             {/* Rows */}

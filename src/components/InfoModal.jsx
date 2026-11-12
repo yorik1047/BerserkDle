@@ -36,7 +36,7 @@ function InfoModal({ onClose }) {
                             <span>⚔️</span> Objective
                         </h3>
                         <p className="leading-relaxed">
-                            Guess the daily character in as few attempts as possible. Each guess reveals clues about the mystery character.
+                            Guess the daily Berserk character in as few attempts as possible. Each guess reveals attribute comparisons to narrow down the mystery character.
                         </p>
                     </div>
 
@@ -52,15 +52,15 @@ function InfoModal({ onClose }) {
                             </li>
                             <li className="flex items-start gap-2">
                                 <span className="text-gray-600 mt-1">▸</span>
-                                <span>Submit your guess to see attribute comparisons</span>
+                                <span>Submit your guess to see attribute comparisons across 6 lore categories</span>
                             </li>
                             <li className="flex items-start gap-2">
                                 <span className="text-gray-600 mt-1">▸</span>
-                                <span>Use the clues to narrow down your next guess</span>
+                                <span>Use the color clues and directional arrows to narrow down your next guess</span>
                             </li>
                             <li className="flex items-start gap-2">
                                 <span className="text-gray-600 mt-1">▸</span>
-                                <span>After 15 attempts, you can unlock a hint</span>
+                                <span>After 15 attempts, you can unlock an Ancient Whisper lore hint</span>
                             </li>
                         </ul>
                     </div>
@@ -68,38 +68,47 @@ function InfoModal({ onClose }) {
                     {/* Color Guide */}
                     <div>
                         <h3 className="text-red-400 font-bold uppercase tracking-wider text-sm mb-3 flex items-center gap-2">
-                            <span>✦</span> Color Guide
+                            <span>✦</span> Color &amp; Arrow Guide
                         </h3>
                         <div className="space-y-3">
                             {/* Correct Match */}
                             <div className="flex items-center gap-3">
-                                <div className="bg-emerald-900/80 border-2 border-emerald-500 px-4 py-2 rounded shadow-[0_0_15px_rgba(16,185,129,0.4)] min-w-[100px] text-center">
+                                <div className="bg-emerald-900/80 border-2 border-emerald-500 px-4 py-2 rounded shadow-[0_0_15px_rgba(16,185,129,0.4)] min-w-[110px] text-center">
                                     <span className="text-emerald-100 font-bold text-sm">Correct</span>
                                 </div>
                                 <span className="text-sm">Exact match with the mystery character</span>
                             </div>
 
+                            {/* Close Match */}
+                            <div className="flex items-center gap-3">
+                                <div className="bg-amber-600/80 border-2 border-amber-400 px-4 py-2 rounded min-w-[110px] text-center">
+                                    <span className="text-amber-50 font-bold text-sm">Close</span>
+                                </div>
+                                <span className="text-sm">Adjacent tier in Stature (1 step away from the mystery character)</span>
+                            </div>
+
                             {/* Incorrect Match */}
                             <div className="flex items-center gap-3">
-                                <div className="bg-red-950/80 border-2 border-red-900 px-4 py-2 rounded min-w-[100px] text-center">
+                                <div className="bg-red-950/80 border-2 border-red-900 px-4 py-2 rounded min-w-[110px] text-center">
                                     <span className="text-red-200 font-bold text-sm">Incorrect</span>
                                 </div>
-                                <span className="text-sm">Does not match the mystery character</span>
+                                <span className="text-sm">Does not match the mystery character (or 2+ Stature tiers away)</span>
                             </div>
 
-                            {/* Higher/Lower */}
+                            {/* Higher / Later */}
                             <div className="flex items-center gap-3">
-                                <div className="bg-gray-900/80 border-2 border-amber-600/50 px-4 py-2 rounded min-w-[100px] text-center">
+                                <div className="bg-gray-900/80 border-2 border-amber-600/50 px-4 py-2 rounded min-w-[110px] text-center">
                                     <span className="text-amber-400 font-bold text-sm">↑ Higher</span>
                                 </div>
-                                <span className="text-sm">The actual value is higher (for numeric attributes)</span>
+                                <span className="text-sm">Target debuted in a later story arc or has a larger Stature tier</span>
                             </div>
 
+                            {/* Lower / Earlier */}
                             <div className="flex items-center gap-3">
-                                <div className="bg-gray-900/80 border-2 border-amber-600/50 px-4 py-2 rounded min-w-[100px] text-center">
+                                <div className="bg-gray-900/80 border-2 border-amber-600/50 px-4 py-2 rounded min-w-[110px] text-center">
                                     <span className="text-amber-400 font-bold text-sm">↓ Lower</span>
                                 </div>
-                                <span className="text-sm">The actual value is lower (for numeric attributes)</span>
+                                <span className="text-sm">Target debuted in an earlier story arc or has a smaller Stature tier</span>
                             </div>
                         </div>
                     </div>
@@ -110,28 +119,32 @@ function InfoModal({ onClose }) {
                             <span>📜</span> Attributes
                         </h3>
                         <p className="leading-relaxed mb-2">
-                            Each guess compares these attributes:
+                            Each guess compares these 6 attributes:
                         </p>
-                        <div className="grid grid-cols-2 gap-2 text-sm">
+                        <div className="grid grid-cols-2 gap-2 text-sm mb-3">
                             <div className="bg-gray-900/30 border border-gray-800 px-3 py-2 rounded">
-                                <span className="text-gray-500">Name</span>
+                                <span className="text-gray-400 font-semibold">Gender</span>
                             </div>
                             <div className="bg-gray-900/30 border border-gray-800 px-3 py-2 rounded">
-                                <span className="text-gray-500">Gender</span>
+                                <span className="text-gray-400 font-semibold">Species</span>
                             </div>
                             <div className="bg-gray-900/30 border border-gray-800 px-3 py-2 rounded">
-                                <span className="text-gray-500">Race</span>
+                                <span className="text-gray-400 font-semibold">Affiliation</span>
                             </div>
                             <div className="bg-gray-900/30 border border-gray-800 px-3 py-2 rounded">
-                                <span className="text-gray-500">Affiliation</span>
+                                <span className="text-gray-400 font-semibold">Debut Arc (↑ / ↓)</span>
                             </div>
                             <div className="bg-gray-900/30 border border-gray-800 px-3 py-2 rounded">
-                                <span className="text-gray-500">First Appearance</span>
+                                <span className="text-gray-400 font-semibold">Hair Color</span>
                             </div>
                             <div className="bg-gray-900/30 border border-gray-800 px-3 py-2 rounded">
-                                <span className="text-gray-500">Status</span>
+                                <span className="text-gray-400 font-semibold">Stature (↑ / ↓)</span>
                             </div>
                         </div>
+                        <p className="text-xs text-gray-500 leading-relaxed">
+                            <span className="text-amber-500/80 font-semibold">Stature Tiers (Smallest → Largest):</span>{' '}
+                            Tiny → Small → Average → Tall → Massive → Colossal
+                        </p>
                     </div>
 
                     {/* Tips */}
@@ -142,11 +155,11 @@ function InfoModal({ onClose }) {
                         <ul className="space-y-2 leading-relaxed text-sm">
                             <li className="flex items-start gap-2">
                                 <span className="text-amber-600 mt-1">◆</span>
-                                <span>Start with well-known characters to narrow down categories</span>
+                                <span>Start with well-known characters to narrow down factions and story arcs</span>
                             </li>
                             <li className="flex items-start gap-2">
                                 <span className="text-amber-600 mt-1">◆</span>
-                                <span>Pay attention to numeric clues (arrows) for appearance dates</span>
+                                <span>Use directional arrows on Debut Arc and Stature to zero in on the target</span>
                             </li>
                             <li className="flex items-start gap-2">
                                 <span className="text-amber-600 mt-1">◆</span>

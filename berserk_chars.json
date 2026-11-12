@@ -6,11 +6,12 @@
     "species": "Human",
     "affiliation": "Black Swordsman Party",
     "hair_color": "Black",
-    "height_cm": 204,
+    "stature": "Tall",
     "debut_arc": "Black Swordsman Arc",
     "image_url": "guts.jpg",
     "hint": "The struggler who defies destiny.",
-    "emojis": "🗡️🦾🐺😡"
+    "emojis": "🗡️🦾🐺😡",
+    "silhouette_url": "silhouettes/guts.webp"
   },
   {
     "id": 2,
@@ -19,11 +20,12 @@
     "species": "God Hand",
     "affiliation": "God Hand",
     "hair_color": "White",
-    "height_cm": 178,
+    "stature": "Tall",
     "debut_arc": "Golden Age Arc",
     "image_url": "griffith.jpg",
     "hint": "The White Hawk who sacrificed everything.",
-    "emojis": "🦅🏰🗡️👑"
+    "emojis": "🦅🏰🗡️👑",
+    "silhouette_url": "silhouettes/griffith.webp"
   },
   {
     "id": 3,
@@ -32,11 +34,12 @@
     "species": "Human",
     "affiliation": "Black Swordsman Party",
     "hair_color": "Black",
-    "height_cm": 165,
+    "stature": "Average",
     "debut_arc": "Golden Age Arc",
     "image_url": "casca.jpg",
     "hint": "Former commander of the Band of the Hawk.",
-    "emojis": "⚔️🌙💔🛡️"
+    "emojis": "⚔️🌙💔🛡️",
+    "silhouette_url": "silhouettes/casca.webp"
   },
   {
     "id": 4,
@@ -45,11 +48,12 @@
     "species": "Elf",
     "affiliation": "Black Swordsman Party",
     "hair_color": "Blue",
-    "height_cm": 15,
+    "stature": "Tiny",
     "debut_arc": "Black Swordsman Arc",
     "image_url": "puck.jpg",
     "hint": "A wind spirit from Elfhelm.",
-    "emojis": "🧚✨💚😂"
+    "emojis": "🧚✨💚😂",
+    "silhouette_url": "silhouettes/puck.webp"
   },
   {
     "id": 5,
@@ -58,11 +62,12 @@
     "species": "Apostle",
     "affiliation": "Band of the Hawk (Reborn)",
     "hair_color": "Black",
-    "height_cm": 220,
+    "stature": "Colossal",
     "debut_arc": "Golden Age Arc",
     "image_url": "zodd.jpg",
     "hint": "The Immortal seeker of the ultimate strong.",
-    "emojis": "👹⚔️🦇💀"
+    "emojis": "👹⚔️🦇💀",
+    "silhouette_url": "silhouettes/zodd.webp"
   },
   {
     "id": 6,
@@ -71,11 +76,12 @@
     "species": "Human",
     "affiliation": "Black Swordsman Party",
     "hair_color": "Blonde",
-    "height_cm": 162,
+    "stature": "Average",
     "debut_arc": "Conviction Arc",
     "image_url": "farnese.jpg",
     "hint": "Former leader of the Holy Iron Chain Knights.",
-    "emojis": "🔥⛪🙏📿"
+    "emojis": "🔥⛪🙏📿",
+    "silhouette_url": "silhouettes/farnese.webp"
   },
   {
     "id": 7,
@@ -84,11 +90,12 @@
     "species": "Human",
     "affiliation": "Black Swordsman Party",
     "hair_color": "Blonde",
-    "height_cm": 175,
+    "stature": "Tall",
     "debut_arc": "Conviction Arc",
     "image_url": "serpico.jpg",
     "hint": "Possesses the Sylph Sword and Cloak.",
-    "emojis": "💨🗡️🌬️😏"
+    "emojis": "💨🗡️🌬️😏",
+    "silhouette_url": "silhouettes/serpico.webp"
   },
   {
     "id": 8,
@@ -97,11 +104,12 @@
     "species": "Human",
     "affiliation": "Black Swordsman Party",
     "hair_color": "Orange",
-    "height_cm": 135,
+    "stature": "Small",
     "debut_arc": "Conviction Arc",
     "image_url": "isidro.jpg",
     "hint": "Aspires to be the greatest swordsman.",
-    "emojis": "🔥🗡️👦💪"
+    "emojis": "🔥🗡️👦💪",
+    "silhouette_url": "silhouettes/isidro.webp"
   },
   {
     "id": 9,
@@ -110,11 +118,12 @@
     "species": "Human",
     "affiliation": "Black Swordsman Party",
     "hair_color": "Green",
-    "height_cm": 120,
+    "stature": "Small",
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "schierke.jpg",
     "hint": "A young witch in training.",
-    "emojis": "🧙‍♀️🔮🌿📖"
+    "emojis": "🧙‍♀️🔮🌿📖",
+    "silhouette_url": "silhouettes/schierke.webp"
   },
   {
     "id": 10,
@@ -123,11 +132,12 @@
     "species": "Unknown",
     "affiliation": "None",
     "hair_color": "White",
-    "height_cm": 230,
+    "stature": "Massive",
     "debut_arc": "Golden Age Arc",
     "image_url": "skull_knight.jpg",
     "hint": "The foe of the Inhumans.",
-    "emojis": "💀🐴⚔️🌀"
+    "emojis": "💀🐴⚔️🌀",
+    "silhouette_url": "silhouettes/skull_knight.webp"
   },
   {
     "id": 11,
@@ -136,11 +146,12 @@
     "species": "Human",
     "affiliation": "Band of the Hawk",
     "hair_color": "Blonde",
-    "height_cm": 160,
+    "stature": "Average",
     "debut_arc": "Golden Age Arc",
     "image_url": "judeau.jpg",
     "hint": "Jack of all trades in the original Band.",
-    "emojis": "🎯🗡️💛😢"
+    "emojis": "🎯🗡️💛😢",
+    "silhouette_url": "silhouettes/judeau.webp"
   },
   {
     "id": 12,
@@ -149,11 +160,12 @@
     "species": "Human",
     "affiliation": "Band of the Hawk",
     "hair_color": "Black",
-    "height_cm": 190,
+    "stature": "Massive",
     "debut_arc": "Golden Age Arc",
     "image_url": "pippin.jpg",
     "hint": "The silent giant of the original Band.",
-    "emojis": "🛡️🤐💪🪓"
+    "emojis": "🛡️🤐💪🪓",
+    "silhouette_url": "silhouettes/pippin.webp"
   },
   {
     "id": 13,
@@ -162,11 +174,12 @@
     "species": "Human",
     "affiliation": "Band of the Hawk",
     "hair_color": "Black",
-    "height_cm": 170,
+    "stature": "Average",
     "debut_arc": "Golden Age Arc",
     "image_url": "corkus.jpg",
     "hint": "Always cynical and hostile towards Guts.",
-    "emojis": "😤🍺💰🗡️"
+    "emojis": "😤🍺💰🗡️",
+    "silhouette_url": "silhouettes/corkus.webp"
   },
   {
     "id": 14,
@@ -175,11 +188,12 @@
     "species": "Human",
     "affiliation": "Bakiraka",
     "hair_color": "Orange",
-    "height_cm": 165,
+    "stature": "Small",
     "debut_arc": "Golden Age Arc",
     "image_url": "rickert.jpg",
     "hint": "The young survivor of the Eclipse.",
-    "emojis": "🔨✋🏰👦"
+    "emojis": "🔨✋🏰👦",
+    "silhouette_url": "silhouettes/rickert.webp"
   },
   {
     "id": 15,
@@ -188,11 +202,12 @@
     "species": "God Hand",
     "affiliation": "God Hand",
     "hair_color": "None",
-    "height_cm": 265,
+    "stature": "Massive",
     "debut_arc": "Black Swordsman Arc",
     "image_url": "void.jpg",
     "hint": "The brain-exposed leader of the God Hand.",
-    "emojis": "🧠✋🌀👁️"
+    "emojis": "🧠✋🌀👁️",
+    "silhouette_url": "silhouettes/void.webp"
   },
   {
     "id": 16,
@@ -201,11 +216,12 @@
     "species": "God Hand",
     "affiliation": "God Hand",
     "hair_color": "Black",
-    "height_cm": 185,
+    "stature": "Tall",
     "debut_arc": "Black Swordsman Arc",
     "image_url": "slan.jpg",
     "hint": "The Whore Princess of the Uterine Sea.",
-    "emojis": "😈🦇💋🖤"
+    "emojis": "😈🦇💋🖤",
+    "silhouette_url": "silhouettes/slan.webp"
   },
   {
     "id": 17,
@@ -214,11 +230,12 @@
     "species": "God Hand",
     "affiliation": "God Hand",
     "hair_color": "None",
-    "height_cm": 80,
+    "stature": "Tiny",
     "debut_arc": "Black Swordsman Arc",
     "image_url": "ubik.jpg",
     "hint": "The floating manipulator of the God Hand.",
-    "emojis": "👓🫧🎭🤏"
+    "emojis": "👓🫧🎭🤏",
+    "silhouette_url": "silhouettes/ubik.webp"
   },
   {
     "id": 18,
@@ -227,11 +244,12 @@
     "species": "God Hand",
     "affiliation": "God Hand",
     "hair_color": "None",
-    "height_cm": 150,
+    "stature": "Small",
     "debut_arc": "Black Swordsman Arc",
     "image_url": "conrad.jpg",
     "hint": "The pestilence-bringer of the God Hand.",
-    "emojis": "🐀🦠💀🫥"
+    "emojis": "🐀🦠💀🫥",
+    "silhouette_url": "silhouettes/conrad.webp"
   },
   {
     "id": 19,
@@ -240,11 +258,12 @@
     "species": "Apostle",
     "affiliation": "Band of the Hawk (Reborn)",
     "hair_color": "Red",
-    "height_cm": 270,
+    "stature": "Colossal",
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "grunbeld.jpg",
     "hint": "The Great Flame Dragon Apostle.",
-    "emojis": "🐉🔥🛡️⚔️"
+    "emojis": "🐉🔥🛡️⚔️",
+    "silhouette_url": "silhouettes/grunbeld.webp"
   },
   {
     "id": 20,
@@ -253,11 +272,12 @@
     "species": "Apostle",
     "affiliation": "Band of the Hawk (Reborn)",
     "hair_color": "Unknown",
-    "height_cm": 200,
+    "stature": "Massive",
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "locus.jpg",
     "hint": "The Moonlight Knight.",
-    "emojis": "🌙🐴🗡️🦋"
+    "emojis": "🌙🐴🗡️🦋",
+    "silhouette_url": "silhouettes/locus.webp"
   },
   {
     "id": 21,
@@ -266,11 +286,12 @@
     "species": "Apostle",
     "affiliation": "Band of the Hawk (Reborn)",
     "hair_color": "Black",
-    "height_cm": 175,
+    "stature": "Tall",
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "irvine.jpg",
     "hint": "The demonic archer.",
-    "emojis": "🏹🐺🎯😶"
+    "emojis": "🏹🐺🎯😶",
+    "silhouette_url": "silhouettes/irvine.webp"
   },
   {
     "id": 22,
@@ -279,11 +300,12 @@
     "species": "Human",
     "affiliation": "Band of the Hawk (Reborn)",
     "hair_color": "Orange",
-    "height_cm": 140,
+    "stature": "Average",
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "sonia.jpg",
     "hint": "A clairvoyant girl devoted to Griffith.",
-    "emojis": "🔮👁️💫😊"
+    "emojis": "🔮👁️💫😊",
+    "silhouette_url": "silhouettes/sonia.webp"
   },
   {
     "id": 23,
@@ -292,11 +314,12 @@
     "species": "Human",
     "affiliation": "Bakiraka",
     "hair_color": "Blonde",
-    "height_cm": 174,
+    "stature": "Tall",
     "debut_arc": "Golden Age Arc",
     "image_url": "silat.jpg",
     "hint": "Prince of the Bakiraka clan.",
-    "emojis": "🥋🪃⚡👳"
+    "emojis": "🥋🪃⚡👳",
+    "silhouette_url": "silhouettes/silat.webp"
   },
   {
     "id": 24,
@@ -305,11 +328,12 @@
     "species": "Human",
     "affiliation": "Band of the Hawk (Reborn)",
     "hair_color": "Brown",
-    "height_cm": 155,
+    "stature": "Average",
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "mule.jpg",
     "hint": "Sonia's loyal protector.",
-    "emojis": "🛡️❤️🗡️👦"
+    "emojis": "🛡️❤️🗡️👦",
+    "silhouette_url": "silhouettes/mule.webp"
   },
   {
     "id": 25,
@@ -318,11 +342,12 @@
     "species": "Human",
     "affiliation": "Holy See",
     "hair_color": "White",
-    "height_cm": 160,
+    "stature": "Tall",
     "debut_arc": "Conviction Arc",
     "image_url": "azan.jpg",
     "hint": "The Bridge Knight.",
-    "emojis": "🌉🛡️⚔️🧔"
+    "emojis": "🌉🛡️⚔️🧔",
+    "silhouette_url": "silhouettes/azan.webp"
   },
   {
     "id": 26,
@@ -331,11 +356,12 @@
     "species": "Elf",
     "affiliation": "Black Swordsman Party",
     "hair_color": "Pink",
-    "height_cm": 15,
+    "stature": "Tiny",
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "ivalera.jpg",
     "hint": "Schierke's flower spirit companion.",
-    "emojis": "🧚🌸😤💖"
+    "emojis": "🧚🌸😤💖",
+    "silhouette_url": "silhouettes/ivalera.webp"
   },
   {
     "id": 27,
@@ -344,11 +370,12 @@
     "species": "Human",
     "affiliation": "Black Swordsman Party",
     "hair_color": "Black",
-    "height_cm": 180,
+    "stature": "Tall",
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "roderick.jpg",
     "hint": "Captain of the Sea Horse.",
-    "emojis": "⚓🚢🗡️🤵"
+    "emojis": "⚓🚢🗡️🤵",
+    "silhouette_url": "silhouettes/roderick.webp"
   },
   {
     "id": 28,
@@ -357,11 +384,12 @@
     "species": "Human",
     "affiliation": "Mercenary",
     "hair_color": "Black",
-    "height_cm": 180,
+    "stature": "Tall",
     "debut_arc": "Golden Age Arc",
     "image_url": "gambino.jpg",
     "hint": "Guts' alcoholic adoptive father.",
-    "emojis": "🍺⚔️🦿😠"
+    "emojis": "🍺⚔️🦿😠",
+    "silhouette_url": "silhouettes/gambino.webp"
   },
   {
     "id": 29,
@@ -370,11 +398,12 @@
     "species": "Human",
     "affiliation": "None",
     "hair_color": "None",
-    "height_cm": 160,
+    "stature": "Average",
     "debut_arc": "Black Swordsman Arc",
     "image_url": "godot.jpg",
     "hint": "Smith who forged the Dragon Slayer.",
-    "emojis": "🔨🗡️🔥👴"
+    "emojis": "🔨🗡️🔥👴",
+    "silhouette_url": "silhouettes/godot.webp"
   },
   {
     "id": 30,
@@ -383,11 +412,12 @@
     "species": "Apostle",
     "affiliation": "Band of the Hawk (Reborn)",
     "hair_color": "None",
-    "height_cm": 200,
+    "stature": "Massive",
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "rakshas.jpg",
     "hint": "Exiled Bakiraka assassin.",
-    "emojis": "🎭🔪🕷️🌑"
+    "emojis": "🎭🔪🕷️🌑",
+    "silhouette_url": "silhouettes/rakshas.webp"
   },
   {
     "id": 31,
@@ -396,11 +426,12 @@
     "species": "Apostle",
     "affiliation": "None",
     "hair_color": "Purple",
-    "height_cm": 155,
+    "stature": "Small",
     "debut_arc": "Conviction Arc",
     "image_url": "rosine.jpg",
     "hint": "The Queen of the Elves (Moth Apostle).",
-    "emojis": "🦋🧚💜👧"
+    "emojis": "🦋🧚💜👧",
+    "silhouette_url": "silhouettes/rosine.webp"
   },
   {
     "id": 32,
@@ -409,11 +440,12 @@
     "species": "Human",
     "affiliation": "Holy See",
     "hair_color": "Grey",
-    "height_cm": 230,
+    "stature": "Massive",
     "debut_arc": "Conviction Arc",
     "image_url": "mozgus.jpg",
     "hint": "Fanatical Chief Inquisitor.",
-    "emojis": "📖😤👼🔥"
+    "emojis": "📖😤👼🔥",
+    "silhouette_url": "silhouettes/mozgus.webp"
   },
   {
     "id": 33,
@@ -422,11 +454,12 @@
     "species": "Apostle",
     "affiliation": "Kushan",
     "hair_color": "Grey",
-    "height_cm": 250,
+    "stature": "Colossal",
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "ganishka.jpg",
     "hint": "The Kushan Emperor.",
-    "emojis": "⛈️👑🐘😈"
+    "emojis": "⛈️👑🐘😈",
+    "silhouette_url": "silhouettes/ganishka.webp"
   },
   {
     "id": 34,
@@ -435,11 +468,12 @@
     "species": "Human",
     "affiliation": "None",
     "hair_color": "Brown",
-    "height_cm": 165,
+    "stature": "Average",
     "debut_arc": "Conviction Arc",
     "image_url": "luca.jpg",
     "hint": "Protector of the refugees at Albion.",
-    "emojis": "💃❤️🛡️😊"
+    "emojis": "💃❤️🛡️😊",
+    "silhouette_url": "silhouettes/luca.webp"
   },
   {
     "id": 35,
@@ -448,11 +482,12 @@
     "species": "Apostle",
     "affiliation": "Black Dog Knights",
     "hair_color": "White",
-    "height_cm": 210,
+    "stature": "Colossal",
     "debut_arc": "Golden Age Arc",
     "image_url": "wyald.jpg",
     "hint": "Leader of the Black Dog Knights.",
-    "emojis": "🐗💀🤪⚔️"
+    "emojis": "🐗💀🤪⚔️",
+    "silhouette_url": "silhouettes/wyald.webp"
   },
   {
     "id": 36,
@@ -461,11 +496,12 @@
     "species": "Human",
     "affiliation": "Blue Whale Knights",
     "hair_color": "Black",
-    "height_cm": 185,
+    "stature": "Tall",
     "debut_arc": "Golden Age Arc",
     "image_url": "adon.jpg",
     "hint": "Master of the Coborlwitz secret techniques.",
-    "emojis": "🐳🤡🗡️😤"
+    "emojis": "🐳🤡🗡️😤",
+    "silhouette_url": "silhouettes/adon.webp"
   },
   {
     "id": 37,
@@ -474,11 +510,12 @@
     "species": "Apostle",
     "affiliation": "None",
     "hair_color": "Blonde",
-    "height_cm": 200,
+    "stature": "Colossal",
     "debut_arc": "Black Swordsman Arc",
     "image_url": "count.jpg",
     "hint": "Slug-like Apostle who ruled a town.",
-    "emojis": "🐌👨‍👧🏰😈"
+    "emojis": "🐌👨‍👧🏰😈",
+    "silhouette_url": "silhouettes/count.webp"
   },
   {
     "id": 38,
@@ -487,11 +524,12 @@
     "species": "Human",
     "affiliation": "Band of the Hawk",
     "hair_color": "Black",
-    "height_cm": 172,
+    "stature": "Tall",
     "debut_arc": "Golden Age Arc",
     "image_url": "gaston.jpg",
     "hint": "Guts' second-in-command during the raid.",
-    "emojis": "⚔️🪡🤝😢"
+    "emojis": "⚔️🪡🤝😢",
+    "silhouette_url": "silhouettes/gaston.webp"
   },
   {
     "id": 39,
@@ -500,11 +538,12 @@
     "species": "Human",
     "affiliation": "Kushan",
     "hair_color": "Grey",
-    "height_cm": 155,
+    "stature": "Average",
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "daiba.jpg",
     "hint": "Sorcerer advisor to Ganishka.",
-    "emojis": "🧙‍♂️🐘🔮🐊"
+    "emojis": "🧙‍♂️🐘🔮🐊",
+    "silhouette_url": "silhouettes/daiba.webp"
   },
   {
     "id": 40,
@@ -513,11 +552,12 @@
     "species": "Merrow",
     "affiliation": "Black Swordsman Party",
     "hair_color": "Brown",
-    "height_cm": 158,
+    "stature": "Average",
     "debut_arc": "Fantasia Arc",
     "image_url": "isma.jpg",
     "hint": "Girl from the Solitary Island.",
-    "emojis": "🧜‍♀️🏝️🌊😊"
+    "emojis": "🧜‍♀️🏝️🌊😊",
+    "silhouette_url": "silhouettes/isma.webp"
   },
   {
     "id": 41,
@@ -526,11 +566,12 @@
     "species": "Human",
     "affiliation": "Black Swordsman Party",
     "hair_color": "Blonde",
-    "height_cm": 168,
+    "stature": "Average",
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "magnifico.jpg",
     "hint": "Farnese's ambitious brother.",
-    "emojis": "💰😰🎩🏃"
+    "emojis": "💰😰🎩🏃",
+    "silhouette_url": "silhouettes/magnifico.webp"
   },
   {
     "id": 42,
@@ -539,11 +580,12 @@
     "species": "Apostle",
     "affiliation": "None",
     "hair_color": "None",
-    "height_cm": 210,
+    "stature": "Colossal",
     "debut_arc": "Black Swordsman Arc",
     "image_url": "snake_baron.jpg",
     "hint": "The first Apostle slain by Guts in the manga.",
-    "emojis": "🐍🏰⚔️🔥"
+    "emojis": "🐍🏰⚔️🔥",
+    "silhouette_url": "silhouettes/snake_baron.webp"
   },
   {
     "id": 43,
@@ -552,11 +594,12 @@
     "species": "Human",
     "affiliation": "Holy See",
     "hair_color": "Red",
-    "height_cm": 155,
+    "stature": "Average",
     "debut_arc": "Conviction Arc",
     "image_url": "nina.jpg",
     "hint": "Sickly girl who betrayed Casca.",
-    "emojis": "🤒😰🐍💔"
+    "emojis": "🤒😰🐍💔",
+    "silhouette_url": "silhouettes/nina.webp"
   },
   {
     "id": 44,
@@ -565,11 +608,12 @@
     "species": "Human",
     "affiliation": "Holy See",
     "hair_color": "Blonde",
-    "height_cm": 178,
+    "stature": "Tall",
     "debut_arc": "Conviction Arc",
     "image_url": "jerome.jpg",
     "hint": "Knight who loved Luca.",
-    "emojis": "⚔️❤️🛡️😏"
+    "emojis": "⚔️❤️🛡️😏",
+    "silhouette_url": "silhouettes/jerome.webp"
   },
   {
     "id": 45,
@@ -578,11 +622,12 @@
     "species": "Human",
     "affiliation": "Purple Rhino Knights",
     "hair_color": "Black",
-    "height_cm": 205,
+    "stature": "Massive",
     "debut_arc": "Golden Age Arc",
     "image_url": "boscogn.jpg",
     "hint": "General of the Purple Rhino Knights.",
-    "emojis": "🦏🗡️💪🏰"
+    "emojis": "🦏🗡️💪🏰",
+    "silhouette_url": "silhouettes/boscogn.webp"
   },
   {
     "id": 46,
@@ -591,11 +636,12 @@
     "species": "Human",
     "affiliation": "Midland",
     "hair_color": "Blonde",
-    "height_cm": 176,
+    "stature": "Tall",
     "debut_arc": "Golden Age Arc",
     "image_url": "julius.jpg",
     "hint": "Adonis's father.",
-    "emojis": "👑🗡️😠🩸"
+    "emojis": "👑🗡️😠🩸",
+    "silhouette_url": "silhouettes/julius.webp"
   },
   {
     "id": 47,
@@ -604,11 +650,12 @@
     "species": "Human",
     "affiliation": "Midland",
     "hair_color": "Grey",
-    "height_cm": 170,
+    "stature": "Tall",
     "debut_arc": "Golden Age Arc",
     "image_url": "midland_king.jpg",
     "hint": "Unhealthily obsessed with his daughter.",
-    "emojis": "👑🤴😰🏰"
+    "emojis": "👑🤴😰🏰",
+    "silhouette_url": "silhouettes/midland_king.webp"
   },
   {
     "id": 48,
@@ -617,11 +664,12 @@
     "species": "Human",
     "affiliation": "Midland",
     "hair_color": "Brown",
-    "height_cm": 155,
+    "stature": "Average",
     "debut_arc": "Golden Age Arc",
     "image_url": "foss.jpg",
     "hint": "Cunning minister of Midland.",
-    "emojis": "🐍📜🤫🏛️"
+    "emojis": "🐍📜🤫🏛️",
+    "silhouette_url": "silhouettes/foss.webp"
   },
   {
     "id": 50,
@@ -630,11 +678,12 @@
     "species": "Elf",
     "affiliation": "Elfhelm",
     "hair_color": "Pink",
-    "height_cm": 170,
+    "stature": "Average",
     "debut_arc": "Fantasia Arc",
     "image_url": "danan.jpg",
     "hint": "The Flower Storm Monarch.",
-    "emojis": "🌸👑🧚🌺"
+    "emojis": "🌸👑🧚🌺",
+    "silhouette_url": "silhouettes/danan.webp"
   },
   {
     "id": 51,
@@ -643,11 +692,12 @@
     "species": "Human",
     "affiliation": "None",
     "hair_color": "Grey",
-    "height_cm": 160,
+    "stature": "Average",
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "flora.jpg",
     "hint": "Schierke's mistress in the Spirit Tree.",
-    "emojis": "🌳🧙‍♀️📖🕯️"
+    "emojis": "🌳🧙‍♀️📖🕯️",
+    "silhouette_url": "silhouettes/flora.webp"
   },
   {
     "id": 52,
@@ -656,11 +706,12 @@
     "species": "Human",
     "affiliation": "Midland",
     "hair_color": "Grey",
-    "height_cm": 165,
+    "stature": "Tall",
     "debut_arc": "Golden Age Arc",
     "image_url": "gennon.jpg",
     "hint": "Governor of Doldrey who loved Griffith.",
-    "emojis": "🏰🤢💰👴"
+    "emojis": "🏰🤢💰👴",
+    "silhouette_url": "silhouettes/gennon.webp"
   },
   {
     "id": 53,
@@ -669,11 +720,12 @@
     "species": "Human",
     "affiliation": "Midland",
     "hair_color": "Blonde",
-    "height_cm": 150,
+    "stature": "Small",
     "debut_arc": "Golden Age Arc",
     "image_url": "adonis.jpg",
     "hint": "Julius's young son.",
-    "emojis": "👦🗡️😇😢"
+    "emojis": "👦🗡️😇😢",
+    "silhouette_url": "silhouettes/adonis.webp"
   },
   {
     "id": 54,
@@ -682,11 +734,12 @@
     "species": "Human",
     "affiliation": "Blue Whale Knights",
     "hair_color": "Black",
-    "height_cm": 205,
+    "stature": "Massive",
     "debut_arc": "Golden Age Arc",
     "image_url": "samson.jpg",
     "hint": "Coborlwitz brother with heavy armor.",
-    "emojis": "🐳🛡️💪⚔️"
+    "emojis": "🐳🛡️💪⚔️",
+    "silhouette_url": "silhouettes/samson.webp"
   },
   {
     "id": 55,
@@ -695,11 +748,12 @@
     "species": "Human",
     "affiliation": "Midland",
     "hair_color": "Brown",
-    "height_cm": 160,
+    "stature": "Average",
     "debut_arc": "Golden Age Arc",
     "image_url": "anna.jpg",
     "hint": "Charlotte's friend/maid.",
-    "emojis": "👗🏰🤝👸"
+    "emojis": "👗🏰🤝👸",
+    "silhouette_url": "silhouettes/anna.webp"
   },
   {
     "id": 56,
@@ -708,11 +762,12 @@
     "species": "Apostle",
     "affiliation": "None",
     "hair_color": "None",
-    "height_cm": 100,
+    "stature": "Small",
     "debut_arc": "Conviction Arc",
     "image_url": "egg_apostle.jpg",
     "hint": "The incubator for the new world.",
-    "emojis": "🥚🌍😢🔴"
+    "emojis": "🥚🌍😢🔴",
+    "silhouette_url": "silhouettes/egg_apostle.webp"
   },
   {
     "id": 57,
@@ -721,11 +776,12 @@
     "species": "Human",
     "affiliation": "Holy See",
     "hair_color": "Brown",
-    "height_cm": 170,
+    "stature": "Tall",
     "debut_arc": "Conviction Arc",
     "image_url": "joachim.jpg",
     "hint": "Attempted to escape Albion with Nina.",
-    "emojis": "🏃❤️😰⛪"
+    "emojis": "🏃❤️😰⛪",
+    "silhouette_url": "silhouettes/joachim.webp"
   },
   {
     "id": 58,
@@ -734,11 +790,12 @@
     "species": "Human",
     "affiliation": "Band of the Hawk (Reborn)",
     "hair_color": "Blonde",
-    "height_cm": 180,
+    "stature": "Tall",
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "owen.jpg",
     "hint": "A noble commander in the new Band.",
-    "emojis": "⚔️🏰🤝👑"
+    "emojis": "⚔️🏰🤝👑",
+    "silhouette_url": "silhouettes/owen.webp"
   },
   {
     "id": 59,
@@ -747,11 +804,12 @@
     "species": "Human",
     "affiliation": "Band of the Hawk (Reborn)",
     "hair_color": "Brown",
-    "height_cm": 185,
+    "stature": "Tall",
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "laban.jpg",
     "hint": "A pragmatic commander in the new Band.",
-    "emojis": "⚔️🛡️🤔🏰"
+    "emojis": "⚔️🛡️🤔🏰",
+    "silhouette_url": "silhouettes/laban.webp"
   },
   {
     "id": 60,
@@ -760,11 +818,12 @@
     "species": "Human",
     "affiliation": "Elfhelm",
     "hair_color": "Black",
-    "height_cm": 165,
+    "stature": "Average",
     "debut_arc": "Fantasia Arc",
     "image_url": "morda.jpg",
     "hint": "A rebellious witch.",
-    "emojis": "🔮😤🧹💥"
+    "emojis": "🔮😤🧹💥",
+    "silhouette_url": "silhouettes/morda.webp"
   },
   {
     "id": 61,
@@ -773,11 +832,12 @@
     "species": "Merrow",
     "affiliation": "None",
     "hair_color": "Unknown",
-    "height_cm": 250,
+    "stature": "Colossal",
     "debut_arc": "Fantasia Arc",
     "image_url": "merrow_queen.jpg",
     "hint": "Isma's true mother.",
-    "emojis": "🧜‍♀️👑🌊💙"
+    "emojis": "🧜‍♀️👑🌊💙",
+    "silhouette_url": "silhouettes/merrow_queen.webp"
   },
   {
     "id": 62,
@@ -786,11 +846,12 @@
     "species": "Human",
     "affiliation": "None",
     "hair_color": "Brown",
-    "height_cm": 150,
+    "stature": "Small",
     "debut_arc": "Black Swordsman Arc",
     "image_url": "theresia.jpg",
     "hint": "The Count's daughter, swore revenge on Guts.",
-    "emojis": "😢👧🔪💔"
+    "emojis": "😢👧🔪💔",
+    "silhouette_url": "silhouettes/theresia.webp"
   },
   {
     "id": 63,
@@ -799,11 +860,12 @@
     "species": "Apostle",
     "affiliation": "Band of the Hawk (Reborn)",
     "hair_color": "None",
-    "height_cm": 300,
+    "stature": "Colossal",
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "borkoff.jpg",
     "hint": "The Apostle who bit off Guts's arm (in the eclipse hallucination/event).",
-    "emojis": "🐕💀🦷👹"
+    "emojis": "🐕💀🦷👹",
+    "silhouette_url": "silhouettes/borkoff.webp"
   },
   {
     "id": 64,
@@ -812,11 +874,12 @@
     "species": "Human",
     "affiliation": "Midland",
     "hair_color": "Unknown",
-    "height_cm": 210,
+    "stature": "Massive",
     "debut_arc": "Golden Age Arc",
     "image_url": "zondark.jpg",
     "hint": "Captain of the guard defeated by Guts.",
-    "emojis": "⚔️🛡️👊😠"
+    "emojis": "⚔️🛡️👊😠",
+    "silhouette_url": "silhouettes/zondark.webp"
   },
   {
     "id": 65,
@@ -825,11 +888,12 @@
     "species": "Human",
     "affiliation": "None",
     "hair_color": "Unknown",
-    "height_cm": 230,
+    "stature": "Massive",
     "debut_arc": "Golden Age Arc",
     "image_url": "gaiseric.jpg",
     "hint": "The Supreme King who united the continent.",
-    "emojis": "💀👑🏛️⚔️"
+    "emojis": "💀👑🏛️⚔️",
+    "silhouette_url": "silhouettes/gaiseric.webp"
   },
   {
     "id": 66,
@@ -838,11 +902,12 @@
     "species": "Human",
     "affiliation": "None",
     "hair_color": "Grey",
-    "height_cm": 160,
+    "stature": "Average",
     "debut_arc": "Black Swordsman Arc",
     "image_url": "vargas.jpg",
     "hint": "Stole the Beherit from the Count.",
-    "emojis": "🔴😰🩸🏃"
+    "emojis": "🔴😰🩸🏃",
+    "silhouette_url": "silhouettes/vargas.webp"
   },
   {
     "id": 67,
@@ -851,11 +916,12 @@
     "species": "Human",
     "affiliation": "None",
     "hair_color": "Brown",
-    "height_cm": 140,
+    "stature": "Small",
     "debut_arc": "Conviction Arc",
     "image_url": "pepe.jpg",
     "hint": "A child refugee at Albion.",
-    "emojis": "👧😢⛪🤝"
+    "emojis": "👧😢⛪🤝",
+    "silhouette_url": "silhouettes/pepe.webp"
   },
   {
     "id": 69,
@@ -864,11 +930,12 @@
     "species": "Unknown",
     "affiliation": "Black Swordsman Party",
     "hair_color": "Black",
-    "height_cm": 120,
+    "stature": "Small",
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "moonlight_boy.jpg",
     "hint": "Appears on full moon nights.",
-    "emojis": "🌕👦✨🤫"
+    "emojis": "🌕👦✨🤫",
+    "silhouette_url": "silhouettes/moonlight_boy.webp"
   },
   {
     "id": 70,
@@ -877,11 +944,12 @@
     "species": "Unknown",
     "affiliation": "Black Swordsman Party",
     "hair_color": "Black",
-    "height_cm": 200,
+    "stature": "Massive",
     "debut_arc": "Conviction Arc",
     "image_url": "beast_of_darkness.jpg",
     "hint": "The manifestation of Guts' inner darkness.",
-    "emojis": "🐺🌑😈🔥"
+    "emojis": "🐺🌑😈🔥",
+    "silhouette_url": "silhouettes/beast_of_darkness.webp"
   },
   {
     "id": 72,
@@ -890,11 +958,12 @@
     "species": "Human",
     "affiliation": "Midland",
     "hair_color": "Brown",
-    "height_cm": 160,
+    "stature": "Average",
     "debut_arc": "Golden Age Arc",
     "image_url": "charlotte.jpg",
     "hint": "The Princess of Midland.",
-    "emojis": "👸🏰💕😢"
+    "emojis": "👸🏰💕😢",
+    "silhouette_url": "silhouettes/charlotte.webp"
   },
   {
     "id": 73,
@@ -903,11 +972,12 @@
     "species": "Human",
     "affiliation": "None",
     "hair_color": "Brown",
-    "height_cm": 140,
+    "stature": "Small",
     "debut_arc": "Conviction Arc",
     "image_url": "jill.jpg",
     "hint": "A village girl who befriended Puck.",
-    "emojis": "👧🦋🏡😢"
+    "emojis": "👧🦋🏡😢",
+    "silhouette_url": "silhouettes/jill.webp"
   },
   {
     "id": 74,
@@ -916,11 +986,12 @@
     "species": "Human",
     "affiliation": "Pirates",
     "hair_color": "Black",
-    "height_cm": 190,
+    "stature": "Tall",
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "bonebeard.jpg",
     "hint": "Pirate Captain employed by Kushan.",
-    "emojis": "🏴‍☠️💀⚓🗡️"
+    "emojis": "🏴‍☠️💀⚓🗡️",
+    "silhouette_url": "silhouettes/bonebeard.webp"
   },
   {
     "id": 75,
@@ -929,11 +1000,12 @@
     "species": "Elf",
     "affiliation": "None",
     "hair_color": "Green",
-    "height_cm": 10,
+    "stature": "Tiny",
     "debut_arc": "Golden Age Arc",
     "image_url": "chitch.jpg",
     "hint": "Flower spirit Guts met in jail.",
-    "emojis": "🌼🧚😢💚"
+    "emojis": "🌼🧚😢💚",
+    "silhouette_url": "silhouettes/chitch.webp"
   },
   {
     "id": 76,
@@ -942,11 +1014,12 @@
     "species": "Human",
     "affiliation": "Mercenary",
     "hair_color": "None",
-    "height_cm": 200,
+    "stature": "Massive",
     "debut_arc": "Golden Age Arc",
     "image_url": "donovan.jpg",
     "hint": "The mercenary who bought Guts.",
-    "emojis": "💰😈🌑💢"
+    "emojis": "💰😈🌑💢",
+    "silhouette_url": "silhouettes/donovan.webp"
   },
   {
     "id": 77,
@@ -955,11 +1028,12 @@
     "species": "Human",
     "affiliation": "Bakiraka",
     "hair_color": "None",
-    "height_cm": 230,
+    "stature": "Massive",
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "tapasa.jpg",
     "hint": "One of Silat's muscle bodyguards.",
-    "emojis": "💪🥋🛡️🤐"
+    "emojis": "💪🥋🛡️🤐",
+    "silhouette_url": "silhouettes/tapasa.webp"
   },
   {
     "id": 78,
@@ -968,11 +1042,12 @@
     "species": "Human",
     "affiliation": "Holy See",
     "hair_color": "None",
-    "height_cm": 130,
+    "stature": "Small",
     "debut_arc": "Conviction Arc",
     "image_url": "imp.jpg",
     "hint": "Small spirit haunting people.",
-    "emojis": "👿🔥😈👻"
+    "emojis": "👿🔥😈👻",
+    "silhouette_url": "silhouettes/imp.webp"
   },
   {
     "id": 79,
@@ -981,11 +1056,12 @@
     "species": "Human",
     "affiliation": "Elfhelm",
     "hair_color": "Grey",
-    "height_cm": 160,
+    "stature": "Tall",
     "debut_arc": "Fantasia Arc",
     "image_url": "gedfring.jpg",
     "hint": "A Great Wizard of Skellig.",
-    "emojis": "🧙‍♂️📖✨🏝️"
+    "emojis": "🧙‍♂️📖✨🏝️",
+    "silhouette_url": "silhouettes/gedfring.webp"
   },
   {
     "id": 80,
@@ -994,11 +1070,12 @@
     "species": "Human",
     "affiliation": "Elfhelm",
     "hair_color": "Black",
-    "height_cm": 155,
+    "stature": "Average",
     "debut_arc": "Fantasia Arc",
     "image_url": "moll.jpg",
     "hint": "A witch of Skellig.",
-    "emojis": "🧹🔮🏝️😊"
+    "emojis": "🧹🔮🏝️😊",
+    "silhouette_url": "silhouettes/moll.webp"
   },
   {
     "id": 81,
@@ -1007,11 +1084,12 @@
     "species": "Human",
     "affiliation": "Midland",
     "hair_color": "Blonde",
-    "height_cm": 165,
+    "stature": "Average",
     "debut_arc": "Golden Age Arc",
     "image_url": "midland_queen.jpg",
     "hint": "Step-mother of Charlotte.",
-    "emojis": "👑🐍🔥😈"
+    "emojis": "👑🐍🔥😈",
+    "silhouette_url": "silhouettes/midland_queen.webp"
   },
   {
     "id": 82,
@@ -1020,11 +1098,12 @@
     "species": "Human",
     "affiliation": "Vandimion Family",
     "hair_color": "White",
-    "height_cm": 175,
+    "stature": "Tall",
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "federico.jpg",
     "hint": "Head of the Vandimion family.",
-    "emojis": "💰🏛️👨‍👧⚖️"
+    "emojis": "💰🏛️👨‍👧⚖️",
+    "silhouette_url": "silhouettes/federico.webp"
   },
   {
     "id": 84,
@@ -1033,11 +1112,12 @@
     "species": "Human",
     "affiliation": "None",
     "hair_color": "Grey",
-    "height_cm": 155,
+    "stature": "Average",
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "morgan.jpg",
     "hint": "Elder of Enoch Village.",
-    "emojis": "👴🏘️📖🤔"
+    "emojis": "👴🏘️📖🤔",
+    "silhouette_url": "silhouettes/morgan.webp"
   },
   {
     "id": 85,
@@ -1046,11 +1126,12 @@
     "species": "Human",
     "affiliation": "None",
     "hair_color": "Brown",
-    "height_cm": 130,
+    "stature": "Small",
     "debut_arc": "Black Swordsman Arc",
     "image_url": "collette.jpg",
     "hint": "Girl killed in the first chapter.",
-    "emojis": "👧🌼💀😢"
+    "emojis": "👧🌼💀😢",
+    "silhouette_url": "silhouettes/collette.webp"
   },
   {
     "id": 86,
@@ -1059,11 +1140,12 @@
     "species": "Apostle",
     "affiliation": "God Hand",
     "hair_color": "Black",
-    "height_cm": 170,
+    "stature": "Tall",
     "debut_arc": "Black Swordsman Arc",
     "image_url": "female_apostle.jpg",
     "hint": "Killed Corkus during the Eclipse.",
-    "emojis": "💋😈🌑💀"
+    "emojis": "💋😈🌑💀",
+    "silhouette_url": "silhouettes/female_apostle.webp"
   },
   {
     "id": 87,
@@ -1072,11 +1154,12 @@
     "species": "Human",
     "affiliation": "Holy See",
     "hair_color": "White",
-    "height_cm": 160,
+    "stature": "Tall",
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "pontiff.jpg",
     "hint": "Religious leader of the Holy See.",
-    "emojis": "⛪📿👑🙏"
+    "emojis": "⛪📿👑🙏",
+    "silhouette_url": "silhouettes/pontiff.webp"
   },
   {
     "id": 88,
@@ -1085,11 +1168,12 @@
     "species": "Human",
     "affiliation": "Bakiraka",
     "hair_color": "Black",
-    "height_cm": 170,
+    "stature": "Tall",
     "debut_arc": "Golden Age Arc",
     "image_url": "hassan.jpg",
     "hint": "Silent Bakiraka assassin.",
-    "emojis": "🥷🔪🤐🌑"
+    "emojis": "🥷🔪🤐🌑",
+    "silhouette_url": "silhouettes/hassan.webp"
   },
   {
     "id": 90,
@@ -1098,11 +1182,12 @@
     "species": "Apostle",
     "affiliation": "Kushan",
     "hair_color": "None",
-    "height_cm": 350,
+    "stature": "Colossal",
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "makara.jpg",
     "hint": "Amphibious Kushan Apostle.",
-    "emojis": "🐊🌊👹💀"
+    "emojis": "🐊🌊👹💀",
+    "silhouette_url": "silhouettes/makara.webp"
   },
   {
     "id": 91,
@@ -1111,11 +1196,12 @@
     "species": "Apostle",
     "affiliation": "Kushan",
     "hair_color": "None",
-    "height_cm": 500,
+    "stature": "Colossal",
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "kundalini.jpg",
     "hint": "Huge snake-like Kushan Apostle.",
-    "emojis": "🐍👹🌊💀"
+    "emojis": "🐍👹🌊💀",
+    "silhouette_url": "silhouettes/kundalini.webp"
   },
   {
     "id": 92,
@@ -1124,11 +1210,12 @@
     "species": "Unknown",
     "affiliation": "None",
     "hair_color": "None",
-    "height_cm": 999,
+    "stature": "Colossal",
     "debut_arc": "Fantasia Arc",
     "image_url": "sea_god.jpg",
     "hint": "Giant Lovecraftian entity.",
-    "emojis": "🌊🐙❤️💀"
+    "emojis": "🌊🐙❤️💀",
+    "silhouette_url": "silhouettes/sea_god.webp"
   },
   {
     "id": 93,
@@ -1137,11 +1224,12 @@
     "species": "Human",
     "affiliation": "Elfhelm",
     "hair_color": "White",
-    "height_cm": 160,
+    "stature": "Average",
     "debut_arc": "Fantasia Arc",
     "image_url": "shiz.jpg",
     "hint": "Son of Gedfring.",
-    "emojis": "🧙‍♂️📖🏝️👦"
+    "emojis": "🧙‍♂️📖🏝️👦",
+    "silhouette_url": "silhouettes/shiz.webp"
   },
   {
     "id": 94,
@@ -1150,11 +1238,12 @@
     "species": "Human",
     "affiliation": "Mercenary",
     "hair_color": "Brown",
-    "height_cm": 150,
+    "stature": "Tall",
     "debut_arc": "Golden Age Arc",
     "image_url": "martino.jpg",
     "hint": "Gambino's mercenary friend.",
-    "emojis": "⚔️🍺🤝🏕️"
+    "emojis": "⚔️🍺🤝🏕️",
+    "silhouette_url": "silhouettes/martino.webp"
   },
   {
     "id": 95,
@@ -1163,11 +1252,12 @@
     "species": "Human",
     "affiliation": "None",
     "hair_color": "Grey",
-    "height_cm": 165,
+    "stature": "Tall",
     "debut_arc": "Black Swordsman Arc",
     "image_url": "corneal.jpg",
     "hint": "Mayor of the town ruled by the Count.",
-    "emojis": "🏘️😰👴🐌"
+    "emojis": "🏘️😰👴🐌",
+    "silhouette_url": "silhouettes/corneal.webp"
   },
   {
     "id": 96,
@@ -1176,11 +1266,12 @@
     "species": "Human",
     "affiliation": "Holy See",
     "hair_color": "None",
-    "height_cm": 180,
+    "stature": "Tall",
     "debut_arc": "Conviction Arc",
     "image_url": "angel_face.jpg",
     "hint": "One of Mozgus's torturers.",
-    "emojis": "😇🔨⛪😈"
+    "emojis": "😇🔨⛪😈",
+    "silhouette_url": "silhouettes/angel_face.webp"
   },
   {
     "id": 97,
@@ -1189,11 +1280,12 @@
     "species": "Human",
     "affiliation": "Holy See",
     "hair_color": "None",
-    "height_cm": 175,
+    "stature": "Average",
     "debut_arc": "Conviction Arc",
     "image_url": "bubble.jpg",
     "hint": "One of Mozgus's torturers.",
-    "emojis": "🫧🔨⛪😈"
+    "emojis": "🫧🔨⛪😈",
+    "silhouette_url": "silhouettes/bubble.webp"
   },
   {
     "id": 98,
@@ -1202,11 +1294,12 @@
     "species": "Dwarf",
     "affiliation": "Elfhelm",
     "hair_color": "White",
-    "height_cm": 130,
+    "stature": "Small",
     "debut_arc": "Fantasia Arc",
     "image_url": "hanarr.jpg",
     "hint": "The Master Smith who created the Berserker Armor.",
-    "emojis": "🔨⚒️🐺🔥"
+    "emojis": "🔨⚒️🐺🔥",
+    "silhouette_url": "silhouettes/hanarr.webp"
   },
   {
     "id": 99,
@@ -1215,11 +1308,12 @@
     "species": "Apostle",
     "affiliation": "Cultists",
     "hair_color": "Brown",
-    "height_cm": 250,
+    "stature": "Colossal",
     "debut_arc": "Conviction Arc",
     "image_url": "great_goat.jpg",
     "hint": "Goat-headed pagan deity/Apostle.",
-    "emojis": "🐐🔥😈🌑"
+    "emojis": "🐐🔥😈🌑",
+    "silhouette_url": "silhouettes/great_goat.webp"
   },
   {
     "id": 100,
@@ -1228,11 +1322,12 @@
     "species": "Unknown",
     "affiliation": "None",
     "hair_color": "None",
-    "height_cm": 50,
+    "stature": "Tiny",
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "schnoz.jpg",
     "hint": "The internet's favorite apostle (Just a nose).",
-    "emojis": "👃😂🤏✨"
+    "emojis": "👃😂🤏✨",
+    "silhouette_url": "silhouettes/schnoz.webp"
   },
   {
     "id": 101,
@@ -1241,11 +1336,12 @@
     "species": "Human",
     "affiliation": "None",
     "hair_color": "Grey",
-    "height_cm": 150,
+    "stature": "Average",
     "debut_arc": "Golden Age Arc",
     "image_url": "fortune_teller.jpg",
     "hint": "Gave Griffith the Beherit?",
-    "emojis": "🔮🔴👵🌀"
+    "emojis": "🔮🔴👵🌀",
+    "silhouette_url": "silhouettes/fortune_teller.webp"
   },
   {
     "id": 102,
@@ -1254,11 +1350,12 @@
     "species": "Human",
     "affiliation": "Chuder",
     "hair_color": "Black",
-    "height_cm": 185,
+    "stature": "Tall",
     "debut_arc": "Golden Age Arc",
     "image_url": "gien.jpg",
     "hint": "General of Chuder.",
-    "emojis": "⚔️🏰🐎💀"
+    "emojis": "⚔️🏰🐎💀",
+    "silhouette_url": "silhouettes/gien.webp"
   },
   {
     "id": 103,
@@ -1267,11 +1364,12 @@
     "species": "Human",
     "affiliation": "Vandimion Family",
     "hair_color": "Blonde",
-    "height_cm": 165,
+    "stature": "Average",
     "debut_arc": "Millennium Falcon Arc",
     "image_url": "lady_vandimion.jpg",
     "hint": "Farnese's mother.",
-    "emojis": "👩💰🏛️😔"
+    "emojis": "👩💰🏛️😔",
+    "silhouette_url": "silhouettes/lady_vandimion.webp"
   },
   {
     "id": 104,
@@ -1280,11 +1378,12 @@
     "species": "Human",
     "affiliation": "Midland",
     "hair_color": "None",
-    "height_cm": 160,
+    "stature": "Average",
     "debut_arc": "Golden Age Arc",
     "image_url": "torturer.jpg",
     "hint": "Tortured Griffith in the Tower of Rebirth.",
-    "emojis": "🔧😈🏰🩸"
+    "emojis": "🔧😈🏰🩸",
+    "silhouette_url": "silhouettes/torturer.webp"
   },
   {
     "id": 105,
@@ -1293,11 +1392,12 @@
     "species": "Human",
     "affiliation": "Bakiraka",
     "hair_color": "None",
-    "height_cm": 165,
+    "stature": "Tall",
     "debut_arc": "Golden Age Arc",
     "image_url": "bakiraka.jpg",
     "hint": "Scout for the Bakiraka.",
-    "emojis": "🥷👀🔪🌑"
+    "emojis": "🥷👀🔪🌑",
+    "silhouette_url": "silhouettes/bakiraka.webp"
   },
   {
     "id": 106,
@@ -1306,11 +1406,12 @@
     "species": "Human",
     "affiliation": "Holy See",
     "hair_color": "None",
-    "height_cm": 200,
+    "stature": "Tall",
     "debut_arc": "Conviction Arc",
     "image_url": "bird_mask.jpg",
     "hint": "One of Mozgus's torturers.",
-    "emojis": "🐦🎭🔨⛪"
+    "emojis": "🐦🎭🔨⛪",
+    "silhouette_url": "silhouettes/bird_mask.webp"
   },
   {
     "id": 107,
@@ -1319,11 +1420,12 @@
     "species": "Human",
     "affiliation": "Holy See",
     "hair_color": "None",
-    "height_cm": 210,
+    "stature": "Massive",
     "debut_arc": "Conviction Arc",
     "image_url": "twin_a.jpg",
     "hint": "One of Mozgus's torturer twins.",
-    "emojis": "👬🔨⛪💪"
+    "emojis": "👬🔨⛪💪",
+    "silhouette_url": "silhouettes/twin_a.webp"
   },
   {
     "id": 108,
@@ -1332,11 +1434,12 @@
     "species": "Human",
     "affiliation": "Holy See",
     "hair_color": "None",
-    "height_cm": 210,
+    "stature": "Massive",
     "debut_arc": "Conviction Arc",
     "image_url": "twin_b.jpg",
     "hint": "One of Mozgus's torturer twins.",
-    "emojis": "👬🔨⛪💪"
+    "emojis": "👬🔨⛪💪",
+    "silhouette_url": "silhouettes/twin_b.webp"
   },
   {
     "id": 109,
@@ -1345,11 +1448,12 @@
     "species": "Human",
     "affiliation": "None",
     "hair_color": "Blonde",
-    "height_cm": 165,
+    "stature": "Average",
     "debut_arc": "Black Swordsman Arc",
     "image_url": "countess.jpg",
     "hint": "The Count's wife.",
-    "emojis": "👩🐍🌑💀"
+    "emojis": "👩🐍🌑💀",
+    "silhouette_url": "silhouettes/countess.webp"
   },
   {
     "id": 110,
@@ -1358,11 +1462,12 @@
     "species": "Human",
     "affiliation": "None",
     "hair_color": "Brown",
-    "height_cm": 155,
+    "stature": "Average",
     "debut_arc": "Black Swordsman Arc",
     "image_url": "theresia.jpg",
     "hint": "Theresia.",
-    "emojis": "👧🏰😢🔪"
+    "emojis": "👧🏰😢🔪",
+    "silhouette_url": "silhouettes/theresia.webp"
   },
   {
     "id": 111,
@@ -1371,10 +1476,11 @@
     "species": "Human",
     "affiliation": "None",
     "hair_color": "None",
-    "height_cm": 150,
+    "stature": "Average",
     "debut_arc": "Golden Age Arc",
     "image_url": "conrad_human.jpg",
     "hint": "The human form of Conrad visible in memories/background.",
-    "emojis": "🐀🦠🫥👤"
+    "emojis": "🐀🦠🫥👤",
+    "silhouette_url": "silhouettes/conrad_human.webp"
   }
 ]

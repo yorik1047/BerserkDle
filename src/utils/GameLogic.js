@@ -41,13 +41,15 @@ export const guessToEmojiRow = (guess) => {
         return '🟥';
     };
 
+    const statureAttr = guess.stature || guess.height_cm;
+
     return [
         boolEmoji(guess.gender),
         boolEmoji(guess.species),
         boolEmoji(guess.affiliation),
         dirEmoji(guess.debut_arc),
         boolEmoji(guess.hair_color),
-        dirEmoji(guess.height_cm),
+        dirEmoji(statureAttr),
     ].join('');
 };
 
@@ -83,49 +85,21 @@ export const copyToClipboard = async (text) => {
     }
 };
 
-export const compareAttributes = (guess, target) => {
-    return {
-        id: guess.id,
-        name: { 
-            value: guess.name, 
-            match: guess.id === target.id 
-        },
-        gender: { 
-            value: guess.gender, 
-            match: guess.gender === target.gender 
-        },
-        species: { 
-            value: guess.species, 
-            match: guess.species === target.species 
-        },
-        affiliation: { 
-            value: guess.affiliation, 
-            match: guess.affiliation === target.affiliation 
-        },
-        debut_arc: {
-            value: guess.debut_arc,
-            match: guess.debut_arc === target.debut_arc,
-            direction: getArcDirection(guess.debut_arc, target.debut_arc)
-        },
-        hair_color: { 
-            value: guess.hair_color, 
-            match: guess.hair_color === target.hair_color 
-        },
-        height_cm: { 
-            value: guess.height_cm, 
-            match: guess.height_cm === target.height_cm,
-            direction: guess.height_cm < target.height_cm ? 'up' : (guess.height_cm > target.height_cm ? 'down' : 'equal')
-        },
-        image_url: guess.image_url
-    };
-};
-
-const ARC_ORDER = [
-    "Black Swordsman Arc", 
-    "Golden Age Arc", 
-    "Conviction Arc", 
-    "Millennium Falcon Arc", 
+export const ARC_ORDER = [
+    "Black Swordsman Arc",
+    "Golden Age Arc",
+    "Conviction Arc",
+    "Millennium Falcon Arc",
     "Fantasia Arc"
+];
+
+export const STATURE_ORDER = [
+    "Tiny",
+    "Small",
+    "Average",
+    "Tall",
+    "Massive",
+    "Colossal"
 ];
 
 const getArcDirection = (guessArc, targetArc) => {
@@ -136,4 +110,60 @@ const getArcDirection = (guessArc, targetArc) => {
     if (guessIndex < targetIndex) return 'up'; // Target is later
     if (guessIndex > targetIndex) return 'down'; // Target is earlier
     return 'equal';
+};
+
+const compareStature = (guessStature, targetStature) => {
+    const guessIndex = STATURE_ORDER.indexOf(guessStature);
+    const targetIndex = STATURE_ORDER.indexOf(targetStature);
+
+    if (guessIndex === -1 || targetIndex === -1) {
+        const isMatch = guessStature === targetStature;
+        return {
+            value: guessStature || '-',
+            match: isMatch,
+            partial: false,
+            direction: 'equal'
+        };
+    }
+
+    const diff = targetIndex - guessIndex;
+    return {
+        value: guessStature,
+        match: diff === 0,
+        partial: Math.abs(diff) === 1,
+        direction: diff > 0 ? 'up' : (diff < 0 ? 'down' : 'equal')
+    };
+};
+
+export const compareAttributes = (guess, target) => {
+    return {
+        id: guess.id,
+        name: {
+            value: guess.name,
+            match: guess.id === target.id
+        },
+        gender: {
+            value: guess.gender,
+            match: guess.gender === target.gender
+        },
+        species: {
+            value: guess.species,
+            match: guess.species === target.species
+        },
+        affiliation: {
+            value: guess.affiliation,
+            match: guess.affiliation === target.affiliation
+        },
+        debut_arc: {
+            value: guess.debut_arc,
+            match: guess.debut_arc === target.debut_arc,
+            direction: getArcDirection(guess.debut_arc, target.debut_arc)
+        },
+        hair_color: {
+            value: guess.hair_color,
+            match: guess.hair_color === target.hair_color
+        },
+        stature: compareStature(guess.stature, target.stature),
+        image_url: guess.image_url
+    };
 };

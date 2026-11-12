@@ -31,10 +31,10 @@ const SeoFooter = () => {
                         </p>
                         <ul className="list-disc pl-4 space-y-2 marker:text-red-950">
                             <li>
-                                <strong className="text-neutral-400 font-semibold">The Struggle (Classic Attribute Guessing):</strong> Enter any character name to compare key attributes including gender, species, affiliation, debut arc, hair color, and height, using color-coded clues and directional arrows to narrow down the answer.
+                                <strong className="text-neutral-400 font-semibold">The Struggle (Classic Attribute Guessing):</strong> Enter any character name to compare key attributes including gender, species, affiliation, debut arc, hair color, and stature, using color-coded clues and directional arrows to narrow down the answer.
                             </li>
                             <li>
-                                <strong className="text-neutral-400 font-semibold">The Eclipse (Silhouette Mode):</strong> Face the darkness and identify the hidden character from an obscured, shadowed portrait that gradually sharpens into focus with each incorrect guess.
+                                <strong className="text-neutral-400 font-semibold">The Eclipse (Silhouette Mode):</strong> Face the darkness and identify the hidden character from a shadowy silhouette outline that sharpens into focus with each incorrect guess.
                             </li>
                             <li>
                                 <strong className="text-neutral-400 font-semibold">The Astral (Emoji Divination):</strong> Read the astral signs by decoding a sequence of four symbolic emojis, unlocking additional icons and lore whispers as you search for the right name.
@@ -48,4 +48,3 @@ const SeoFooter = () => {
 };
 
 export default SeoFooter;
-

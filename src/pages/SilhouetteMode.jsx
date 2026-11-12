@@ -13,6 +13,29 @@ const resolvePath = (path) => {
     return `${import.meta.env.BASE_URL}${cleanPath}`;
 };
 
+// Build candidate silhouette URLs in priority order:
+// 1. Explicit silhouette_url or public/silhouettes/<stem>.webp
+// 2. public/silhouettes/<stem>.png
+// 3. Fallback to original character.image_url
+const getSilhouetteCandidates = (character) => {
+    if (!character) return [];
+    const rawPath = (character.image_url || '').replace(/^\//, '');
+    const stem = rawPath.replace(/\.[^.]+$/, '');
+    const candidates = [];
+
+    if (character.silhouette_url) {
+        candidates.push(resolvePath(character.silhouette_url));
+    }
+    if (stem) {
+        candidates.push(resolvePath(`silhouettes/${stem}.webp`));
+        candidates.push(resolvePath(`silhouettes/${stem}.png`));
+    }
+    if (rawPath) {
+        candidates.push(resolvePath(rawPath));
+    }
+    return [...new Set(candidates)];
+};
+
 // --- Helper: Daily Logic ---
 const getDailyIndex = () => {
     const epoch = new Date("2024-01-01T00:00:00.000Z");
@@ -29,11 +52,13 @@ const SilhouetteMode = () => {
     const [streak, setStreak] = useState(0);
     const [isHelpOpen, setIsHelpOpen] = useState(false);
     const [isCopied, setIsCopied] = useState(false);
+    const [imgCandidateIdx, setImgCandidateIdx] = useState(0);
 
     useEffect(() => {
         // Init Character
         const dailyIndex = getDailyIndex();
         setTargetCharacter(characterData[dailyIndex]);
+        setImgCandidateIdx(0);
 
         // Init State from LocalStorage
         const todayStr = new Date().toISOString().split('T')[0];
@@ -72,17 +97,21 @@ const SilhouetteMode = () => {
 
     if (!targetCharacter) return <div className="text-red-900 text-center mt-20 animate-pulse font-serif tracking-widest">SUMMONING...</div>;
 
-    // Blur Calculation with minimum floor
+    // True Silhouette CSS Filter Calculation:
+    // - Starts at: brightness(0) blur(6px) drop-shadow(0 0 10px rgba(220, 38, 38, 0.4))
+    // - Reduces blur with each wrong attempt so the silhouette outline becomes razor-sharp (0px)
+    // - Transitions to: brightness(1) blur(0px) when guessed
     const attempts = guesses.length;
-    const maxBlurPx = 40;
-    const attemptsToClear = 25;
-    let currentBlur = Math.max(0, maxBlurPx - (attempts * (maxBlurPx / attemptsToClear)));
-    // Enforce minimum blur floor of 5px until they win
-    if (!hasWon) {
-        currentBlur = Math.max(5, currentBlur);
-    } else {
-        currentBlur = 0;
-    }
+    const maxBlurPx = 6;
+    const blurStepPerAttempt = 1;
+    const currentBlur = hasWon ? 0 : Math.max(0, maxBlurPx - attempts * blurStepPerAttempt);
+
+    const silhouetteFilter = hasWon
+        ? 'brightness(1) blur(0px)'
+        : `brightness(0) blur(${currentBlur}px) drop-shadow(0 0 10px rgba(220, 38, 38, 0.4))`;
+
+    const candidates = getSilhouetteCandidates(targetCharacter);
+    const activeImageSrc = candidates[Math.min(imgCandidateIdx, candidates.length - 1)];
 
     return (
         // ROOT CONTAINER: Transparent background, relative positioning
@@ -110,7 +139,7 @@ const SilhouetteMode = () => {
                 <ModeSwitcher wonTrigger={hasWon} />
 
                 {/* HEADER */}
-                <header className="w-full max-w-4xl px-4 flex justify-between items-start mb-12">
+                <header className="w-full max-w-4xl px-4 flex justify-between items-start mb-8">
                     <Link to="/" className="text-gray-500 hover:text-red-500 transition-colors flex items-center gap-2 group font-bold tracking-[0.2em] uppercase text-[10px]">
                         <span className="group-hover:-translate-x-1 transition-transform">←</span> Escape
                     </Link>
@@ -139,28 +168,39 @@ const SilhouetteMode = () => {
 
                 <main className="flex flex-col items-center w-full max-w-md px-4">
 
-                    {/* PORTAL / IMAGE CONTAINER */}
-                    <div className="relative group mb-10">
-                        {/* Red Glow Behind */}
-                        <div className={`absolute -inset-4 bg-gradient-to-b from-red-600 to-black rounded-full blur-xl opacity-20 transition-opacity duration-1000 ${hasWon ? 'opacity-50 animate-pulse' : ''}`}></div>
+                    {/* FULL-BODY / UPPER-BODY SILHOUETTE STAGE (No circular crop) */}
+                    <div className="relative flex flex-col items-center justify-center w-full min-h-[280px] sm:min-h-[340px] mb-8 py-4">
+                        {/* Ambient Crimson Aura Behind Silhouette */}
+                        <div
+                            className={`pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.22)_0%,transparent_68%)] blur-2xl transition-opacity duration-1000 ${
+                                hasWon ? 'opacity-80' : 'opacity-45'
+                            }`}
+                        />
 
-                        {/* The Image Itself */}
-                        <div className="relative w-64 h-64 md:w-80 md:h-80 bg-black rounded-full border-4 border-red-900/40 overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.9)] ring-1 ring-red-950">
-                            <img
-                                src={resolvePath(targetCharacter.image_url)}
-                                alt="Silhouette"
-                                draggable="false"
-                                onContextMenu={(e) => e.preventDefault()}
-                                className="w-full h-full object-cover scale-110 pointer-events-none select-none"
-                                style={{
-                                    filter: `grayscale(100%) blur(${currentBlur.toFixed(1)}px) brightness(${hasWon ? 1 : 0.7})`,
-                                    transition: 'filter 1.5s cubic-bezier(0.4, 0, 0.2, 1)',
-                                    userSelect: 'none',
-                                    WebkitUserDrag: 'none'
-                                }}
-                            />
-                            {!hasWon && <div className="absolute inset-0 bg-red-900/10 mix-blend-overlay pointer-events-none"></div>}
-                        </div>
+                        {/* Character Silhouette Image */}
+                        <img
+                            src={activeImageSrc}
+                            alt="Character Silhouette"
+                            draggable="false"
+                            onContextMenu={(e) => e.preventDefault()}
+                            onError={() => {
+                                if (imgCandidateIdx < candidates.length - 1) {
+                                    setImgCandidateIdx((prev) => prev + 1);
+                                }
+                            }}
+                            className="relative z-10 w-auto max-w-full pointer-events-none select-none"
+                            style={{
+                                maxHeight: '380px',
+                                objectFit: 'contain',
+                                filter: silhouetteFilter,
+                                transition: 'filter 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+                                userSelect: 'none',
+                                WebkitUserDrag: 'none',
+                            }}
+                        />
+
+                        {/* Subtle Pedestal Line */}
+                        <div className="w-48 h-px bg-gradient-to-r from-transparent via-red-800/50 to-transparent mt-3" />
                     </div>
 
                     {/* COUNTER */}
@@ -255,7 +295,7 @@ const SilhouetteMode = () => {
                         <div className="absolute top-3 left-3 w-4 h-4 border-l border-t border-red-900/50" />
                         <div className="absolute top-3 right-3 w-4 h-4 border-r border-t border-red-900/50" />
                         <div className="absolute bottom-3 left-3 w-4 h-4 border-l border-b border-red-900/50" />
-                        <div className="absolute bottom-3 right-3 w-4 h-4 border-r border-b border-red-900/50" />
+                        <div className="absolute bottom-3 right-3 w-4 h-4 border-r border-b border-red-700/50" />
 
                         {/* Close button */}
                         <button
@@ -270,9 +310,9 @@ const SilhouetteMode = () => {
 
                         <p className="text-xs uppercase tracking-[0.3em] text-red-400/80 font-bold mb-3 text-center">THE ECLIPSE</p>
                         <p className="text-gray-400 text-sm leading-relaxed font-serif text-center">
-                            Guess the character based on their dark silhouette.
-                            You have unlimited attempts — but the image starts pitch-black.
-                            Each guess reduces the blur slightly. Sacrifice your logic.
+                            Identify the character from their darkened silhouette.
+                            The outline starts shrouded in blur — each wrong guess sharpens the silhouette edge until it is razor-clear.
+                            Guess the right soul to lift the veil completely.
                         </p>
 
                         <div className="mt-6 h-px bg-gradient-to-r from-transparent via-red-900/50 to-transparent" />
