@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import characterData from '../../berserk_chars.json';
 import CountdownTimer from '../components/CountdownTimer';
+import ModeSwitcher from '../components/ModeSwitcher';
 
 // Filter to only characters that have emoji data
 const emojiCharacters = characterData.filter(c => c.emojis);
@@ -169,7 +170,10 @@ const EmojiMode = () => {
             </div>
 
             {/* --- CONTENT --- */}
-            <div className="relative z-10 flex flex-col items-center min-h-screen py-6">
+            <div className="relative z-10 flex flex-col items-center min-h-screen pb-6">
+
+                {/* Quick Mode Switcher */}
+                <ModeSwitcher wonTrigger={hasWon} />
 
                 {/* HEADER */}
                 <header className="w-full max-w-4xl px-4 flex justify-between items-start mb-12">
@@ -249,7 +253,7 @@ const EmojiMode = () => {
                                     <div className="relative bg-black/50 border border-purple-700/40 rounded-xl px-6 py-4 backdrop-blur-sm">
                                         <p className="text-[9px] uppercase tracking-[0.4em] text-purple-600/60 mb-2 font-bold text-center">Astral Whisper</p>
                                         <p className="text-purple-300 italic text-center font-serif text-sm md:text-base leading-relaxed" style={{ textShadow: '0 0 20px rgba(168,85,247,0.4)' }}>
-                                            "{targetCharacter.hint}"
+                                            &quot;{targetCharacter.hint}&quot;
                                         </p>
                                     </div>
                                 </div>
@@ -261,7 +265,7 @@ const EmojiMode = () => {
                             <div className="relative w-full max-w-md">
                                 <div className="relative bg-black/30 border border-purple-900/30 rounded-xl px-6 py-3 backdrop-blur-sm">
                                     <p className="text-purple-400/60 italic text-center font-serif text-xs leading-relaxed">
-                                        "{targetCharacter.hint}"
+                                        &quot;{targetCharacter.hint}&quot;
                                     </p>
                                 </div>
                             </div>
@@ -270,7 +274,7 @@ const EmojiMode = () => {
 
                     {/* Attempts Counter */}
                     <div className="mb-8 text-center">
-                        <p className="text-purple-900/60 text-[9px] uppercase tracking-[0.4em] mb-2 font-bold">Astral Visions</p>
+                        <p className="text-purple-400/60 text-[10px] uppercase tracking-[0.35em] mb-2 font-bold">Astral Visions</p>
                         <p className="text-3xl font-bold text-purple-400 font-mono drop-shadow-[0_0_10px_rgba(139,92,246,0.5)]">{attempts}</p>
                     </div>
 

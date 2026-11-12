@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import SearchBar from '../components/SearchBar';
 import characterData from '../../berserk_chars.json';
 import CountdownTimer from '../components/CountdownTimer';
+import ModeSwitcher from '../components/ModeSwitcher';
 
 // --- Helper: Path Resolution ---
 const resolvePath = (path) => {
@@ -103,7 +104,10 @@ const SilhouetteMode = () => {
             </div>
 
             {/* --- 2. GAME CONTENT (Positive Z-Index) --- */}
-            <div className="relative z-10 flex flex-col items-center py-6">
+            <div className="relative z-10 flex flex-col items-center pb-6">
+
+                {/* Quick Mode Switcher */}
+                <ModeSwitcher wonTrigger={hasWon} />
 
                 {/* HEADER */}
                 <header className="w-full max-w-4xl px-4 flex justify-between items-start mb-12">
@@ -161,7 +165,7 @@ const SilhouetteMode = () => {
 
                     {/* COUNTER */}
                     <div className="mb-8 text-center">
-                        <p className="text-red-900/60 text-[9px] uppercase tracking-[0.4em] mb-2 font-bold">Blood Sacrifices</p>
+                        <p className="text-red-500/70 text-[10px] uppercase tracking-[0.35em] mb-2 font-bold">Attempts</p>
                         <p className="text-3xl font-bold text-red-600 font-mono drop-shadow-[0_0_10px_rgba(220,38,38,0.6)]">{attempts}</p>
                     </div>
 
@@ -179,7 +183,7 @@ const SilhouetteMode = () => {
                             <div className="flex flex-col sm:flex-row gap-3 items-center">
                                 <button
                                     onClick={() => {
-                                        const shareText = `BerserkDle 🗡️\nMode: THE ECLIPSE 🌑\nGuesses: ${attempts}\nPlay now: https://berserk-dle.vercel.app/`;
+                                        const shareText = `BerserkDle 🗡️\nMode: THE ECLIPSE 🌑\nAttempts: ${attempts}\nPlay now: https://berserk-dle.vercel.app/`;
                                         navigator.clipboard.writeText(shareText).then(() => {
                                             setIsCopied(true);
                                             setTimeout(() => setIsCopied(false), 2000);

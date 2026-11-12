@@ -1,11 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import SearchBar from '../components/SearchBar';
 import GuessGrid from '../components/GuessGrid';
 import InfoModal from '../components/InfoModal';
 import WinModal from '../components/WinModal';
 import GrimParticles from '../components/GrimParticles';
-import { getDailyCharacter, compareAttributes } from '../utils/GameLogic';
+import ModeSwitcher from '../components/ModeSwitcher';
+import {
+    getDailyCharacter,
+    getDailyNumber,
+    compareAttributes,
+    buildClassicShareText,
+    guessToEmojiRow,
+    copyToClipboard,
+} from '../utils/GameLogic';
 import BerserkConfetti from '../components/BerserkConfetti';
 
 function ClassicMode() {
@@ -17,7 +25,8 @@ function ClassicMode() {
     const [showWin, setShowWin] = useState(false);
     const [showHint, setShowHint] = useState(false);
     const [timeRemaining, setTimeRemaining] = useState('');
-    const [isCopied, setIsCopied] = useState(false);
+    const [showToast, setShowToast] = useState(false);
+    const toastTimeoutRef = useRef(null);
 
     useEffect(() => {
         // 1. Load daily character
@@ -75,8 +84,10 @@ function ClassicMode() {
             setTimeRemaining(calculateTimeLeft());
         }, 1000);
 
-        return () => clearInterval(timer);
-
+        return () => {
+            clearInterval(timer);
+            if (toastTimeoutRef.current) clearTimeout(toastTimeoutRef.current);
+        };
     }, []);
 
     const handleGuess = (character) => {
@@ -105,6 +116,20 @@ function ClassicMode() {
         }));
     };
 
+    const handleShareResult = async () => {
+        const shareText = buildClassicShareText(guesses);
+        try {
+            await copyToClipboard(shareText);
+            setShowToast(true);
+            if (toastTimeoutRef.current) clearTimeout(toastTimeoutRef.current);
+            toastTimeoutRef.current = setTimeout(() => {
+                setShowToast(false);
+            }, 2500);
+        } catch (err) {
+            console.error('Failed to copy share result:', err);
+        }
+    };
+
     const handleDevReset = () => {
         if (window.confirm("RESET ALL PROGRESS? This is for testing only.")) {
             localStorage.clear();
@@ -113,11 +138,25 @@ function ClassicMode() {
         }
     };
 
+    const dayNumber = getDailyNumber();
+
     return (
         <>
             {/* Background effects (Ash + Brand of Sacrifice) */}
             {hasWon && <GrimParticles />}
             {hasWon && <BerserkConfetti />}
+
+            {/* Toast Notification */}
+            {showToast && (
+                <div
+                    role="status"
+                    aria-live="polite"
+                    className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[200] flex items-center gap-2.5 px-5 py-3 rounded-md bg-stone-950/95 border border-amber-500/60 text-amber-200 text-xs sm:text-sm font-serif tracking-[0.2em] uppercase shadow-[0_0_25px_rgba(217,119,6,0.4)] backdrop-blur-md animate-fadeIn pointer-events-none whitespace-nowrap"
+                >
+                    <span className="text-emerald-400 text-base leading-none">✓</span>
+                    <span>Copied to clipboard!</span>
+                </div>
+            )}
 
             {/* Main container with Atmospheric Background Image */}
             <div className="relative min-h-screen overflow-x-hidden">
@@ -133,15 +172,20 @@ function ClassicMode() {
                 <div className="fixed inset-0 bg-black/70 z-0" />
 
                 {/* Content Container - Above Background */}
-                <div className="relative z-10 text-white min-h-screen flex flex-col items-center py-10 font-serif">
+                <div className="relative z-10 text-white min-h-screen flex flex-col items-center pb-10 font-serif">
+
+                    {/* Quick Mode Switcher */}
+                    <ModeSwitcher wonTrigger={hasWon} />
 
                     {/* Modals */}
                     {showInfo && <InfoModal onClose={() => setShowInfo(false)} />}
                     {showWin && hasWon && (
                         <WinModal
                             character={targetCharacter}
+                            guesses={guesses}
                             guessCount={guesses.length}
                             nextCharacterTime={timeRemaining}
+                            onShare={handleShareResult}
                             onClose={() => setShowWin(false)}
                         />
                     )}
@@ -160,7 +204,7 @@ function ClassicMode() {
 
                         {/* Title Section - Metallic Blood-Stained */}
                         <div className="text-center flex-1">
-                            <h1 className="font-serif font-black bg-gradient-to-b from-gray-100 to-gray-400 bg-clip-text text-transparent text-5xl md:text-6xl uppercase tracking-[0.2em] mb-2" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.9)' }}>
+                            <h1 className="font-serif font-black bg-gradient-to-b from-gray-100 to-gray-400 bg-clip-text text-transparent text-4xl sm:text-5xl md:text-6xl uppercase tracking-[0.2em] mb-2" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.9)' }}>
                                 DAILY GUESS
                             </h1>
                             <p className="text-red-900/70 text-xs italic tracking-wide drop-shadow-[0_0_4px_rgba(127,29,29,0.5)]">
@@ -224,7 +268,7 @@ function ClassicMode() {
                                     <div className="relative z-10">
                                         <p className="text-[11px] text-amber-600 font-bold uppercase mb-2 tracking-[0.2em] text-center font-serif">◈ Ancient Whisper ◈</p>
                                         <p className="text-amber-100/95 italic font-serif text-lg leading-relaxed text-center" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.8)' }}>
-                                            "{targetCharacter?.hint || 'No hint available'}"
+                                            &quot;{targetCharacter?.hint || 'No hint available'}&quot;
                                         </p>
                                     </div>
                                 </div>
@@ -236,28 +280,30 @@ function ClassicMode() {
                     <div className="w-full max-w-4xl px-4 flex flex-col items-center z-10">
 
                         {hasWon && (
-                            <div className="w-full max-w-md mb-6 flex flex-col items-center gap-4 animate-fadeIn">
-                                <div className="w-full bg-gradient-to-r from-transparent via-amber-950/20 to-transparent border-y border-amber-700/30 py-6 backdrop-blur-md text-center">
+                            <div className="w-full max-w-md mb-8 flex flex-col items-center gap-4 animate-fadeIn">
+                                <div className="w-full bg-gradient-to-r from-transparent via-amber-950/30 to-transparent border-y border-amber-700/40 py-6 px-4 backdrop-blur-md text-center">
+                                    <p className="text-[10px] text-amber-500/80 uppercase tracking-[0.35em] mb-1">
+                                        BerserkDle #{dayNumber} • {guesses.length} {guesses.length === 1 ? 'Attempt' : 'Attempts'}
+                                    </p>
                                     <p className="text-[10px] text-gray-500 uppercase tracking-[0.4em] mb-3">The Branded Revealed</p>
-                                    <p className="font-serif font-black text-3xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-b from-amber-400 via-amber-500 to-amber-900 uppercase tracking-[0.3em]">
+                                    <p className="font-serif font-black text-3xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-b from-amber-300 via-amber-500 to-amber-900 uppercase tracking-[0.25em] mb-4">
                                         {targetCharacter.name}
                                     </p>
+
+                                    {/* Spoiler-Free Emoji Summary */}
+                                    <div className="font-mono text-sm sm:text-base leading-snug tracking-widest py-2 px-3 bg-black/50 border border-stone-800/80 rounded inline-block max-h-36 overflow-y-auto">
+                                        {guesses.map((g, idx) => (
+                                            <div key={idx}>{guessToEmojiRow(g)}</div>
+                                        ))}
+                                    </div>
                                 </div>
+
                                 <button
-                                    onClick={() => {
-                                        const shareText = `BerserkDle 🗡️\nMode: THE STRUGGLE (Classic)\nGuesses: ${guesses.length}\nPlay now: https://berserk-dle.vercel.app/`;
-                                        navigator.clipboard.writeText(shareText).then(() => {
-                                            setIsCopied(true);
-                                            setTimeout(() => setIsCopied(false), 2000);
-                                        });
-                                    }}
-                                    className={`px-8 py-3 border text-xs tracking-[0.3em] uppercase rounded-sm transition-all duration-300 cursor-pointer font-bold ${
-                                        isCopied
-                                            ? 'bg-green-900/30 border-green-600/50 text-green-300'
-                                            : 'bg-gradient-to-r from-amber-950/50 via-amber-900/40 to-amber-950/50 border-amber-700/50 text-amber-400 hover:bg-amber-900/50 hover:text-amber-200 hover:border-amber-500 hover:shadow-[0_0_15px_rgba(217,119,6,0.3)]'
-                                    }`}
+                                    onClick={handleShareResult}
+                                    className="w-full sm:w-auto px-10 py-3.5 bg-gradient-to-r from-amber-700 via-amber-600 to-amber-700 hover:from-amber-600 hover:via-amber-500 hover:to-amber-600 border border-amber-400/70 text-black text-xs sm:text-sm tracking-[0.25em] uppercase rounded transition-all duration-200 cursor-pointer font-black shadow-[0_0_20px_rgba(217,119,6,0.35)] hover:shadow-[0_0_30px_rgba(245,158,11,0.55)] flex items-center justify-center gap-2"
                                 >
-                                    {isCopied ? 'Copied! ✓' : '📋 Share Result'}
+                                    <span>📋</span>
+                                    <span>Share Result</span>
                                 </button>
                             </div>
                         )}
@@ -287,7 +333,7 @@ function ClassicMode() {
                         </footer>
                     </div>
                 </div>
-            </div >
+            </div>
         </>
     );
 }

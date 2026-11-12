@@ -16,6 +16,73 @@ export const getDailyCharacter = () => {
     return characters[index];
 };
 
+// Deterministic daily game number (#1 = 2026-01-10 UTC)
+export const getDailyNumber = () => {
+    const epoch = Date.UTC(2026, 0, 10);
+    const now = new Date();
+    const todayUtc = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+    return Math.max(1, Math.floor((todayUtc - epoch) / (1000 * 60 * 60 * 24)) + 1);
+};
+
+// Convert a single Classic guess result object into a 6-cell spoiler-free emoji row
+export const guessToEmojiRow = (guess) => {
+    if (!guess) return '';
+
+    const boolEmoji = (attr) => {
+        if (attr?.partial) return '🟨';
+        return attr?.match ? '🟩' : '🟥';
+    };
+
+    const dirEmoji = (attr) => {
+        if (attr?.match) return '🟩';
+        if (attr?.partial) return '🟨';
+        if (attr?.direction === 'up') return '⬆️';
+        if (attr?.direction === 'down') return '⬇️';
+        return '🟥';
+    };
+
+    return [
+        boolEmoji(guess.gender),
+        boolEmoji(guess.species),
+        boolEmoji(guess.affiliation),
+        dirEmoji(guess.debut_arc),
+        boolEmoji(guess.hair_color),
+        dirEmoji(guess.height_cm),
+    ].join('');
+};
+
+// Build full spoiler-free share text for Classic ("The Struggle") mode
+export const buildClassicShareText = (guesses = []) => {
+    const dayNumber = getDailyNumber();
+    const count = guesses.length;
+    const attemptLabel = count === 1 ? 'Attempt' : 'Attempts';
+    const emojiGrid = guesses.map(guessToEmojiRow).join('\n');
+
+    return `BerserkDle #${dayNumber} - ${count} ${attemptLabel}\n${emojiGrid}\nPlay at: https://berserk-dle.vercel.app/`;
+};
+
+// Copy text to clipboard with fallback support
+export const copyToClipboard = async (text) => {
+    if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return true;
+    }
+
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.left = '-9999px';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+        document.execCommand('copy');
+        return true;
+    } finally {
+        document.body.removeChild(textArea);
+    }
+};
+
 export const compareAttributes = (guess, target) => {
     return {
         id: guess.id,

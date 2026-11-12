@@ -2,10 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const MainMenu = () => {
-    const resolvePath = (path) => `${import.meta.env.BASE_URL}${path}`;
-
     return (
-        <div className="min-h-screen bg-[#050505] text-white font-serif flex flex-col items-center overflow-y-auto p-6 relative overflow-x-hidden">
+        <div className="min-h-screen bg-[#050505] text-white font-serif flex flex-col items-center p-6 relative overflow-x-hidden antialiased">
 
             {/* --- GLOBAL NOISE TEXTURE --- */}
             <div className="fixed inset-0 opacity-[0.08] pointer-events-none z-50 mix-blend-overlay"
@@ -16,7 +14,7 @@ const MainMenu = () => {
             <div className="fixed inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#000000_120%)] pointer-events-none z-40"></div>
 
             {/* --- HEADER --- */}
-            <div className="z-10 text-center mb-16 relative">
+            <header className="z-10 text-center mb-16 relative">
                 <div className="w-px h-16 bg-gradient-to-b from-transparent via-red-900 to-transparent mx-auto mb-6 opacity-50"></div>
 
                 <h1 className="text-5xl md:text-8xl font-black tracking-[0.2em] text-gray-200 uppercase"
@@ -29,10 +27,10 @@ const MainMenu = () => {
                     <p className="text-xs tracking-[0.4em] uppercase text-gray-400">Sacrifice Your Logic</p>
                     <span className="h-px w-12 bg-gray-600"></span>
                 </div>
-            </div>
+            </header>
 
             {/* --- THE CARDS (Brutal Style) --- */}
-            <div className="z-10 flex flex-col md:flex-row gap-0 w-full max-w-5xl h-auto md:h-[500px] border border-gray-800 bg-black/50 shadow-2xl relative my-auto">
+            <main className="z-10 flex flex-col md:flex-row gap-0 w-full max-w-5xl h-auto md:h-[500px] border border-gray-800 bg-black/50 shadow-2xl relative my-auto">
 
                 {/* === LEFT: CLASSIC MODE (THE STRUGGLE) === */}
                 <Link to="/classic" className="group relative flex-1 border-b md:border-b-0 md:border-r border-gray-800 cursor-pointer overflow-hidden transition-all duration-500 hover:flex-[1.5]">
@@ -41,7 +39,7 @@ const MainMenu = () => {
                     <div className="absolute inset-0 z-0">
                         <img
                             src={`${import.meta.env.BASE_URL}images/home_classic_bg.jpg`}
-                            alt="The Struggle"
+                            alt="The Struggle - Classic Berserk Character Guessing Mode"
                             className="w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 scale-100 group-hover:scale-110"
                         />
                         {/* Cold overlay for steel atmosphere */}
@@ -53,11 +51,11 @@ const MainMenu = () => {
 
                     {/* Content */}
                     <div className="relative z-10 h-full flex flex-col items-center justify-center p-8 transition-transform duration-500">
-                        <h2 className="text-2xl md:text-4xl font-bold text-gray-400 uppercase tracking-widest group-hover:text-white transition-colors border-b-2 border-transparent group-hover:border-white pb-2 drop-shadow-lg">
+                        <h2 className="text-2xl md:text-4xl font-bold text-gray-300 uppercase tracking-widest group-hover:text-white transition-colors border-b-2 border-transparent group-hover:border-white pb-2 drop-shadow-lg">
                             The Struggle
                         </h2>
-                        <p className="mt-4 text-gray-500 text-xs uppercase tracking-widest group-hover:text-gray-300 font-bold">
-                            Classic Guessing
+                        <p className="mt-4 text-gray-400 text-xs font-sans uppercase tracking-[0.2em] group-hover:text-gray-200 font-semibold drop-shadow">
+                            CLASSIC GUESSING
                         </p>
                     </div>
                 </Link>
@@ -69,7 +67,7 @@ const MainMenu = () => {
                     <div className="absolute inset-0 z-0">
                         <img
                             src={`${import.meta.env.BASE_URL}images/home_eclipse_bg.jpg`}
-                            alt="The Eclipse"
+                            alt="The Eclipse - Berserk Silhouette Guessing Mode"
                             className="w-full h-full object-cover opacity-40 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 scale-105 group-hover:scale-110"
                         />
                         {/* Red overlay for hell atmosphere */}
@@ -81,11 +79,11 @@ const MainMenu = () => {
 
                     {/* Content */}
                     <div className="relative z-10 h-full flex flex-col items-center justify-center p-8">
-                        <h2 className="text-2xl md:text-4xl font-bold text-red-900/60 uppercase tracking-widest group-hover:text-red-500 transition-colors border-b-2 border-transparent group-hover:border-red-600 pb-2 drop-shadow-lg">
+                        <h2 className="text-2xl md:text-4xl font-bold text-red-700/80 uppercase tracking-widest group-hover:text-red-500 transition-colors border-b-2 border-transparent group-hover:border-red-600 pb-2 drop-shadow-lg">
                             The Eclipse
                         </h2>
-                        <p className="mt-4 text-red-900/40 text-xs uppercase tracking-widest group-hover:text-red-300 font-bold">
-                            Silhouette Mode
+                        <p className="mt-4 text-red-400/70 text-xs font-sans uppercase tracking-[0.2em] group-hover:text-red-200 font-semibold drop-shadow">
+                            SILHOUETTE MODE
                         </p>
                     </div>
                 </Link>
@@ -97,7 +95,7 @@ const MainMenu = () => {
                     <div className="absolute inset-0 z-0">
                         <img
                             src={`${import.meta.env.BASE_URL}images/astral_button_bg.png`}
-                            alt="The Astral"
+                            alt="The Astral - Berserk Emoji Divination Mode"
                             className="w-full h-full object-cover opacity-40 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 scale-105 group-hover:scale-110"
                         />
                         {/* Purple overlay for astral atmosphere */}
@@ -110,21 +108,21 @@ const MainMenu = () => {
                     {/* Content */}
                     <div className="relative z-10 h-full flex flex-col items-center justify-center p-8">
 
-                        <h2 className="text-2xl md:text-4xl font-bold text-purple-900/60 uppercase tracking-widest group-hover:text-purple-400 transition-colors border-b-2 border-transparent group-hover:border-purple-500 pb-2 drop-shadow-lg">
+                        <h2 className="text-2xl md:text-4xl font-bold text-purple-600/80 uppercase tracking-widest group-hover:text-purple-400 transition-colors border-b-2 border-transparent group-hover:border-purple-500 pb-2 drop-shadow-lg">
                             The Astral
                         </h2>
-                        <p className="mt-4 text-purple-900/40 text-xs uppercase tracking-widest group-hover:text-purple-300 font-bold">
-                            Emoji Mode
+                        <p className="mt-4 text-purple-400/70 text-xs font-sans uppercase tracking-[0.2em] group-hover:text-purple-200 font-semibold drop-shadow">
+                            EMOJI MODE
                         </p>
                     </div>
                 </Link>
-            </div>
+            </main>
 
             {/* --- DECORATIVE CORNERS --- */}
             <div className="fixed top-6 left-6 w-8 h-8 border-l-2 border-t-2 border-gray-800 opacity-50 pointer-events-none"></div>
             <div className="fixed bottom-6 right-6 w-8 h-8 border-r-2 border-b-2 border-gray-800 opacity-50 pointer-events-none"></div>
 
-            {/* Footer — Social Links */}
+            {/* Social Links */}
             <div className="z-10 flex flex-col items-center gap-2 mt-12 pb-6">
                 <div className="flex items-center gap-4">
                     <a
